@@ -1,0 +1,453 @@
+{
+  "report": "analysis",
+  "version": "1.4",
+  "productVersion": "24.0.0.2",
+  "productRelease": "24.0.0.2",
+  "buildID": "v20240515_2333",
+  "options": [
+    "--sourceAppServer=was855",
+    "--sourceJava=ibm6",
+    "--sourceJavaEE=ee6",
+    "--targetAppServer=openLiberty",
+    "--targetJava=ibm8",
+    "--targetJavaEE=ee7",
+    "--includeHelpLocation",
+    "--excludePackages=ch.qos,com.cloudant,com.cognos,com.fasterxml,com.filenet,com.ibatis,com.ibm,com.informix,com.lowagie,com.mchange,com.meterware,com.microsoft,com.mongodb,com.mysql,com.sun,com.sybase,filenet,freemarker,groovy,jakarta,java,javax,net,oracle,org,sqlj,sun,twitter4j,_ibmjsp"
+  ],
+  "totalRulesFlagged": 12,
+  "filesAffected": 15,
+  "totalResults": 26,
+  "severitySummary": [
+    {
+      "severity": "Critical",
+      "severityId": "severe",
+      "totalRulesFlagged": 1,
+      "totalResults": 5,
+      "totalRulesFlaggedWithAutomatedFix": 0,
+      "totalResultsWithAutomatedFix": 0
+    },
+    {
+      "severity": "Information",
+      "severityId": "info",
+      "totalRulesFlagged": 11,
+      "totalResults": 21,
+      "totalRulesFlaggedWithAutomatedFix": 0,
+      "totalResultsWithAutomatedFix": 0
+    }
+  ],
+  "applications": [
+    "/root/source/modresorts/modresorts/target/modresorts-2.0.0.war"
+  ],
+  "rules": [
+    {
+      "ruleName": "Behavior change in java.lang.String and java.util.regex.Pattern split methods",
+      "ruleId": "StringSplit",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/180/JRE8StringSplit.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 8 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.180.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/JavaVersion.class",
+          "details": [
+            {
+              "reference": "Method parseDotted",
+              "match": "java.lang.String.split(*)",
+              "lineNumber": 48
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkJlaGF2aW9yIGNoYW5nZSBpbiBqYXZhLmxhbmcuU3RyaW5nIGFuZCBqYXZhLnV0aWwucmVnZXguUGF0dGVybiBzcGxpdCBtZXRob2RzPC9oMz4KPHA+ClRoaXMgcnVsZSBmbGFncyBhbGwgdXNlcyBvZiB0aGUgPGNvZGU+amF2YS51dGlsLnJlZ2V4LlBhdHRlcm4uc3BsaXQ8L2NvZGU+IGFuZCA8Y29kZT5qYXZhLmxhbmcuU3RyaW5nLnNwbGl0PC9jb2RlPiAKbWV0aG9kIG9uY2UgcGVyIGZpbGUuCjwvcD4KCjxwPgpJbiBKYXZhIDgsIHdoZW4gdGhlcmUgaXMgYSBwb3NpdGl2ZS13aWR0aCBtYXRjaCBhdCB0aGUgYmVnaW5uaW5nIG9mIHRoZSBpbnB1dCBzZXF1ZW5jZSB0aGVuIGFuIGVtcHR5IGxlYWRpbmcgc3Vic3RyaW5nIGlzIGluY2x1ZGVkIGF0IHRoZSAKYmVnaW5uaW5nIG9mIHRoZSByZXN1bHRpbmcgYXJyYXkuIEEgemVyby13aWR0aCBtYXRjaCBhdCB0aGUgYmVnaW5uaW5nIGhvd2V2ZXIgbmV2ZXIgcHJvZHVjZXMgc3VjaCBlbXB0eSBsZWFkaW5nIHN1YnN0cmluZy4KPC9wPgoKPHA+CkZvciBleGFtcGxlLCB3aGVuIHRoZSBmb2xsb3dpbmcgbWV0aG9kIGlzIGNhbGxlZDogPGNvZGU+ImFiYyIuc3BsaXQoIiIpOzwvY29kZT48YnI+CkluIEphdmEgNywgdGhlIG1ldGhvZCByZXR1cm5zIHRoZSBmb2xsb3dpbmcgYXJyYXk6IDxjb2RlPlsiIiwgImEiLCAiYiIsICJjIl08L2NvZGU+PGJyPgpJbiBKYXZhIDgsIHRoZSBtZXRob2QgcmV0dXJucyB0aGUgZm9sbG93aW5nIGFycmF5IGluc3RlYWQ6IDxjb2RlPlsiYSIsICJiIiwgImMiXTwvY29kZT4KPC9wPgoKPHA+ClJldmlldyB5b3VyIGFwcGxpY2F0aW9uIGFuZCBlbnN1cmUgdGhlIGFwcGxpY2F0aW9uIGRvZXMgbm90IHJlbHkgb24gdGhlIGVtcHR5IHN0cmluZyBwcmV2aW91c2x5IHJldHVybmVkIGJ5IHRoZSBzcGxpdCBtZXRob2QuCjwvcD4KCjxwPgpGb3IgYWRkaXRpb25hbCBpbmZvcm1hdGlvbiwgc2VlIHRoZSBKYXZhIGRvY3VtZW50YXRpb24gZm9yIHRoZSBmb2xsb3dpbmcgY2xhc3NlczoKPC9wPgo8dWw+CjxsaT48YSBocmVmPSJodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvNy9kb2NzL2FwaS9qYXZhL3V0aWwvcmVnZXgvUGF0dGVybi5odG1sI3NwbGl0JTI4amF2YS5sYW5nLkNoYXJTZXF1ZW5jZSwlMjBpbnQlMjkiCnRpdGxlPSJPcGVucyBhIG5ldyB3aW5kb3ciIG9uY2xpY2s9ImphdmFzY3JpcHQ6aGVscFdpbmRvdygnaHR0cHM6Ly9kb2NzLm9yYWNsZS5jb20vamF2YXNlLzcvZG9jcy9hcGkvamF2YS91dGlsL3JlZ2V4L1BhdHRlcm4uaHRtbCNzcGxpdCUyOGphdmEubGFuZy5DaGFyU2VxdWVuY2UsJTIwaW50JTI5Jyk7IHJldHVybiBmYWxzZTsiPgpQYXR0ZXJuLnNwbGl0KCk8L2E+IEphdmEgNzwvbGk+CjxsaT48YSBocmVmPSJodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3V0aWwvcmVnZXgvUGF0dGVybi5odG1sI3NwbGl0LWphdmEubGFuZy5DaGFyU2VxdWVuY2UtaW50LSIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3V0aWwvcmVnZXgvUGF0dGVybi5odG1sI3NwbGl0LWphdmEubGFuZy5DaGFyU2VxdWVuY2UtaW50LScpOyByZXR1cm4gZmFsc2U7Ij4KUGF0dGVybi5zcGxpdCgpPC9hPiBKYXZhIDg8L2xpPgo8L3VsPgo="
+    },
+    {
+      "ruleName": "Behavior change in month name formatting for some languages",
+      "ruleId": "MonthFormattingNames",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/180/JRE8MonthFormattingNames.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 8 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.180.category",
+      "totalResults": 4,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/bind/DateTypeAdapter.class",
+          "details": [
+            {
+              "reference": "Method write",
+              "match": "java.text.DateFormat.format(*)",
+              "lineNumber": 103
+            }
+          ]
+        },
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/bind/DefaultDateTypeAdapter.class",
+          "details": [
+            {
+              "reference": "Method write",
+              "match": "java.text.DateFormat.format(*)",
+              "lineNumber": 136
+            }
+          ]
+        },
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/sql/SqlDateTypeAdapter.class",
+          "details": [
+            {
+              "reference": "Method write",
+              "match": "java.text.DateFormat.format(*)",
+              "lineNumber": 79
+            }
+          ]
+        },
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/sql/SqlTimeTypeAdapter.class",
+          "details": [
+            {
+              "reference": "Method write",
+              "match": "java.text.DateFormat.format(*)",
+              "lineNumber": 76
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkJlaGF2aW9yIGNoYW5nZSBpbiBtb250aCBuYW1lIGZvcm1hdHRpbmcgZm9yIHNvbWUgbGFuZ3VhZ2VzPC9oMz4KPHA+ClNvbWUgbGFuZ3VhZ2VzIGRpZmZlcmVudGlhdGUgYmV0d2VlbiBtb250aCBuYW1lcyBpbiBhIGNvbXBsZXRlIGRhdGUgZm9ybWF0IGFuZCBtb250aCBuYW1lcyBpbiBhIHN0YW5kYWxvbmUgZm9ybS4KSW4gSmF2YSA4LCB0aGUgPGNvZGU+Z2V0TW9udGhOYW1lczwvY29kZT4gYW5kIHRoZSA8Y29kZT5nZXRTaG9ydE1vbnRoTmFtZXM8L2NvZGU+IG1ldGhvZHMgb2YKPGNvZGU+RGF0ZUZvcm1hdFN5bWJvbHM8L2NvZGU+IHJldHVybiBtb250aCBuYW1lcyBpbiB0aGUgZm9ybWF0dGluZyBmb3JtIGZvciB0aG9zZSBsYW5ndWFnZXMKdGhhdCBoYXZlIGEgZGlmZmVyZW5jZS4KSW4gSmF2YSA3IGFuZCBwcmlvciB2ZXJzaW9ucywgdGhlc2UgbWV0aG9kcyByZXR1cm4gdGhlIHN0YW5kYWxvbmUgZm9ybSBvZiB0aGUgbW9udGggbmFtZXMuCjwvcD4KPHA+CkluIEphdmEgOCwgZm9ybWF0dGluZyBkYXRlLXRpbWUgdmFsdWVzIHVzaW5nIHRoZSA8Y29kZT5EYXRlRm9ybWF0PC9jb2RlPiBhbmQgPGNvZGU+U2ltcGxlRGF0ZUZvcm1hdDwvY29kZT4gY2xhc3NlcwphbHNvIHVzZXMgdGhlIG1vbnRoIG5hbWVzIHByZWZlcnJlZCBmb3IgZm9ybWF0dGluZyByYXRoZXIgdGhhbiB0aGUgc3RhbmRhbG9uZSB2ZXJzaW9uLgpEZXBlbmRpbmcgb24gdGhlIGxhbmd1YWdlIGFuZCB0aGUgZGF0ZSBwYXR0ZXJuLCB1c2luZyB0aGUgPGNvZGU+Zm9ybWF0PC9jb2RlPgptZXRob2QgbWlnaHQgcmV0dXJuIGRpZmZlcmVudCBtb250aCBuYW1lcy4KPC9wPgo8cD4KSW4gSmF2YSA3LCBvbmx5IDxjb2RlPk08L2NvZGU+IHJlcHJlc2VudHMgdGhlIG1vbnRoIGluIGRhdGUgZm9ybWF0dGluZwpwYXR0ZXJucyBzdWNoIGFzIDxjb2RlPiZxdW90O3l5eXl5Lk1NTU1NLmRkJnF1b3Q7PC9jb2RlPi4KSW4gSmF2YSA4LCA8Y29kZT5MPC9jb2RlPiBpcyBpbnRyb2R1Y2VkIGZvciB0aGUgc3RhbmRhbG9uZSBmb3JtIGFuZCBjYW4gYmUgdXNlZCB0byBjaGFuZ2UgdGhlCmJlaGF2aW9yIGJhY2sgdG8gdGhhdCBvZiBKYXZhIDcuCjwvcD4KPHByZT4KICAgIE0gICBNb250aCBpbiB5ZWFyIChjb250ZXh0IHNlbnNpdGl2ZSkKICAgIEwgICBNb250aCBpbiB5ZWFyIChzdGFuZGFsb25lIGZvcm0pCjwvcHJlPgo8cD4KVGhpcyBydWxlIGZsYWdzIHRoZSBmb2xsb3dpbmcgZGF0ZS1yZWxhdGVkIEFQSXM6CjwvcD4KPHVsPgo8bGk+amF2YS50ZXh0LkRhdGVGb3JtYXQuZm9ybWF0KCk8L2xpPgo8bGk+amF2YS50ZXh0LkRhdGVGb3JtYXRTeW1ib2xzLmdldE1vbnRocygpPC9saT4KPGxpPmphdmEudGV4dC5EYXRlRm9ybWF0U3ltYm9scy5nZXRTaG9ydE1vbnRocygpPC9saT4KPGxpPmphdmEudGV4dC5TaW1wbGVEYXRlRm9ybWF0LmZvcm1hdCgpPC9saT4KPGxpPmphdmEudXRpbC5DYWxlbmRhci5nZXREaXNwbGF5TmFtZSgpPC9saT4KPGxpPmphdmEudXRpbC5DYWxlbmRhci5nZXREaXNwbGF5TmFtZXMoKTwvbGk+CjxsaT5qYXZhLnV0aWwuR3JlZ29yaWFuQ2FsZW5kYXIuZ2V0RGlzcGxheU5hbWUoKTwvbGk+CjxsaT5qYXZhLnV0aWwuR3JlZ29yaWFuQ2FsZW5kYXIuZ2V0RGlzcGxheU5hbWVzKCk8L2xpPgo8L3VsPgo8cD4KUmV2aWV3IHRoZSBmbGFnZ2VkIGNvZGUgdG8gdmVyaWZ5IHRoYXQgdGhlIGNvcnJlY3QgbW9udGggbmFtZSB3aWxsIGRpc3BsYXkgYXQgcnVuIHRpbWUuIApJZiBhIG1vbnRoIG5hbWUgaXMKbm93IGFwcGVhcmluZyBpbiB0aGUgZm9ybWF0dGluZyBmb3JtIHdoZXJlIHRoZSBzdGFuZGFsb25lIGZvcm0gbXVzdCBiZSB1c2VkLCB1c2UgPGNvZGU+TDwvY29kZT4KaW5zdGVhZCBvZiA8Y29kZT5NPC9jb2RlPiB0byByZXByZXNlbnQgdGhlIG1vbnRoIG5hbWUuCklmIHlvdSBhcmUgbm90IHVzaW5nIGFuIGFmZmVjdGVkIGxhbmd1YWdlIG9yIHlvdSBhcmUgZm9ybWF0dGluZyBtb250aHMgYXMKYSBudW1iZXIsIHlvdSBjYW4gaWdub3JlIHRoZSBmbGFncyBvciB0dXJuIG9mZiB0aGlzIHJ1bGUuCjwvcD4KPHA+CkZvciBhZGRpdGlvbmFsIGluZm9ybWF0aW9uLCBzZWUgdGhlIEphdmEgZG9jdW1lbnRhdGlvbiBmb3IgdGhlIGZvbGxvd2luZyBjbGFzc2VzOgo8L3A+Cjx1bD4KPGxpPjxhIGhyZWY9Imh0dHA6Ly9kb2NzLm9yYWNsZS5jb20vamF2YXNlLzgvZG9jcy9hcGkvamF2YS90ZXh0L1NpbXBsZURhdGVGb3JtYXQuaHRtbCIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwOi8vZG9jcy5vcmFjbGUuY29tL2phdmFzZS84L2RvY3MvYXBpL2phdmEvdGV4dC9TaW1wbGVEYXRlRm9ybWF0Lmh0bWwnKTsgcmV0dXJuIGZhbHNlOyI+CkNsYXNzIGphdmEudGV4dC5TaW1wbGVEYXRlRm9ybWF0PC9hPjwvbGk+CjxsaT48YSBocmVmPSJodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3RleHQvRGF0ZUZvcm1hdFN5bWJvbHMuaHRtbCIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3RleHQvRGF0ZUZvcm1hdFN5bWJvbHMuaHRtbCcpOyByZXR1cm4gZmFsc2U7Ij4KQ2xhc3MgamF2YS50ZXh0LkRhdGVGb3JtYXRTeW1ib2xzPC9hPjwvbGk+CjxsaT48YSBocmVmPSJodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3V0aWwvQ2FsZW5kYXIuaHRtbCIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3V0aWwvQ2FsZW5kYXIuaHRtbCcpOyByZXR1cm4gZmFsc2U7Ij4KQ2xhc3MgamF2YS51dGlsLkNhbGVuZGFyPC9hPjwvbGk+Cgo8L3VsPgo="
+    },
+    {
+      "ruleName": "Behavior change in most Collection.removeAll and Collection.retainAll implementations",
+      "ruleId": "CollectionMethods",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/180/JRE8CollectionMethods.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 8 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.180.category",
+      "totalResults": 2,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/NonNullElementWrapperList.class",
+          "details": [
+            {
+              "reference": "Method removeAll",
+              "match": "java.util.ArrayList.removeAll(*)",
+              "lineNumber": 62
+            },
+            {
+              "reference": "Method retainAll",
+              "match": "java.util.ArrayList.retainAll(*)",
+              "lineNumber": 66
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkJlaGF2aW9yIGNoYW5nZSBpbiBtb3N0IENvbGxlY3Rpb24ucmVtb3ZlQWxsIGFuZCBDb2xsZWN0aW9uLnJldGFpbkFsbCBpbXBsZW1lbnRhdGlvbnM8L2gzPgo8cD4KUHJpb3IgdG8gSmF2YSBTRSA4LCBtb3N0IGltcGxlbWVudGF0aW9ucyBvZiA8Y29kZT5Db2xsZWN0aW9uLnJlbW92ZUFsbChDb2xsZWN0aW9uKTwvY29kZT4gYW5kIAo8Y29kZT5yZXRhaW5BbGwoQ29sbGVjdGlvbik8L2NvZGU+IHJldHVybiBmYWxzZSBhbmQgc2lsZW50bHkgaWdub3JlIGEgbnVsbCBwYXJhbWV0ZXIgaWYgdGhlIGNvbGxlY3Rpb24gCml0c2VsZiB3YXMgZW1wdHkuIEluIEphdmEgOCwgYWxsIGNvbGxlY3Rpb24gaW1wbGVtZW50YXRpb25zIHRocm93IGEgCjxjb2RlPk51bGxQb2ludGVyRXhjZXB0aW9uPC9jb2RlPiBpZiBudWxsIGlzIHByb3ZpZGVkIGFzIGEgcGFyYW1ldGVyLiAKPC9wPgo8cD4KVG8gaWRlbnRpZnkgd2hlcmUgdGhlc2UgZXhjZXB0aW9ucyBtaWdodCBvY2N1ciwgdGhpcyBydWxlIGZsYWdzIHRoZSBpbnZvY2F0aW9uIG9mIHRoZQo8Y29kZT5yZW1vdmVBbGwoQ29sbGVjdGlvbik8L2NvZGU+IGFuZCB0aGUgPGNvZGU+cmV0YWluQWxsKENvbGxlY3Rpb24pPC9jb2RlPiBtZXRob2RzIAppbiB0aGUgZm9sbG93aW5nIGltcGxlbWVudGF0aW9ucyBhbmQgaW50ZXJmYWNlcyBzbwp0aGF0IHlvdSBjYW4gZXZhbHVhdGUgeW91ciBsb2dpYyB0byBhdm9pZCBhbiB1bmV4cGVjdGVkIDxjb2RlPk51bGxQb2ludGVyRXhjZXB0aW9uPC9jb2RlPi4KPC9wPgo8dWw+CjxsaT5qYXZhLnV0aWwuQXJyYXlEZXF1ZTwvbGk+CjxsaT5qYXZhLnV0aWwuQXJyYXlMaXN0PC9saT4gCjxsaT5qYXZhLnV0aWwuQ29sbGVjdGlvbjwvbGk+IAo8bGk+amF2YS51dGlsLkRlcXVlPC9saT4KPGxpPmphdmEudXRpbC5FbnVtU2V0PC9saT4gCjxsaT5qYXZhLnV0aWwuTGlua2VkTGlzdDwvbGk+IAo8bGk+amF2YS51dGlsLkxpc3Q8L2xpPgo8bGk+amF2YS51dGlsLk5hdmlnYWJsZVNldDwvbGk+CjxsaT5qYXZhLnV0aWwuUHJpb3JpdHlRdWV1ZTwvbGk+IAo8bGk+amF2YS51dGlsLlByaW9yaXR5UXVldWU8L2xpPiAKPGxpPmphdmEudXRpbC5RdWV1ZTwvbGk+CjxsaT5qYXZhLnV0aWwuU2V0PC9saT4KPGxpPmphdmEudXRpbC5Tb3J0ZWRTZXQ8L2xpPiAKPGxpPmphdmEudXRpbC5TdGFjazwvbGk+IAo8bGk+amF2YS51dGlsLlZlY3RvcjwvbGk+CjxsaT5qYXZhLnV0aWwuY29uY3VycmVudC5BcnJheUJsb2NraW5nUXVldWU8L2xpPgo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuQmxvY2tpbmdEZXF1ZTwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuQmxvY2tpbmdRdWV1ZTwvbGk+CjxsaT5qYXZhLnV0aWwuY29uY3VycmVudC5Db25jdXJyZW50TGlua2VkRGVxdWU8L2xpPgo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuQ29uY3VycmVudExpbmtlZFF1ZXVlPC9saT4gCjxsaT5qYXZhLnV0aWwuY29uY3VycmVudC5Db3B5T25Xcml0ZUFycmF5TGlzdDwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuQ29weU9uV3JpdGVBcnJheVNldDwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuRGVsYXlRdWV1ZTwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuTGlua2VkQmxvY2tpbmdEZXF1ZTwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuTGlua2VkQmxvY2tpbmdRdWV1ZTwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuTGlua2VkVHJhbnNmZXJRdWV1ZTwvbGk+IAo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuUHJpb3JpdHlCbG9ja2luZ1F1ZXVlPC9saT4gCjxsaT5qYXZhLnV0aWwuY29uY3VycmVudC5UcmFuc2ZlclF1ZXVlPC9saT4KPGxpPmphdmF4Lm1hbmFnZW1lbnQuQXR0cmlidXRlTGlzdDwvbGk+IAo8bGk+amF2YXgubWFuYWdlbWVudC5yZWxhdGlvbi5Sb2xlTGlzdDwvbGk+IAo8bGk+amF2YXgubWFuYWdlbWVudC5yZWxhdGlvbi5Sb2xlTGlzdDwvbGk+IAo8bGk+amF2YXgubWFuYWdlbWVudC5yZWxhdGlvbi5Sb2xlVW5yZXNvbHZlZExpc3Q8L2xpPiAKPCEtLSBsaT5qYXZhLnV0aWwuY29uY3VycmVudC5TeW5jaHJvbm91c1F1ZXVlPC9saT4gYmVoYXZpb3IgZGlkIG5vdCBjaGFuZ2UtLT4gCjwvdWw+CjxwPgpUaGUgPGNvZGU+cmV0YWluQWxsKENvbGxlY3Rpb24pPC9jb2RlPiBtZXRob2QKaXMgZmxhZ2dlZCBmb3IgdGhlIGZvbGxvd2luZyBpbXBsZW1lbnRhdGlvbnMuIEZvciB0aGVzZSwgdGhlIDxjb2RlPnJlbW92ZUFsbChDb2xsZWN0aW9uKTwvY29kZT4gbWV0aG9kCmFscmVhZHkgdGhyb3dzIGEgPGNvZGU+TnVsbFBvaW50ZXJFeGNlcHRpb25zPC9jb2RlPiBpbiBKYXZhIDYgYW5kIEphdmEgNy4KPC9wPgkKPHVsPgo8bGk+amF2YS51dGlsLmNvbmN1cnJlbnQuQ29uY3VycmVudFNraXBMaXN0U2V0PC9saT4gCjxsaT5qYXZhLnV0aWwuSGFzaFNldDwvbGk+IAo8bGk+amF2YS51dGlsLkxpbmtlZEhhc2hTZXQ8L2xpPiAKPGxpPmphdmEudXRpbC5UcmVlU2V0PC9saT4gCjxsaT5qYXZheC5wcmludC5hdHRyaWJ1dGUuc3RhbmRhcmQuSm9iU3RhdGVSZWFzb25zPC9saT4gCjwvdWw+CjxwPgpKYXZhIDggZG9lcyBub3QgaW50cm9kdWNlIGEgYmVoYXZpb3IgY2hhbmdlIGZvciB0aGUgZm9sbG93aW5nIGNvbGxlY3Rpb24gaW1wbGVtZW50YXRpb25zLApzbyB0aGV5IGFyZSBub3QgZmxhZ2dlZCBieSB0aGlzIHJ1bGU6ICAKPC9wPgo8dWw+IAo8bGk+amF2YS5iZWFucy5iZWFuY29udGV4dC5CZWFuQ29udGV4dFNlcnZpY2VzU3VwcG9ydCAtIGNvbnRpbnVlcyB0byB0aHJvdyA8Y29kZT5VbnN1cHBvcnRlZE9wZXJhdGlvbkV4Y2VwdGlvbiA8L2NvZGU+PC9saT4KPGxpPmphdmEuYmVhbnMuYmVhbmNvbnRleHQuQmVhbkNvbnRleHRTdXBwb3J0ICAtIGNvbnRpbnVlcyB0byB0aHJvdyA8Y29kZT5VbnN1cHBvcnRlZE9wZXJhdGlvbkV4Y2VwdGlvbiA8L2NvZGU+PC9saT4KPGxpPmphdmEudXRpbC5jb25jdXJyZW50LlN5bmNocm9ub3VzUXVldWUgLSBjb250aW51ZXMgdG8gaGF2ZSB0aGUgSmF2YSA3IGJlaGF2aW9yIGFuZCBkb2VzIG5vdCB0aHJvdyBhIDxjb2RlPk51bGxQb2ludGVyRXhjZXB0aW9uPC9jb2RlPjwvbGk+CjwvdWw+CjxwPgpGb3IgYWRkaXRpb25hbCBpbmZvcm1hdGlvbiBhYm91dCB0aGUgPGNvZGU+amF2YS51dGlsLkNvbGxlY3Rpb248L2NvZGU+IGludGVyZmFjZSBhbmQgaXRzIGltcGxlbWVudGF0aW9ucywgCnNlZSB0aGUgPGEgaHJlZj0iaHR0cHM6Ly9kb2NzLm9yYWNsZS5jb20vamF2YXNlLzgvZG9jcy9hcGkvamF2YS91dGlsL0NvbGxlY3Rpb24uaHRtbCIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZhL3V0aWwvQ29sbGVjdGlvbi5odG1sJyk7IHJldHVybiBmYWxzZTsiPgpJbnRlcmZhY2UgamF2YS51dGlsLkNvbGxlY3Rpb248L2E+IEphdmEgZG9jdW1lbnRhdGlvbi4KPC9wPgo="
+    },
+    {
+      "ruleName": "CDI recognizes implicit bean archives",
+      "ruleId": "ImplicitCDIBehaviorChange",
+      "ruleHelpLocation": "/ruleinfo/appconversion/javaee7/cdi/ImplicitCDIBehaviorChange.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java EE 7 / CDI",
+      "categoryId": "appconversion.javaee7.category / appconversion.javaee7.cdi.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/db/ModResortsCustomerInformation.class",
+          "details": [
+            {
+              "reference": "Class annotation",
+              "match": "javax.ejb.Singleton",
+              "lineNumber": 0
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkNESSByZWNvZ25pemVzIGltcGxpY2l0IGJlYW4gYXJjaGl2ZXM8L2gzPgo8cD5UaGUgQ29udGV4dHMgYW5kIERlcGVuZGVuY3kgSW5qZWN0aW9uIChDREkpIDEuMSBzcGVjaWZpY2F0aW9uCgkJCWludHJvZHVjZWQgaW1wbGljaXQgYmVhbiBkaXNjb3ZlcnkgbW9kZSwgcmVzdWx0aW5nIGluIGJlaGF2aW9yIGFuZAoJCQlwZXJmb3JtYW5jZSBjaGFuZ2VzIGZyb20gdGhlIEphdmEgUGxhdGZvcm0sIEVudGVycHJpc2UgRWRpdGlvbiAoSmF2YQoJCQlFRSkgNiBDREkgMS4wIGltcGxlbWVudGF0aW9uIGluIFdlYlNwaGVyZSBBcHBsaWNhdGlvbiBTZXJ2ZXIuIEFuCgkJCWltcGxpY2l0IGJlYW4gaXMgYW55IGFyY2hpdmUgdGhhdCBjb250YWlucyBvbmUgb3IgbW9yZSBiZWFuIGNsYXNzZXMKCQkJd2l0aCBlaXRoZXIgYSBiZWFuLWRlZmluaW5nIGFubm90YXRpb24gb3Igb25lIG9yIG1vcmUgc2Vzc2lvbiBiZWFucy48L3A+CgkJPHA+CgkJCVdoZW4gbW92aW5nIGZyb20gSmF2YSBFRSA2IENESSAxLjAgdG8gSmF2YSBFRSA3IENESSAxLjEgb3IgbGF0ZXIsCgkJCWltcGxpY2l0IGJlYW4gZGlzY292ZXJ5IHJlc3VsdHMgaW4gYWxsIFdBUiBhbmQgSkFSIGZpbGVzIGJlaW5nCgkJCXNjYW5uZWQgYnkgdGhlIHJ1bnRpbWUsIGV2ZW4gaWYgdGhleSBkbyBub3QgaGF2ZSBhIDxzcGFuCgkJCQljbGFzcz0iRmlsZVBhdGgiPmJlYW5zLnhtbDwvc3Bhbj4gZmlsZS4gVGhpcyBzY2FuIGlzIGEgYmVoYXZpb3IKCQkJY2hhbmdlIGZyb20gSmF2YSBFRSA2IENESSAxLjAsIHdoZXJlIGEgbWlzc2luZyA8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPmJlYW5zLnhtbDwvc3Bhbj4KCQkJZmlsZSB3b3VsZCBwcmV2ZW50IHRoZSBzY2FubmluZyBvZiBhcmNoaXZlcyBpbiB0aGUgYXBwbGljYXRpb24uCgkJPC9wPgoJCTxwPgoJCQlUaGlzIHJ1bGUgZmxhZ3MgdGhlIGZvbGxvd2luZyBiZWFuLWRlZmluaW5nIGFubm90YXRpb25zIGFuZAoJCQlFbnRlcnByaXNlIEphdmFCZWFucyAoRUpCKSBzZXNzaW9uIGJlYW5zIGluIGFsbCBXQVIgYW5kIEpBUiBmaWxlcwoJCQl0aGF0IGRvIG5vdCBoYXZlIGEgPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5iZWFucy54bWw8L3NwYW4+IGZpbGUuCgkJPC9wPgoJCTx1bD4KCQkJPGxpPkBBcHBsaWNhdGlvblNjb3BlZCwgQFNlc3Npb25TY29wZWQsIEBDb252ZXJzYXRpb25TY29wZWQsIGFuZAoJCQkJQFJlcXVlc3RlZFNjb3BlZCBhbm5vdGF0aW9uczwvbGk+CgkJCTxsaT5BbGwgb3RoZXIgbm9ybWFsIHNjb3BlIHR5cGUgYW5ub3RhdGlvbnM8L2xpPgoJCQk8bGk+QEludGVyY2VwdG9yIGFuZCBARGVjb3JhdG9yIGFubm90YXRpb25zPC9saT4KCQkJPGxpPkBTdGVyZW90eXBlIGFuZCBARGVwZW5kZW50IGFubm90YXRpb25zPC9saT4KCQkJPGxpPkBTdGF0ZWZ1bCwgQFN0YXRlbGVzcyBhbmQgQFNpbmdsZXRvbiBzZXNzaW9uIGJlYW5zPC9saT4KCQk8L3VsPgoJCTxwPgoJCQlUaGUgYmluYXJ5IGFwcGxpY2F0aW9uIHNjYW5uZXIgZmxhZ3MgYW5ub3RhdGlvbiBjbGFzc2VzIHRoYXQgYXJlCgkJCWFubm90YXRlZCBhcwoJCQk8Y29kZT5ATm9ybWFsU2NvcGU8L2NvZGU+CgkJCS4gVW5saWtlIHRoZSBFY2xpcHNlLWJhc2VkIGFwcGxpY2F0aW9uIHNvdXJjZSBzY2FubmVyLCBpdCBkb2VzIG5vdAoJCQlkZXRlY3QgY2xhc3NlcyB0aGF0IGFyZSBhbm5vdGF0ZWQgd2l0aCBhIG5vcm1hbCBzY29wZSB0eXBlCgkJCWFubm90YXRpb24uIFRoZXNlIGFubm90YXRpb25zIG1pZ2h0IGJlIGZsYWdnZWQgb3V0c2lkZSBvZiB0aGUgc2NvcGUKCQkJb2YgdGhlIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+YmVhbnMueG1sPC9zcGFuPiBmaWxlcyB0aGF0IGFyZSB1c2luZwoJCQl0aGVtIGVpdGhlciBleHBsaWNpdGx5IG9yIGltcGxpY2l0bHkuCgkJPC9wPgoJCTxwPgoJCQlUbyBkaXNhYmxlIHRoaXMgQ0RJIGJlaGF2aW9yIGNoYW5nZSBkdXJpbmcgcnVuIHRpbWUgYXQgdGhlIFdBUiBvciBKQVIKCQkJbGV2ZWwsIGFkZCBhIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+YmVhbnMueG1sPC9zcGFuPiBmaWxlIHdpdGggYmVhbgoJCQlkaXNjb3ZlcnkgbW9kZSBzZXQgdG8gPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5ub25lPC9zcGFuPiwgYXMgc2hvd24gaW4KCQkJdGhlIGZvbGxvd2luZyBleGFtcGxlLgoJCTwvcD4KCQk8dGFibGUgc3VtbWFyeT0iVGhpcyB0YWJsZSBwcm92aWRlcyBtb3JlIGluZm9ybWF0aW9uIGFib3V0IHRoZSBydWxlLCBzb21ldGltZXMgaW4gdGhlIGZvcm0gb2YgYW4gZXhjZXJwdCBmcm9tIGEgZmlsZSBkZW1vbnN0cmF0aW5nIHRoZSBtaWdyYXRpb24gaXNzdWUuIiBiZ2NvbG9yPSIjRjdGOEY5IiBib3JkZXI9IjEiIGNlbGxwYWRkaW5nPSIycHgiPgo8dHI+PHRkPgo8cHJlIGNsYXNzPSJKYXZhVHlwZSI+Cjxjb2RlPgombHQ7YmVhbnMgeG1sbnM9Imh0dHA6Ly94bWxucy5qY3Aub3JnL3htbC9ucy9qYXZhZWUiIAoJCSAgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIKCQkgIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL3htbG5zLmpjcC5vcmcveG1sL25zL2phdmFlZSAKCQkgIAkJICAgICAgaHR0cDovL3htbG5zLmpjcC5vcmcveG1sL25zL2phdmFlZS9iZWFuc18xXzEueHNkIiAKCQkgIAkJICAgICAgYmVhbi1kaXNjb3ZlcnktbW9kZT0ibm9uZSIgdmVyc2lvbj0iMS4xIiZndDsKJmx0Oy9iZWFucyZndDsKPC9jb2RlPgo8L3ByZT4KPC90ZD48L3RyPjwvdGFibGU+CjxwPgoJCQlPbiBMaWJlcnR5LCB5b3UgY2FuCgkJCWFsc28gZGlzYWJsZSB0aGlzIGJlaGF2aW9yIGJ5IGFkZGluZyB0aGUgZm9sbG93aW5nIHByb3BlcnR5IHRvIHRoZSA8c3BhbgoJCQkJY2xhc3M9IkZpbGVQYXRoIj5zZXJ2ZXIueG1sPC9zcGFuPiBmaWxlLgoJCTwvcD4KCQk8dGFibGUgc3VtbWFyeT0iVGhpcyB0YWJsZSBwcm92aWRlcyBtb3JlIGluZm9ybWF0aW9uIGFib3V0IHRoZSBydWxlLCBzb21ldGltZXMgaW4gdGhlIGZvcm0gb2YgYW4gZXhjZXJwdCBmcm9tIGEgZmlsZSBkZW1vbnN0cmF0aW5nIHRoZSBtaWdyYXRpb24gaXNzdWUuIiBiZ2NvbG9yPSIjRjdGOEY5IiBib3JkZXI9IjEiIGNlbGxwYWRkaW5nPSIycHgiPgo8dHI+PHRkPgo8cHJlIGNsYXNzPSJKYXZhVHlwZSI+Cjxjb2RlPgombHQ7Y2RpMTIgZW5hYmxlSW1wbGljaXRCZWFuQXJjaGl2ZXM9ImZhbHNlIi8mZ3Q7CjwvY29kZT4KPC9wcmU+CjwvdGQ+PC90cj48L3RhYmxlPgoJCTxwPgoJCQlGb3IgbW9yZSBpbmZvcm1hdGlvbiBvbiB0aGUgSmF2YSBFRSA3IENESSAxLjIgaW1wbGVtZW50YXRpb24sIHNlZSA8YQoJCQkJaHJlZj0iaHR0cHM6Ly93d3cuaWJtLmNvbS9kb2NzL2VuL3dhcy1saWJlcnR5L2Jhc2U/dG9waWM9U1NFUVRQX2xpYmVydHkvY29tLmlibS53ZWJzcGhlcmUud2xwLm5kLm11bHRpcGxhdGZvcm0uZG9jL2FlL2N3bHBfY2RpX2JlaGF2aW9yLmh0bWwiCgkJCQl0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd3d3LmlibS5jb20vZG9jcy9lbi93YXMtbGliZXJ0eS9iYXNlP3RvcGljPVNTRVFUUF9saWJlcnR5L2NvbS5pYm0ud2Vic3BoZXJlLndscC5uZC5tdWx0aXBsYXRmb3JtLmRvYy9hZS9jd2xwX2NkaV9iZWhhdmlvci5odG1sJyk7IHJldHVybiBmYWxzZTsiPgoJCQkJQ29udGV4dHMgYW5kIERlcGVuZGVuY3kgSW5qZWN0aW9uIDEuMiBiZWhhdmlvciBjaGFuZ2VzPC9hPi4KCQk8L3A+Cgk="
+    },
+    {
+      "ruleName": "CDI scans for implicit beans when there is no beans.xml file",
+      "ruleId": "MissingBeansFile",
+      "ruleHelpLocation": "/ruleinfo/appconversion/javaee7/cdi/MissingBeansXmlRule.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java EE 7 / CDI",
+      "categoryId": "appconversion.javaee7.category / appconversion.javaee7.cdi.category",
+      "totalResults": 2,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war",
+          "details": [
+            {
+              "match": ".*(\\.war|\\.jar)",
+              "lineNumber": 0
+            }
+          ]
+        },
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar",
+          "details": [
+            {
+              "match": ".*(\\.war|\\.jar)",
+              "lineNumber": 0
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkNESSBzY2FucyBmb3IgaW1wbGljaXQgYmVhbnMgd2hlbiB0aGVyZSBpcyBubyBiZWFucy54bWwgZmlsZTwvaDM+CjxwPgoJCSAgICBUaGUgQ29udGV4dHMgYW5kIERlcGVuZGVuY3kgSW5qZWN0aW9uIChDREkpIDEuMSBzcGVjaWZpY2F0aW9uIGludHJvZHVjZWQgaW1wbGljaXQgYmVhbiBkaXNjb3ZlcnkgbW9kZSwgCgkJCXJlc3VsdGluZyBpbiBiZWhhdmlvciBhbmQgcGVyZm9ybWFuY2UgY2hhbmdlcyBmcm9tIHRoZSBKYXZhIFBsYXRmb3JtLCBFbnRlcnByaXNlIEVkaXRpb24gKEphdmEgRUUpCgkJCTYgQ0RJIDEuMCBpbXBsZW1lbnRhdGlvbiBpbiBXZWJTcGhlcmUgQXBwbGljYXRpb24gU2VydmVyLgoJCTwvcD4KCQk8cD4KCQkJVGhpcyBydWxlIGZsYWdzIHRoZSA8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPldFQi1JTkY8L3NwYW4+IG9yIDxzcGFuCgkJCQljbGFzcz0iRmlsZVBhdGgiPk1FVEEtSU5GPC9zcGFuPiBmb2xkZXIgaWYgdGhlIHByb2plY3QgZG9lcyBub3QKCQkJY29udGFpbiBhIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+YmVhbnMueG1sPC9zcGFuPiBmaWxlLiBXaGVuIG1vdmluZwoJCQlmcm9tIEphdmEgRUUgNiBDREkgMS4wIHRvIEphdmEgRUUgNyBDREkgMS4xIG9yIGxhdGVyLCBpbXBsaWNpdCBiZWFuCgkJCWRpc2NvdmVyeSByZXN1bHRzIGluIGFsbCBXQVIgYW5kIEpBUiBmaWxlcyBiZWluZyBzY2FubmVkIGJ5IHRoZQoJCQlydW50aW1lLCBldmVuIGlmIHRoZXkgZG8gbm90IGhhdmUgYSA8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPmJlYW5zLnhtbDwvc3Bhbj4KCQkJZmlsZS4gVGhpcyBjYW4gbGVhZCB0byBiZWFuIGRpc2NvdmVyeSBwZXJmb3JtYW5jZSBkZWdyYWRhdGlvbiBpZiB5b3UKCQkJZW5hYmxlIHRoZSA8c3BhbiBjbGFzcz0iQ29kZSI+Y2RpLTEuMjwvc3Bhbj4gZmVhdHVyZSBvbiBMaWJlcnR5LgoJCTwvcD4KCQk8cD4gCgkJCUluIEphdmEgRUUgNywgaWYgbm8gPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5iZWFucy54bWw8L3NwYW4+IGZpbGUgaXMgZGVmaW5lZCwgdGhlIHJ1bnRpbWUgYXV0b21hdGljYWxseQoJCQlzY2FucyBmb3IgYmVhbi1kZWZpbmluZyBhbm5vdGF0aW9ucy4gVG8KCQkJZGlzYWJsZSB0aGlzIGJlaGF2aW9yLCBhZGQgYSA8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPmJlYW5zLnhtbDwvc3Bhbj4KCQkJZmlsZSB3aXRoIGJlYW4gZGlzY292ZXJ5IG1vZGUgc2V0IHRvIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+bm9uZTwvc3Bhbj4sIGFzIAoJCQlzaG93biBpbiB0aGUgZm9sbG93aW5nIGV4YW1wbGUuCgkJPC9wPgo8dGFibGUgc3VtbWFyeT0iVGhpcyB0YWJsZSBwcm92aWRlcyBtb3JlIGluZm9ybWF0aW9uIGFib3V0IHRoZSBydWxlLCBzb21ldGltZXMgaW4gdGhlIGZvcm0gb2YgYW4gZXhjZXJwdCBmcm9tIGEgZmlsZSBkZW1vbnN0cmF0aW5nIHRoZSBtaWdyYXRpb24gaXNzdWUuIiBiZ2NvbG9yPSIjRjdGOEY5IiBib3JkZXI9IjEiIGNlbGxwYWRkaW5nPSIycHgiPgo8dHI+PHRkPgo8cHJlIGNsYXNzPSJKYXZhVHlwZSI+Cjxjb2RlPgombHQ7YmVhbnMgeG1sbnM9Imh0dHA6Ly94bWxucy5qY3Aub3JnL3htbC9ucy9qYXZhZWUiIAoJCSAgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIKCQkgIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL3htbG5zLmpjcC5vcmcveG1sL25zL2phdmFlZSAKCQkgIAkJICAgICAgaHR0cDovL3htbG5zLmpjcC5vcmcveG1sL25zL2phdmFlZS9iZWFuc18xXzEueHNkIiAKCQkgIAkJICAgICAgYmVhbi1kaXNjb3ZlcnktbW9kZT0ibm9uZSIgdmVyc2lvbj0iMS4xIiZndDsKJmx0Oy9iZWFucyZndDsKPC9jb2RlPgo8L3ByZT4KPC90ZD48L3RyPjwvdGFibGU+CgkJPHA+CgkJCU9uIExpYmVydHksIHlvdSBjYW4KCQkJYWxzbyBkaXNhYmxlIHRoaXMgYmVoYXZpb3IgYnkgYWRkaW5nIHRoZSBmb2xsb3dpbmcgcHJvcGVydHkgdG8gdGhlIDxzcGFuCgkJCQljbGFzcz0iRmlsZVBhdGgiPnNlcnZlci54bWw8L3NwYW4+IGZpbGUuCgkJPC9wPgoJCTx0YWJsZSBzdW1tYXJ5PSJUaGlzIHRhYmxlIHByb3ZpZGVzIG1vcmUgaW5mb3JtYXRpb24gYWJvdXQgdGhlIHJ1bGUsIHNvbWV0aW1lcyBpbiB0aGUgZm9ybSBvZiBhbiBleGNlcnB0IGZyb20gYSBmaWxlIGRlbW9uc3RyYXRpbmcgdGhlIG1pZ3JhdGlvbiBpc3N1ZS4iIGJnY29sb3I9IiNGN0Y4RjkiIGJvcmRlcj0iMSIgY2VsbHBhZGRpbmc9IjJweCI+Cjx0cj48dGQ+CjxwcmUgY2xhc3M9IkphdmFUeXBlIj4KPGNvZGU+CiZsdDtjZGkxMiBlbmFibGVJbXBsaWNpdEJlYW5BcmNoaXZlcz0iZmFsc2UiLyZndDsKPC9jb2RlPgo8L3ByZT4KPC90ZD48L3RyPjwvdGFibGU+CgkJPHA+CgkJCU9uIFdlYlNwaGVyZSBBcHBsaWNhdGlvbiBTZXJ2ZXIgdHJhZGl0aW9uYWwsIHRoaXMgYmVoYXZpb3IgY2FuIGJlIGRpc2FibGVkIGluIHRoZSBmb2xsb3dpbmcgd2F5czoKCQk8L3A+CgkJPHVsPgoJCTxsaT4KCQkJU2V0dGluZyB0aGUgPGNvZGU+ZW5hYmxlSW1wbGljaXRCZWFuQXJjaGl2ZXM8L2NvZGU+IGN1c3RvbSBwcm9wZXJ0eSB0byBmYWxzZSBkaXNhYmxlcyBDREktcmVsYXRlZCAKCQkJYW5ub3RhdGlvbiBzY2FubmluZyBzdGVwcyBmb3IgYXJjaGl2ZXMgdGhhdCBkbyBub3QgY29udGFpbiBhIGJlYW4gZGVzY3JpcHRvciBzdWNoIGFzIHRoZSBiZWFucy54bWwgZmlsZS4KCQk8L2xpPgoJCTxsaT4KCQkJU2V0dGluZyB0aGUgPGNvZGU+ZW5hYmxlQ0RJPC9jb2RlPiBjdXN0b20gcHJvcGVydHkgdG8gZmFsc2UsIGRpc2FibGVzIGFsbCBDREkgc3RlcHMuIFRoaXMgdmFsdWUgCgkJCXNob3VsZCBiZSBzZXQgdG8gZmFsc2UgaWYgbm8gQ0RJIGlzIG5lZWRlZCBvbiB0aGUgc2VydmVyIGxldmVsLgoJCTwvbGk+CgkJPC91bD4KCQk8cD4KCQkJRm9yIG1vcmUgaW5mb3JtYXRpb24gb24gc2V0dGluZyB0aGVzZSBwcm9wZXJ0aWVzIGluIFdlYlNwaGVyZSB0cmFkaXRpb25hbCwgc2VlIHRoZSA8YSBocmVmPSJodHRwOi8vd3d3LTAxLmlibS5jb20vc3VwcG9ydC9kb2N2aWV3Lndzcz91aWQ9c3dnMjE5ODM1NjQiCgkJCQl0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHA6Ly93d3ctMDEuaWJtLmNvbS9zdXBwb3J0L2RvY3ZpZXcud3NzP3VpZD1zd2cyMTk4MzU2NCcpOyByZXR1cm4gZmFsc2U7Ij4KCQkJCUN1c3RvbSBQcm9wZXJ0aWVzIGZvciBpbXByb3ZpbmcgYXBwbGljYXRpb24gc3RhcnR1cCBpbiBXZWJTcGhlcmUgQXBwbGljYXRpb24gU2VydmVyPC9hPiBkb2N1bWVudGF0aW9uLgoJCTwvcD4KCQk8cD4KCQkJRm9yIG1vcmUgaW5mb3JtYXRpb24gb24gdGhlIEphdmEgRUUgNyBDREkgMS4yIGltcGxlbWVudGF0aW9uLCBzZWUgPGEgaHJlZj0iaHR0cHM6Ly93d3cuaWJtLmNvbS9kb2NzL2VuL3dhcy1saWJlcnR5L2Jhc2U/dG9waWM9U1NFUVRQX2xpYmVydHkvY29tLmlibS53ZWJzcGhlcmUud2xwLm5kLm11bHRpcGxhdGZvcm0uZG9jL2FlL2N3bHBfY2RpX2JlaGF2aW9yLmh0bWwiCgkJCQl0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd3d3LmlibS5jb20vZG9jcy9lbi93YXMtbGliZXJ0eS9iYXNlP3RvcGljPVNTRVFUUF9saWJlcnR5L2NvbS5pYm0ud2Vic3BoZXJlLndscC5uZC5tdWx0aXBsYXRmb3JtLmRvYy9hZS9jd2xwX2NkaV9iZWhhdmlvci5odG1sJyk7IHJldHVybiBmYWxzZTsiPgoJCQkJQ29udGV4dHMgYW5kIERlcGVuZGVuY3kgSW5qZWN0aW9uIDEuMiBiZWhhdmlvciBjaGFuZ2VzPC9hPi4KCQk8L3A+Cgk="
+    },
+    {
+      "ruleName": "Check for a behavior change for URLConnection, HttpURLConnection getInputStream method",
+      "ruleId": "JREUrlConnectionGetInputStream",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/170/JREUrlConnectionGetInputStream.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 7 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.170.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/WeatherServlet.class",
+          "details": [
+            {
+              "reference": "Method getRealTimeWeatherData",
+              "match": "java.net.HttpURLConnection.getInputStream(*)",
+              "lineNumber": 160
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkNoZWNrIGZvciBhIGJlaGF2aW9yIGNoYW5nZSBmb3IgVVJMQ29ubmVjdGlvbiwgSHR0cFVSTENvbm5lY3Rpb24gZ2V0SW5wdXRTdHJlYW0gbWV0aG9kPC9oMz4KPHA+ClRoaXMgcnVsZSBmbGFncyB0aGUgbWV0aG9kIDxzcGFuIGNsYXNzPSJDb2RlIj5qYXZhLm5ldC5VUkxDb25uZWN0aW9uIGdldElucHV0U3RyZWFtKCk8L3NwYW4+Cm9yIDxzcGFuIGNsYXNzPSJDb2RlIj5qYXZhLm5ldC5IdHRwVVJMQ29ubmVjdGlvbiBnZXRJbnB1dFN0cmVhbSgpPC9zcGFuPiAKPC9wPgo8cD4KQWNjb3JkaW5nIHRvIAo8YSBocmVmPSJodHRwOi8vd3d3Lm9yYWNsZS5jb20vdGVjaG5ldHdvcmsvamF2YS9qYXZhc2UvY29tcGF0aWJpbGl0eS00MTcwMTMuaHRtbCNiZWhhdmlvcmFsIiAKCXRpdGxlPSJPcGVucyBhIG5ldyB3aW5kb3ciIG9uY2xpY2s9ImphdmFzY3JpcHQ6aGVscFdpbmRvdygnaHR0cDovL3d3dy5vcmFjbGUuY29tL3RlY2huZXR3b3JrL2phdmEvamF2YXNlL2NvbXBhdGliaWxpdHktNDE3MDEzLmh0bWwjYmVoYXZpb3JhbCcpOyByZXR1cm4gZmFsc2U7Ij4KCUphdmEgU0UgNyBhbmQgSkRLIDcgQ29tcGF0aWJpbGl0eTwvYT4gCmRvY3VtZW50YXRpb24sIHRoZSA8Y29kZT5nZXRJbnB1dFN0cmVhbTwvY29kZT4gbWV0aG9kIG5vdyB0aHJvd3MgYSA8c3BhbiBjbGFzcz0iQ29kZSI+amF2YS5pby5JT0V4Y2VwdGlvbjwvc3Bhbj4gCmlmIGl0IGlzIGNhbGxlZCBvbiBhbiBIVFRQIGNvbm5lY3Rpb24gYW5kIHRoZSBjb25uZWN0aW9uIHJldHVybmVkIGEgcmVzcG9uc2UgY29kZSBvZiAtMS4gIApQcmV2aW91c2x5IHRoZSBjb25uZWN0aW9uIGF0IHRoZSBjbGllbnQgd291bGQgaGFuZy4gICAgClRoZSBuZXcgY29ycmVjdGVkIGJlaGF2aW9yIHRocm93cyBhbiBJT0V4Y2VwdGlvbi4gCjwvcD4KPHA+CkFjY29yZGluZyB0byB0aGUgZG9jdW1lbnRhdGlvbiwgd29yayBhcm91bmQgdGhpcyBwcm9ibGVtIGJ5IApjaGVja2luZyB0aGUgcmV0dXJuIHZhbHVlIGZyb20gdGhlIDxjb2RlPmdldFJlc3BvbnNlQ29kZTwvY29kZT4gbWV0aG9kIAphbmQgaGFuZGxlIGEgLTEgcmV0dXJuIHZhbHVlIGJ5IGVpdGhlciAgCm9wZW5pbmcgYSBuZXcgY29ubmVjdGlvbiBvciBieSBpbnZva2luZyBnZXRFcnJvclN0cmVhbSBvbiB0aGUgc3RyZWFtLiAgICAKPC9wPgoKPHA+CkZvciBhZGRpdGlvbmFsIGluZm9ybWF0aW9uLCBzZWUgdGhlIEphdmEgNyBBUElzOgo8L3A+Cjx1bD4KCTxsaT4KCTxhIGhyZWY9Imh0dHA6Ly9kb3dubG9hZC5vcmFjbGUuY29tL2phdmFzZS83L2RvY3MvYXBpL2phdmEvbmV0L1VSTENvbm5lY3Rpb24uaHRtbCIgCgkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwOi8vZG93bmxvYWQub3JhY2xlLmNvbS9qYXZhc2UvNy9kb2NzL2FwaS9qYXZhL25ldC9VUkxDb25uZWN0aW9uLmh0bWwnKTsgcmV0dXJuIGZhbHNlOyI+CgkJamF2YS5uZXQuVVJMQ29ubmVjdGlvbjwvYT4gSmF2YSBkb2N1bWVudGF0aW9uCgk8L2xpPgoJPGxpPgoJPGEgaHJlZj0iaHR0cDovL2Rvd25sb2FkLm9yYWNsZS5jb20vamF2YXNlLzcvZG9jcy9hcGkvamF2YS9uZXQvSHR0cFVSTENvbm5lY3Rpb24uaHRtbCIgCgkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwOi8vZG93bmxvYWQub3JhY2xlLmNvbS9qYXZhc2UvNy9kb2NzL2FwaS9qYXZhL25ldC9IdHRwVVJMQ29ubmVjdGlvbi5odG1sJyk7IHJldHVybiBmYWxzZTsiPgoJCWphdmEubmV0Lkh0dHBVUkxDb25uZWN0aW9uPC9hPiBKYXZhIGRvY3VtZW50YXRpb24KCTwvbGk+CQkKPC91bD4K"
+    },
+    {
+      "ruleName": "Check for a behavior change on Locale getDefault method",
+      "ruleId": "JRELocaleGetDefault",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/170/JRELocaleGetDefault.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 7 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.170.category",
+      "totalResults": 4,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/bind/DateTypeAdapter.class",
+          "details": [
+            {
+              "reference": "Constructor",
+              "match": "java.util.Locale.getDefault(*)",
+              "lineNumber": 62
+            }
+          ]
+        },
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/bind/DefaultDateTypeAdapter.class",
+          "details": [
+            {
+              "reference": "Constructor",
+              "match": "java.util.Locale.getDefault(*)",
+              "lineNumber": 97
+            },
+            {
+              "reference": "Constructor",
+              "match": "java.util.Locale.getDefault(*)",
+              "lineNumber": 105
+            },
+            {
+              "reference": "Constructor",
+              "match": "java.util.Locale.getDefault(*)",
+              "lineNumber": 116
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkNoZWNrIGZvciBhIGJlaGF2aW9yIGNoYW5nZSBvbiBMb2NhbCBnZXREZWZhdWx0IG1ldGhvZDwvaDM+CjxwPgpUaGlzIHJ1bGUgZmxhZ3MgaW5zdGFuY2VzIG9mIHRoZSA8c3BhbiBjbGFzcz0iQ29kZSI+amF2YS51dGlsLkxvY2FsZSBnZXREZWZhdWx0KCk8L3NwYW4+IG1ldGhvZC4KPC9wPgo8cD4KVGhpcyBtZXRob2QgaXMgZmxhZ2dlZCBiZWNhdXNlIHRoZXJlIGlzIGEgYmVoYXZpb3IgY2hhbmdlIGFzc29jaWF0ZWQgd2l0aCBpdC4gQWNjb3JkaW5nIHRvIAo8YSBocmVmPSJodHRwOi8vd3d3Lm9yYWNsZS5jb20vdGVjaG5ldHdvcmsvamF2YS9qYXZhc2UvY29tcGF0aWJpbGl0eS00MTcwMTMuaHRtbCNiZWhhdmlvcmFsIiAKCXRpdGxlPSJPcGVucyBhIG5ldyB3aW5kb3ciIG9uY2xpY2s9ImphdmFzY3JpcHQ6aGVscFdpbmRvdygnaHR0cDovL3d3dy5vcmFjbGUuY29tL3RlY2huZXR3b3JrL2phdmEvamF2YXNlL2NvbXBhdGliaWxpdHktNDE3MDEzLmh0bWwjYmVoYXZpb3JhbCcpOyByZXR1cm4gZmFsc2U7Ij4KCUphdmEgU0UgNyBhbmQgSkRLIDcgQ29tcGF0aWJpbGl0eTwvYT4gZG9jdW1lbnRhdGlvbiBpbiBKYXZhIDcsIAp0aGUgdXNlciBjYW4gbm93IGFjY2VzcyB0aGUgZGlzcGxheSBsb2NhbGUgKHRoZSB2aXN1YWwgcmVwcmVzZW50YXRpb24gb2YgYSBzdHJpbmcgZm9yIGV4YW1wbGUpIG9yIHRoZSBmb3JtYXQgbG9jYWxlICh0aGUgYWN0dWFsIGZvcm1hdCBvZiBhIHN0cmluZyBmb3IgZXhhbXBsZSkuICAKVG8gaGVscCBhY2NvbXBsaXNoIHRoaXMsIEphdmEgNyBhZGRlZCB0aGUgbmV3IG1ldGhvZDogPHNwYW4gY2xhc3M9IkNvZGUiPmdldERlZmF1bHQoTG9jYWxlLkNhdGdvcnkgY2F0KTwvc3Bhbj4gd2hlcmUgPHNwYW4gY2xhc3M9IkNvZGUiPkxvY2FsZS5DYXRlZ29yeTwvc3Bhbj4gaXMgYSBuZXcgZW51bWVyYXRpb24gd2l0aCA8c3BhbiBjbGFzcz0iQ29kZSI+RElTUExBWTwvc3Bhbj4gb3IgPHNwYW4gY2xhc3M9IkNvZGUiPkZPUk1BVDwvc3Bhbj4gb3B0aW9ucy4gIApVc2luZyB0aGlzIG5ldyBtZXRob2QsIHRoZSB1c2VyIGNhbiBnZXQgdGhlIHNwZWNpZmljIExvY2FsZSBvZiBpbnRlcmVzdC4gIAo8L3A+CjxwPgpUaGUgb2xkZXIgbWV0aG9kLCB3aGljaCB0aGlzIHJ1bGUgZmxhZ3MsIDxzcGFuIGNsYXNzPSJDb2RlIj5nZXREZWZhdWx0KCk8L3NwYW4+IGhhcyBiZWVuIHVwZGF0ZWQgdG8gYmUgZXF1aXZhbGVudCB0byB0aGUgCmNhbGwgPHNwYW4gY2xhc3M9IkNvZGUiPmdldERlZmF1bHQoTG9jYWxlLkRJU1BMQVkpPC9zcGFuPi4gIFByaW9yIHRvIEphdmEgNywgdGhlIDxzcGFuIGNsYXNzPSJDb2RlIj5nZXREZWZhdWx0KCk8L3NwYW4+CiBtZXRob2QgdXNlZCB0byByZXR1cm4gdG8gd2hhdCBpcyBlcXVpdmFsZW50IHRvIDxzcGFuIGNsYXNzPSJDb2RlIj5nZXREZWZhdWx0KExvY2FsZS5GT1JNQVQpPC9zcGFuPgo8L3A+CjxwPgpUaGUgZGlzcGxheSBsb2NhbGUgZGV0ZXJtaW5lcyBob3cgdGhlIGRhdGEgaXMgZGlzcGxheWVkIG9uIGEgdXNlciBpbnRlcmZhY2UsIHN1Y2ggYXMgYSB3aW5kb3cgb3IgYSBkaWFsb2cgYm94LiAgCkZvciBleGFtcGxlLCB0aGUgZGF0YSBjYW4gYmUgZGlzcGxheWVkIGluIGEgZGlmZmVyZW50IGxhbmd1YWdlIHRoYW4gdGhlIGhvc3Qgc3lzdGVtLgo8L3A+CjxwPgpUaGUgZm9ybWF0IGxvY2FsZSBkZXRlcm1pbmVzIGhvdyB0aGUgZGF0YSBpcyBmb3JtYXR0ZWQuIEZvciBleGFtcGxlLCB1c2luZyB0aGUgVW5pdGVkIFN0YXRlcyBmb3JtYXQgbG9jYWxlLCAKdGhlIGRhdGUgT2N0b2JlciA0LCAyMDExIGlzIHByZXNlbnRlZCBhcyAxMC8wNC8yMDExIHdoaWxlIHRoZSBzYW1lIGRhdGUgdXNpbmcgdGhlIFVuaXRlZCBLaW5nZG9tIGZvcm1hdCBsb2NhbGUgd291bGQgYXBwZWFyIGFzIDA0LzEwLzIwMTEuCjwvcD4KPHA+ClRoZSB1c2VyIG5lZWRzIHRvIGV2YWx1YXRlIHRoZSBjb2RlIGFuZCBkZXRlcm1pbmUgaWYgaXQgaXMgYWZmZWN0ZWQgYnkgdGhlIGJlaGF2aW9yIGNoYW5nZSwgIHB1cnN1ZSBhbnkgYXBwcm9wcmlhdGUgdGVzdGluZywgYW5kIG1ha2UgYW55IG5lY2Vzc2FyeQpjaGFuZ2VzIHRvIHRoZSBjb2RlLgo8L3A+CjxwPgpBY2NvcmRpbmcgdG8gdGhlIGRvY3VtZW50YXRpb24sIHRoZSB1c2VyIGNhbiBwcmVzZXJ2ZSB0aGUgb2xkZXIgYmVoYXZpb3Igb2YgSkRLIDYgYnkgZWl0aGVyIHNldHRpbmcgdGhlIHByb3BlcnR5IDxzcGFuIGNsYXNzPSJDb2RlIj5zdW4ubG9jYWxlLmZvcm1hdGFzZGVmYXVsdDwvc3Bhbj4gdG8gdHJ1ZSAKb3IgYnkgY2hhbmdpbmcgdGhlIGNvZGUgdG8gdXNlIHRoZSBuZXcgbWV0aG9kIDxzcGFuIGNsYXNzPSJDb2RlIj5nZXREZWZhdWx0KExvY2FsZS5DYXRlZ29yeSBjYXQpPC9zcGFuPi4gIApJbiB0aGlzIGNhc2UsIHRoZSA8c3BhbiBjbGFzcz0iQ29kZSI+Y2F0PC9zcGFuPiBwYXJhbWV0ZXIgd2lsbCBiZSA8c3BhbiBjbGFzcz0iQ29kZSI+TG9jYWxlLkNhdGVnb3J5LkZPUk1BVDwvc3Bhbj4gICAKPC9wPiAKPHA+CkZvciBhZGRpdGlvbmFsIGluZm9ybWF0aW9uLCBzZWUgdGhlIEphdmEgNyBBUElzOgo8L3A+Cjx1bD4KCTxsaT4KCTxhIGhyZWY9Imh0dHA6Ly9kb3dubG9hZC5vcmFjbGUuY29tL2phdmFzZS83L2RvY3MvYXBpL2phdmEvdXRpbC9Mb2NhbGUuaHRtbCIgCgkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwOi8vZG93bmxvYWQub3JhY2xlLmNvbS9qYXZhc2UvNy9kb2NzL2FwaS9qYXZhL3V0aWwvTG9jYWxlLmh0bWwnKTsgcmV0dXJuIGZhbHNlOyI+CgkJamF2YS51dGlsLkxvY2FsZTwvYT4gSmF2YSBkb2N1bWVudGF0aW9uCgk8L2xpPgoJPGxpPgoJPGEgaHJlZj0iaHR0cDovL2Rvd25sb2FkLm9yYWNsZS5jb20vamF2YXNlLzcvZG9jcy9hcGkvamF2YS91dGlsL0xvY2FsZS5DYXRlZ29yeS5odG1sIiAKCQl0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHA6Ly9kb3dubG9hZC5vcmFjbGUuY29tL2phdmFzZS83L2RvY3MvYXBpL2phdmEvdXRpbC9Mb2NhbGUuQ2F0ZWdvcnkuaHRtbCcpOyByZXR1cm4gZmFsc2U7Ij4KCQlqYXZhLnV0aWwuTG9jYWxlLkNhdGVnb3J5PC9hPiBKYXZhIGRvY3VtZW50YXRpb24KCTwvbGk+CjwvdWw+Cg=="
+    },
+    {
+      "ruleName": "Check for a behavior change on isLowerCase and isUpperCase methods",
+      "ruleId": "JREcheckisLowerCaseisUpperCase",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/170/JREcheckisLowerCaseisUpperCase.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 7 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.170.category",
+      "totalResults": 3,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/FieldNamingPolicy.class",
+          "details": [
+            {
+              "reference": "Method separateCamelCase",
+              "match": "java.lang.Character.isUpperCase(char)",
+              "lineNumber": 172
+            },
+            {
+              "reference": "Method upperCaseFirstLetter",
+              "match": "java.lang.Character.isUpperCase(char)",
+              "lineNumber": 188
+            }
+          ]
+        },
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/reflect/ReflectionHelper.class",
+          "details": [
+            {
+              "reference": "Method getAccessibleObjectDescription",
+              "match": "java.lang.Character.isLowerCase(char)",
+              "lineNumber": 71
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkNoZWNrIGZvciBhIGJlaGF2aW9yIGNoYW5nZSBvbiB0aGUgaXNMb3dlckNhc2UgYW5kIGlzVXBwZXJDYXNlIG1ldGhvZHM8L2gzPgo8cD4KVGhpcyBydWxlIGZsYWdzIGluc3RhbmNlcyBvZiB0aGUgPGNvZGU+amF2YS5sYW5nLkNoYXJhY3RlcjwvY29kZT4gPHNwYW4gY2xhc3M9IkNvZGUiPmlzTG93ZXJDYXNlKCk8L3NwYW4+IGFuZCA8c3BhbiBjbGFzcz0iQ29kZSI+aXNVcHBlckNhc2UoKTwvc3Bhbj4gbWV0aG9kcy4KPC9wPgo8cD4KVGhlc2UgbWV0aG9kcyBhcmUgZmxhZ2dlZCBiZWNhdXNlIHRoZXJlIGlzIGEgYmVoYXZpb3IgY2hhbmdlIGFzc29jaWF0ZWQgd2l0aCB0aGVtLgpBY2NvcmRpbmcgdG8gCjxhIGhyZWY9Imh0dHA6Ly93d3cub3JhY2xlLmNvbS90ZWNobmV0d29yay9qYXZhL2phdmFzZS9jb21wYXRpYmlsaXR5LTQxNzAxMy5odG1sI2JlaGF2aW9yYWwiIAp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHA6Ly93d3cub3JhY2xlLmNvbS90ZWNobmV0d29yay9qYXZhL2phdmFzZS9jb21wYXRpYmlsaXR5LTQxNzAxMy5odG1sI2JlaGF2aW9yYWwnKTsgcmV0dXJuIGZhbHNlOyI+CkphdmEgU0UgNyBhbmQgSkRLIDcgQ29tcGF0aWJpbGl0eTwvYT4gZG9jdW1lbnRhdGlvbiwgCnRoZSB0d28gbWV0aG9kcyBoYXZlIGJlZW4gInVwZGF0ZWQgdG8gY29tcGx5IHdpdGggdGhlIHNwZWNpZmllZCB1bmljb2RlIGRlZmluaXRpb24uIgpJbiBwYXJ0aWN1bGFyIHRoZSAic3BlY2lmaWNhdGlvbiBhbmQgdGhlIGltcGxlbWVudGF0aW9uIG9mIHRoZSBpc0xvd2VyQ2FzZSBhbmQgaXNVcHBlckNhc2UgCm1ldGhvZHMgaGF2ZSBiZWVuIHVwZGF0ZWQgdG8gY29tcGx5IHdpdGggdGhlIFVuaWNvZGUgU3RhbmRhcmQgZGVmaW5pdGlvbiB0byBiZSBHRD1MdS9MbCArIE90aGVyX1VwcGVyQ2FzZS9Mb3dlckNhc2UuIgpUaGVyZSBpcyBhIHBvc3NpYmlsaXR5IHRoYXQgaW5zdGFuY2VzIG9mIHRoZXNlIG1ldGhvZHMgd2hpY2ggcHJldmlvdXNseSByZXR1cm5lZCB0cnVlLCBub3cgcmV0dXJuIGZhbHNlLCBhbmQgdmljZSB2ZXJzYS4gCjwvcD4KCjxwPlRoZSByZWNvbW1lbmRlZCBhY3Rpb24gaXMgdG8gZXZhbHVhdGUgeW91ciBjb2RlIGFuZCBkZXRlcm1pbmUgaWYgaXQgaXMgYWZmZWN0ZWQgYnkgdGhlIGJlaGF2aW9yIGNoYW5nZSwgIHB1cnN1ZSBhbnkgYXBwcm9wcmlhdGUgdGVzdGluZywgYW5kIG1ha2UgYW55IG5lY2Vzc2FyeQpjaGFuZ2VzIHRvIHlvdXIgY29kZS4KPC9wPgoKPHA+Tm90ZSB0aGF0IHR3byBuZXcgbWV0aG9kcywgPHNwYW4gY2xhc3M9IkNvZGUiPmphdmEubGFuZy5DaGFyYWN0ZXIuaXNBbHBoYWJldGljKGludCk8L3NwYW4+IGFuZCA8c3BhbiBjbGFzcz0iQ29kZSI+amF2YS5sYW5nLkNoYXJhY3Rlci5pc0lkZW9ncmFwaGljKGludCk8L3NwYW4+CiBoYXZlIGJlZW4gYWRkZWQgd2hpY2ggeW91IG1heSBmaW5kIHVzZWZ1bC4KPC9wPgoKRm9yIGFkZGl0aW9uYWwgaW5mb3JtYXRpb24gc2VlOiAKPHVsPgo8bGk+CjxhIGhyZWY9Imh0dHA6Ly9kb3dubG9hZC5vcmFjbGUuY29tL2phdmFzZS83L2RvY3MvYXBpL2phdmEvbGFuZy9DaGFyYWN0ZXIuaHRtbCIgCnRpdGxlPSJPcGVucyBhIG5ldyB3aW5kb3ciIG9uY2xpY2s9ImphdmFzY3JpcHQ6aGVscFdpbmRvdygnaHR0cDovL2Rvd25sb2FkLm9yYWNsZS5jb20vamF2YXNlLzcvZG9jcy9hcGkvamF2YS9sYW5nL0NoYXJhY3Rlci5odG1sJyk7IHJldHVybiBmYWxzZTsiPgpDbGFzcyBDaGFyYWN0ZXI8L2E+IEphdmEgZG9jdW1lbnRhdGlvbi4KPC9saT4KPC91bD4KCiAK"
+    },
+    {
+      "ruleName": "Check for a behavior change on the sendRedirect method",
+      "ruleId": "SendRedirectBehaviorChange",
+      "ruleHelpLocation": "/ruleinfo/appconversion/javaee7/servlet/SendRedirectBehaviorChange.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java EE 7 / Servlet 3.1",
+      "categoryId": "appconversion.javaee7.category / appconversion.javaee7.servlet.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/LogoutServlet.class",
+          "details": [
+            {
+              "reference": "Method doGet",
+              "match": "javax.servlet.http.HttpServletResponse.sendRedirect(\"login.jsp\")",
+              "lineNumber": 25
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPjwvaDM+CjxwPgpUaGlzIHJ1bGUgZmxhZ3MgcmVmZXJlbmNlcyB0byB0aGUgPGNvZGU+amF2YXguc2VydmxldC5odHRwLkh0dHBTZXJ2bGV0UmVzcG9uc2Uuc2VuZFJlZGlyZWN0KFN0cmluZyk8L2NvZGU+IG1ldGhvZCAKYmVjYXVzZSB0aGUgZGVmYXVsdCBiZWhhdmlvciBmb3IgcmVsYXRpdmUgVVJMcyBpcyBkaWZmZXJlbnQgaW4gdGhlIFNlcnZsZXQgMy4xIGltcGxlbWVudGF0aW9uIHRoYW4gaW4gdGhlIFNlcnZsZXQgMy4wIAppbXBsZW1lbnRhdGlvbi4gVGhlIGJlaGF2aW9yIGZvciBTZXJ2bGV0IDMuMSBtYXRjaGVzIHRoZSBiZWhhdmlvciBvZiB3aGVuIHRoZSBTZXJ2bGV0IDMuMAo8Y29kZT5jb20uaWJtLndzLndlYmNvbnRhaW5lci5SZWRpcmVjdFdpdGhQYXRoSW5mbzwvY29kZT4gcHJvcGVydHkgaXMgc2V0IHRvIDxiPnRydWU8L2I+LCBhbmQgdGhlIHByb3BlcnR5IGlzIGlnbm9yZWQgaW4gCnRoZSBTZXJ2bGV0IDMuMSBpbXBsZW1lbnRhdGlvbi48L3A+CjxwPgpJbiBTZXJ2bGV0IDMuMSwgaWYgdGhlIHJlbGF0aXZlIGxvY2F0aW9uIGRvZXMgbm90IGhhdmUgYSBsZWFkaW5nICcvJywgdGhlIGNvbnRhaW5lciBpbnRlcnByZXRzIHRoZSBsb2NhdGlvbiBhcyAKYmVpbmcgcmVsYXRpdmUgdG8gdGhlIGN1cnJlbnQgcmVxdWVzdCBVUkkuIElmIHRoZSByZWxhdGl2ZSBsb2NhdGlvbiBoYXMgYSBsZWFkaW5nICcvJywgdGhlIGNvbnRhaW5lciBpbnRlcnByZXRzIAp0aGUgbG9jYXRpb24gYXMgYmVpbmcgcmVsYXRpdmUgdG8gdGhlIHNlcnZsZXQgY29udGFpbmVyIHJvb3QuIAo8L3A+CjxwPgpGb3IgZXhhbXBsZSwgaWYgdGhlIHJlZGlyZWN0aW9uIGxvY2F0aW9uIHRoYXQgaXMgcHJvdmlkZWQgYnkgdGhlCmFwcGxpY2F0aW9uIGlzIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+Zm9sZGVyL2RlZmF1bHQuanNwPC9zcGFuPiwgd2l0aCBubyBsZWFkaW5nICcvJywgYW5kIHRoZSBpbmJvdW5kIHJlcXVlc3QgVVJMIGlzIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+aHR0cDovL2hvc3Q6cG9ydC9jb250ZXh0X3Jvb3QvZXh0cmFGb2xkZXI8L3NwYW4+IApvciA8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPmh0dHA6Ly9ob3N0OnBvcnQvY29udGV4dF9yb290L2V4dHJhRm9sZGVyLzwvc3Bhbj4sIGluIFNlcnZsZXQgMy4xIHRoZSByZXF1ZXN0IGlzIHJlZGlyZWN0ZWQgdG8gPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5odHRwOi8vaG9zdDpwb3J0L2NvbnRleHRfcm9vdC9leHRyYUZvbGRlci9mb2xkZXIvZGVmYXVsdC5qc3A8L3NwYW4+LCAKd2hpY2ggaXMgcmVsYXRpdmUgdG8gdGhlIGN1cnJlbnQgcmVxdWVzdCBVUkkuIEluIFNlcnZsZXQgMy4wLCB0aGUgcmVxdWVzdCBpcyByZWRpcmVjdGVkIHRvIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+aHR0cDovL2hvc3Q6cG9ydC9jb250ZXh0X3Jvb3QvZm9sZGVyL2RlZmF1bHQuanNwPC9zcGFuPiwKdW5sZXNzIHRoZSA8Y29kZT5jb20uaWJtLndzLndlYmNvbnRhaW5lci5SZWRpcmVjdFdpdGhQYXRoSW5mbzwvY29kZT4gcHJvcGVydHkgaXMgc2V0IHRvIDxiPnRydWU8L2I+Lgo8L3A+CjxwPgpGb3IgbW9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGlzIG1ldGhvZCwgc2VlIAo8YSBocmVmPSJodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhZWUvNy9hcGkvamF2YXgvc2VydmxldC9odHRwL0h0dHBTZXJ2bGV0UmVzcG9uc2UuaHRtbCIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhZWUvNy9hcGkvamF2YXgvc2VydmxldC9odHRwL0h0dHBTZXJ2bGV0UmVzcG9uc2UuaHRtbCcpOyByZXR1cm4gZmFsc2U7Ij4KSW50ZXJmYWNlIEh0dHBTZXJ2bGV0UmVzcG9uc2U8L2E+Lgo8L3A+IAo8cD4KRm9yIG1vcmUgaW5mb3JtYXRpb24gb24gU2VydmxldCAzLjEgYmVoYXZpb3IgY2hhbmdlcywgc2VlIHRoZSBmb2xsb3dpbmcgcmVzb3VyY2U6CjxhIGhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vZG9jcy9lbi93YXMtbGliZXJ0eS9iYXNlP3RvcGljPVNTRVFUUF9saWJlcnR5L2NvbS5pYm0ud2Vic3BoZXJlLndscC5uZC5tdWx0aXBsYXRmb3JtLmRvYy9hZS9jd2xwX3NlcnZsZXQzMV9iZWhhdmlvci5odG1sIgp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd3d3LmlibS5jb20vZG9jcy9lbi93YXMtbGliZXJ0eS9iYXNlP3RvcGljPVNTRVFUUF9saWJlcnR5L2NvbS5pYm0ud2Vic3BoZXJlLndscC5uZC5tdWx0aXBsYXRmb3JtLmRvYy9hZS9jd2xwX3NlcnZsZXQzMV9iZWhhdmlvci5odG1sJyk7IHJldHVybiBmYWxzZTsiPgpTZXJ2bGV0IDMuMSBiZWhhdmlvciBjaGFuZ2VzPC9hPi4KPC9wPgo="
+    },
+    {
+      "ruleName": "Detect registered or instantiated MBeans and MXBeans",
+      "ruleId": "MXBeanRuleExtended",
+      "ruleHelpLocation": "/ruleinfo/appconversion/jre/180/JRE8MBeanNonPublicExtended.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java SE version migration / Java SE 8 compatibility impacts",
+      "categoryId": "appconversion.jre.category / appconversion.jre.180.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/WeatherServlet.class",
+          "details": [
+            {
+              "reference": "Method init",
+              "match": "javax.management.MBeanServer.registerMBean(*)",
+              "lineNumber": 73
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkRldGVjdCByZWdpc3RlcmVkIG9yIGluc3RhbnRpYXRlZCBNQmVhbnMgYW5kIE1YQmVhbnM8L2gzPgo8cD4KSmF2YSA4IGludHJvZHVjZXMgYSBiZWhhdmlvciBjaGFuZ2UgZm9yIHRoZSB2aXNpYmlsaXR5IHJlcXVpcmVtZW50cyBmb3IgaW50ZXJmYWNlcwp0aGF0IGFyZSB1c2VkIHRvIGNyZWF0ZSBNQmVhbnMgb3IgTVhCZWFucy4KQWxsIE1CZWFuIGFuZCBNWEJlYW4gaW50ZXJmYWNlcyBtdXN0IGJlIHB1YmxpYy4KUHJpb3IgdG8gSmF2YSA4LCBub24tcHVibGljIGludGVyZmFjZXMgd2VyZSBhbGxvd2VkLCBhbHRob3VnaCB0aGUgc3BlY2lmaWNhdGlvbiBkZWZpbmVkCnRoYXQgdGhleSBzaG91bGQgYmUgcHVibGljLgo8L3A+CjxwPgpTZXR0aW5nIHRoZSA8Y29kZT5qZGsuam14Lm1iZWFucy5hbGxvd05vblB1YmxpYzwvY29kZT4gc3lzdGVtIHByb3BlcnR5IHJldmVydHMgdGhlIG1hbmFnZW1lbnQgc3Vic3lzdGVtCnRvIHVzZSB0aGUgb2xkIGJlaGF2aW9yLCBhbGxvd2luZyBub24tcHVibGljIG1hbmFnZW1lbnQgaW50ZXJmYWNlcy4KVGhpcyBwcm9wZXJ0eSBpcyBjb25zaWRlcmVkIHRvIGJlIHRyYW5zaXRpb25hbCBhbmQgbWlnaHQgYmUgcmVtb3ZlZCBpbiBzdWJzZXF1ZW50IHJlbGVhc2VzLgkKPC9wPgo8cD4KQmVjYXVzZSBlbmRpbmcgdGhlIE1CZWFuIGludGVyZmFjZSBuYW1lIHdpdGggPGNvZGU+TUJlYW48L2NvZGU+IGlzIGNvbnZlbnRpb24gcmF0aGVyIHRoYW4gYQpyZXF1aXJlbWVudCwgYW55IGludm9jYXRpb24gb2YgdGhlIDxjb2RlPk1CZWFuU2VydmVyIHJlZ2lzdGVyTUJlYW48L2NvZGU+Cm9yIDxjb2RlPmNyZWF0ZU1CZWFuPC9jb2RlPiBtZXRob2RzIGFyZSBhbHNvIGZsYWdnZWQgdG8gaGlnaGxpZ2h0IHRoaXMgSmF2YSA4CmRpZmZlcmVuY2Ugd2hlbiB5b3UgY3JlYXRlIG1hbmFnZW1lbnQgYmVhbnMuCklmIHlvdXIgbWFuYWdlbWVudCBiZWFuIGludGVyZmFjZXMgZG8gbm90IGZvbGxvdyB0aGUgcHJldmlvdXNseSBsaXN0ZWQgY29udmVudGlvbnMsCm1hbnVhbGx5IHZlcmlmeSB0aGF0IHRoZXkgdXNlIDxjb2RlPnB1YmxpYzwvY29kZT4gaW50ZXJmYWNlcy4KPC9wPgo8cD4KRm9yIGFkZGl0aW9uYWwgaW5mb3JtYXRpb24sIHNlZSA8YSBocmVmPSJodHRwczovL2RvY3Mub3JhY2xlLmNvbS9qYXZhc2UvOC9kb2NzL2FwaS9qYXZheC9tYW5hZ2VtZW50L3BhY2thZ2Utc3VtbWFyeS5odG1sIgp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vZG9jcy5vcmFjbGUuY29tL2phdmFzZS84L2RvY3MvYXBpL2phdmF4L21hbmFnZW1lbnQvcGFja2FnZS1zdW1tYXJ5Lmh0bWwnKTsgcmV0dXJuIGZhbHNlOyI+ClBhY2thZ2UgamF2YXgubWFuYWdlbWVudDwvYT4gSmF2YSBkb2N1bWVudGF0aW9uLgo8L3A+Cg=="
+    },
+    {
+      "ruleName": "Do not start unmanaged threads within the web or EJB container",
+      "ruleId": "CreateThreadMethodsInWebOrEjbProject",
+      "ruleHelpLocation": "/ruleinfo/appconversion/allservers/BehaviorCreateThread.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "All application servers",
+      "categoryId": "com.ibm.ws.appconversion.all.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/AvailabilityCheckerServlet.class",
+          "details": [
+            {
+              "reference": "Method doGet",
+              "match": "java.lang.Thread.start(*)",
+              "lineNumber": 41
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkRvIG5vdCBzdGFydCB1bm1hbmFnZWQgdGhyZWFkcyB3aXRoaW4gdGhlIHdlYiBvciBFSkIgY29udGFpbmVyPC9oMz4KPHA+ClRoaXMgcnVsZSBmbGFncyBjYWxscyB0byB0aGUgPHNwYW4gY2xhc3M9IkNvZGUiPnN0YXJ0KCk8L3NwYW4+IG1ldGhvZCBvbiA8c3BhbiBjbGFzcz0iQ29kZSI+amF2YS5sYW5nLlRocmVhZDwvc3Bhbj4gb2JqZWN0cyAKYW5kIGNhbGxzIHRvIHRoZSA8c3BhbiBjbGFzcz0iQ29kZSI+cnVuKCk8L3NwYW4+IG1ldGhvZCBvbiBvYmplY3RzIHRoYXQgaW1wbGVtZW50IHRoZSA8c3BhbiBjbGFzcz0iQ29kZSI+amF2YS5sYW5nLlJ1bm5hYmxlPC9zcGFuPiBpbnRlcmZhY2UKd2l0aGluIHdlYiBhbmQgRUpCIG1vZHVsZXMuIAo8L3A+CjxwPgo8cD5NYW5hZ2luZyB0aHJlYWRzIGlzIGltcG9ydGFudCB3aXRoaW4gdGhlIHdlYiBvciBFSkIgY29udGFpbmVycy4gIEFwcGxpY2F0aW9ucyBzaG91bGQgdXNlIHRoZSBzZXJ2aWNlcyBwcm92aWRlZApmb3IgaGFuZGxpbmcgdGhyZWFkcyBpbnN0ZWFkIG9mIHN0YXJ0aW5nIHVubWFuYWdlZCB0aHJlYWRzIGZvciB0aGUgCmZvbGxvd2luZyByZWFzb25zOgo8L3A+Cjx1bD4KPGxpPlRoZSBhcHBsaWNhdGlvbiBzZXJ2ZXIgZG9lcyBub3QgcmVjb2duaXplIHVubWFuYWdlZCB0aHJlYWRzLjwvbGk+CjxsaT5BcHBsaWNhdGlvbnMgcnVubmluZyBpbiB1bm1hbmFnZWQgdGhyZWFkcyBkbyBub3QgaGF2ZSBhY2Nlc3MgdG8gSmF2YSBFRSBjb250ZXh0dWFsIGluZm9ybWF0aW9uLjwvbGk+CjxsaT5BcHBsaWNhdGlvbnMgcnVubmluZyBpbiB1bm1hbmFnZWQgdGhyZWFkcyBjYW4gdXNlIHJlc291cmNlcyB3aXRob3V0IGJlaW5nIG1vbml0b3JlZCBieSB0aGUgYXBwbGljYXRpb24gc2VydmVyLjwvbGk+CjxsaT5Vbm1hbmFnZWQgdGhyZWFkcyBjYW4gYWR2ZXJzZWx5IGFmZmVjdCBhcHBsaWNhdGlvbiBzZXJ2ZXIgZnVuY3Rpb25zIHN1Y2ggYXMgc2h1dCBkb3duIAphbmQgcmVzb3VyY2UgcmVjb3ZlcnkgYWZ0ZXIgYSBmYWlsdXJlLjwvbGk+CjxsaT5BbiBhZG1pbmlzdHJhdG9yIGNhbm5vdCBjb250cm9sIHRoZSBudW1iZXIgb2YgdW5tYW5hZ2VkIHRocmVhZHMgb3IgdGhlaXIgdXNlIG9mIHJlc291cmNlcy48L2xpPgo8L3VsPgo8cD4KV2hlcmUgcG9zc2libGUsIGNvbmZpZ3VyZSBhcHBsaWNhdGlvbnMgdG8gdXNlIHRoZSBDb25jdXJyZW5jeSBVdGlsaXRpZXMgTWFuYWdlZEV4ZWN1dG9yU2VydmljZSBpbnRyb2R1Y2VkIGluIEphdmEgRUUgNy4KRm9yIGFkZGl0aW9uYWwgaW5mb3JtYXRpb24gb24gdGhlIENvbmN1cnJlbmN5IFV0aWxpdGllcyBBUElzLCBzZWUgdGhlIGZvbGxvd2luZyByZXNvdXJjZXM6Cjx1bD4KPGxpPjxhIGhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vZG9jcy9lbi93YXMtbGliZXJ0eS9uZD90b3BpYz1mZWF0dXJlcy1jb25jdXJyZW5jeS11dGlsaXRpZXMtamF2YS1lZS0xMCIgdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL3d3dy5pYm0uY29tL2RvY3MvZW4vd2FzLWxpYmVydHkvbmQ/dG9waWM9ZmVhdHVyZXMtY29uY3VycmVuY3ktdXRpbGl0aWVzLWphdmEtZWUtMTAnKTsgcmV0dXJuIGZhbHNlOyI+Q29uY3VycmVuY3kgVXRpbGl0aWVzIGZvciBKYXZhIEVFIDEuMDwvYT48L2xpPgo8bGk+PGEgaHJlZj0iaHR0cHM6Ly93d3cuaWJtLmNvbS9zdXBwb3J0L2tub3dsZWRnZWNlbnRlci9TU0FXNTdfbGliZXJ0eS9jb20uaWJtLndlYnNwaGVyZS53bHAuY29yZS5kb2MvYWUvdHdscF9jb25maWdfbWFuYWdlZGV4ZWN1dG9yLmh0bWwiIAp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd3d3LmlibS5jb20vc3VwcG9ydC9rbm93bGVkZ2VjZW50ZXIvU1NBVzU3X2xpYmVydHkvY29tLmlibS53ZWJzcGhlcmUud2xwLmNvcmUuZG9jL2FlL3R3bHBfY29uZmlnX21hbmFnZWRleGVjdXRvci5odG1sJyk7IHJldHVybiBmYWxzZTsiPgpDb25maWd1cmluZyBNYW5hZ2VkRXhlY3V0b3JTZXJ2aWNlIGluc3RhbmNlczwvYT4gZm9yIGNvbmZpZ3VyYXRpb24gaW5mb3JtYXRpb24uPC9saT4gCjxsaT4KPGEgaHJlZj0iaHR0cDovL2RvY3Mub3JhY2xlLmNvbS9qYXZhZWUvNy9hcGkvamF2YXgvZW50ZXJwcmlzZS9jb25jdXJyZW50L01hbmFnZWRFeGVjdXRvclNlcnZpY2UuaHRtbCIgCnRpdGxlPSJPcGVucyBhIG5ldyB3aW5kb3ciIG9uY2xpY2s9ImphdmFzY3JpcHQ6aGVscFdpbmRvdygnaHR0cDovL2RvY3Mub3JhY2xlLmNvbS9qYXZhZWUvNy9hcGkvamF2YXgvZW50ZXJwcmlzZS9jb25jdXJyZW50L01hbmFnZWRFeGVjdXRvclNlcnZpY2UuaHRtbCcpOyByZXR1cm4gZmFsc2U7Ij4KamF2YXguZW50ZXJwcmlzZS5jb25jdXJyZW50Lk1hbmFnZWRFeGVjdXRvclNlcnZpY2U8L2E+IGZvciBBUEkgaW5mb3JtYXRpb24uPC9saT4KPC91bD4KPHA+CkZvciBXZWJTcGhlcmUgQXBwbGljYXRpb24gU2VydmVyIHRyYWRpdGlvbmFsIFZlcnNpb24gOC41LjUgYW5kIHByaW9yLCB1c2UgdGhlIHdvcmsgbWFuYWdlciB0byBzY2hlZHVsZSBhc3luY2hyb25vdXMgYmVhbnMuIApTZWUgCjxhIGhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vZG9jcy9lbi93YXMtbmQvOC41LjU/dG9waWM9YmVhbnMtd29yay1tYW5hZ2VycyIgCnRpdGxlPSJPcGVucyBhIG5ldyB3aW5kb3ciIG9uY2xpY2s9ImphdmFzY3JpcHQ6aGVscFdpbmRvdygnaHR0cHM6Ly93d3cuaWJtLmNvbS9kb2NzL2VuL3dhcy1uZC84LjUuNT90b3BpYz1iZWFucy13b3JrLW1hbmFnZXJzJyk7IHJldHVybiBmYWxzZTsiPgpXb3JrIG1hbmFnZXJzPC9hPiBmb3IgbW9yZSBpbmZvcm1hdGlvbi4KPC9wPgo="
+    },
+    {
+      "ruleName": "The WebSphere ServletChain API was superseded by a newer implementation",
+      "ruleId": "WebSphereServletChainRule",
+      "ruleHelpLocation": "/ruleinfo/appconversion/was2liberty/WebSphereServletChainRule.html",
+      "devCost": "1",
+      "instanceCost": "0.1",
+      "severity": "Critical",
+      "severityId": "severe",
+      "alternativeRecipes": [],
+      "category": "WebSphere traditional to Liberty",
+      "categoryId": "appconversion.was2liberty.category",
+      "totalResults": 5,
+      "results": [
+        {
+          "fileName": "modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/WelcomeServlet.class",
+          "details": [
+            {
+              "reference": "Method doGet",
+              "match": "com.ibm.websphere.servlet.filter.ServletChain",
+              "lineNumber": 23
+            },
+            {
+              "reference": "Method doGet",
+              "match": "com.ibm.websphere.servlet.filter.ServletChain",
+              "lineNumber": 24
+            },
+            {
+              "reference": "Method doGet",
+              "match": "com.ibm.websphere.servlet.filter.ServletChain",
+              "lineNumber": 25
+            },
+            {
+              "reference": "Method doGet",
+              "match": "com.ibm.websphere.servlet.filter.ServletChain",
+              "lineNumber": 26
+            },
+            {
+              "reference": "Method doGet",
+              "match": "com.ibm.websphere.servlet.filter.ServletChain",
+              "lineNumber": 30
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPlRoZSBXZWJTcGhlcmUgU2VydmxldENoYWluIEFQSSB3YXMgc3VwZXJzZWRlZCBieSBhIG5ld2VyIGltcGxlbWVudGF0aW9uPC9oMz4KPHA+ClRoZSBXZWJTcGhlcmUgU2VydmxldCBBUEkgd2FzIHN1cGVyc2VkZWQgYnkgc3RhbmRhcmQgU2VydmxldCAzLjAgZnVuY3Rpb25hbGl0eS4gVGhpcyBydWxlIGZsYWdzIEphdmEgY29kZSB0aGF0IGhhcyByZWZlcmVuY2VzIHRvIAp0aGUgPGNvZGU+Y29tLmlibS53ZWJzcGhlcmUuc2VydmxldC5maWx0ZXIuU2VydmxldENoYWluPC9jb2RlPiBjbGFzcyBiZWNhdXNlIGl0IGlzIG5vdCBhdmFpbGFibGUgb24gTGliZXJ0eS4gQXBwbGljYXRpb25zIHJlcXVpcmluZyAKdGhpcyBmdW5jdGlvbmFsaXR5IHNob3VsZCBpbnN0ZWFkIHVzZSB0aGUgPGNvZGU+amF2YXguc2VydmxldC5GaWx0ZXI8L2NvZGU+IGFuZCA8Y29kZT5qYXZheC5zZXJ2bGV0LkZpbHRlckNoYWluPC9jb2RlPiBjbGFzc2VzLgo8L3A+CjxwPgpBbiBMTE0gYXNzaXN0ZWQgZml4IGlzIGF2YWlsYWJsZSBpbiB0aGUgd2F0c29ueCBDb2RlIEFzc2lzdGFudCBmb3IgRW50ZXJwcmlzZSBKYXZhIEFwcGxpY2F0aW9ucyBwbHVnaW4gdG8gaGVscCB3aXRoIHRoZSBjb252ZXJzaW9uLiAKV2l0aCB0aGUgcGx1Z2luIGluc3RhbGxlZCwgbG9vayB1cCB3aGljaCBzZXJ2bGV0cyBhcmUgbWFwcGVkIHRvIHRoZSBVUkwgcGF0dGVybiB1c2VkIGluIHlvdXIgU2VydmxldENoYWluIGFuZCBpbnZva2UgdGhlIExMTSBhZ2FpbnN0IAp0aG9zZSBjbGFzc2VzLiBPbmNlIHRoZSBzZXJ2bGV0cyBoYXZlIGJlZW4gY29udmVydGVkIGludG8gZmlsdGVycywgeW91IGNhbiByZW1vdmUgdGhlIG9sZCBzZXJ2bGV0cyBmcm9tIHRoZSBhcHBsaWNhdGlvbiwgcmVtb3ZlIHRoZSAKU2VydmxldENoYWluIGZyb20geW91ciBjb2RlIGFuZCB0aGVuIGNvbmZpZ3VyZSB0aGUgbmV3IGZpbHRlcnMgYWNjb3JkaW5nbHkgaW4gdGhlIGFwcGxpY2F0aW9uJ3Mgd2ViLnhtbCBkZXBsb3ltZW50IGRlc2NyaXB0b3IuCjwvcD4KPHA+CkZvciBpbmZvcm1hdGlvbiBhYm91dCB0aGUgSmF2YSBFRSBTZXJ2bGV0IEFQSXMsIHNlZSB0aGUKPGEgaHJlZj0iaHR0cDovL2RvY3Mub3JhY2xlLmNvbS9qYXZhZWUvNi9hcGkvP2phdmF4L3NlcnZsZXQvcGFja2FnZS1zdW1tYXJ5Lmh0bWwiIAp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHA6Ly9kb2NzLm9yYWNsZS5jb20vamF2YWVlLzYvYXBpLz9qYXZheC9zZXJ2bGV0L3BhY2thZ2Utc3VtbWFyeS5odG1sJyk7IHJldHVybiBmYWxzZTsiPgpqYXZheC5zZXJ2bGV0PC9hPiBwYWNrYWdlIEphdmEgZG9jdW1lbnRhdGlvbi4KPC9wPgo8cD4KRm9yIGluZm9ybWF0aW9uIGFib3V0IHRoZSBXZWJTcGhlcmUgU2VydmxldCBBUElzLCBzZWUgdGhlCjxhIGhyZWY9Imh0dHA6Ly93d3cuaWJtLmNvbS9zdXBwb3J0L2tub3dsZWRnZWNlbnRlci9TU0FXNTdfOC41LjUvY29tLmlibS53ZWJzcGhlcmUuamF2YWRvYy5kb2Mvd2ViL2FwaWRvY3Mvb3ZlcnZpZXctc3VtbWFyeS5odG1sIiAKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwOi8vd3d3LmlibS5jb20vc3VwcG9ydC9rbm93bGVkZ2VjZW50ZXIvU1NBVzU3XzguNS41L2NvbS5pYm0ud2Vic3BoZXJlLmphdmFkb2MuZG9jL3dlYi9hcGlkb2NzL292ZXJ2aWV3LXN1bW1hcnkuaHRtbCcpOyByZXR1cm4gZmFsc2U7Ij4KSUJNIFdlYlNwaGVyZSBBcHBsaWNhdGlvbiBTZXJ2ZXIsIFJlbGVhc2UgOC41IEFQSSBTcGVjaWZpY2F0aW9uPC9hPi4KPHA+CjxwPgpBbHNvLCBzZWUgdGhlIGRlcHJlY2F0aW9uIG5vdGUgaW4gdGhlIAo8YSBocmVmPSJodHRwczovL3d3dy5pYm0uY29tL2RvY3MvYXBpL3YxL2NvbnRlbnQvU1NBVzU3XzguNS41L2NvbS5pYm0ud2Vic3BoZXJlLmphdmFkb2MuZG9jL3dlYi9hcGlkb2NzL2NvbS9pYm0vd2Vic3BoZXJlL3NlcnZsZXQvZmlsdGVyL1NlcnZsZXRDaGFpbi5odG1sIiAKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL3d3dy5pYm0uY29tL2RvY3MvYXBpL3YxL2NvbnRlbnQvU1NBVzU3XzguNS41L2NvbS5pYm0ud2Vic3BoZXJlLmphdmFkb2MuZG9jL3dlYi9hcGlkb2NzL2NvbS9pYm0vd2Vic3BoZXJlL3NlcnZsZXQvZmlsdGVyL1NlcnZsZXRDaGFpbi5odG1sJyk7IHJldHVybiBmYWxzZTsiPgpjb20uaWJtLndlYnNwaGVyZS5zZXJ2bGV0LmZpbHRlci5TZXJ2bGV0Q2hhaW48L2E+IGNsYXNzIEphdmEgZG9jdW1lbnRhdGlvbi4KPC9wPgo="
+    }
+  ]
+}

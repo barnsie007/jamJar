@@ -1,0 +1,7 @@
+ Detected pom.xml, setting build tool type to "maven"
+ Using 'mvn --version' for maven home location
+  Running recipe(s)...
+  Changes have been made to src/main/java/com/acme/modres/AvailabilityCheckerServlet.java by
+      com.ibm.testRecipe
+          org.openrewrite.java.migrate.lang.ThreadStopUnsupported
+  Please review and commit the results.

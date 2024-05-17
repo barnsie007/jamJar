@@ -1,0 +1,1 @@
+/root/source/modresorts/modresorts/target/modresorts-2.0.0.war

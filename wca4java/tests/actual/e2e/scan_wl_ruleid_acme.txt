@@ -1,0 +1,2 @@
+         "ruleId": "BeansXmlNamespace",
+         "ruleId": "MissingBeansFile",

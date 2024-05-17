@@ -1,0 +1,127 @@
+###addLocalDependencies
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addLocalDependenciesToApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -l C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\db-drivers\db2jcc.jar
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addLocalDependenciesToApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -l C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\db-drivers\db2jcc_license_cisuz.jar
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addLocalDependenciesToApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -l C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\db-drivers\db2jcc_license_cu.jar
+
+
+###addServerConfig
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addServerConfig -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip
+
+###addServerConfig overwrite
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addServerConfig -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f
+
+###getAllAvailableRecipes
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAllAvailableRecipes -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip
+
+###runAllRecipes
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api runAllRecipes -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip
+
+###runSpecificRecipes
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api runRecipes -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -r org.openrewrite.java.liberty.ServerName
+
+###runBuild
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api runBuild -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -b clean package
+
+
+### scan a build
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api scanApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -b C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\target\modresorts-2.0.0.war --source-app-server=was855 --source-ee-version=ee6 --source-java-version=ibm6 --target-app-server=liberty --target-ee-version=ee7 --target-java-version=ibm8
+
+
+#####space 
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAllAvailableRecipes -a 'C:\Users\I71663754\Desktop\modResorts4wca\modResorts Latest\' -m 'C:\Users\I71663754\Desktop\modResorts4wca\modResorts Latest\migration-bundle\modresorts.ear_migrationBundle.zip'
+
+####getApplicationWorkspace
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getApplicationWorkspace -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\
+
+### cleanApplicationWorkspace 
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api cleanApplicationWorkspace -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\
+
+### getAnalysisReport
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAnalysisReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f JSON -t WEBSPHERE_LIBERTY
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAnalysisReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f HTML -t WEBSPHERE_LIBERTY
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAnalysisReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f JSON -t OPEN_LIBERTY
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAnalysisReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f HTML -t OPEN_LIBERTY
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAnalysisReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f JSON -t TWAS 
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAnalysisReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f HTML -t TWAS 
+
+### getInventoryReport
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getInventoryReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f HTML
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getInventoryReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f JSON
+
+### getTechnologyReport
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getTechnologyReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f HTML
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getTechnologyReport -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip -f JSON 
+ 
+###Add container file
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addContainerFile -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip
+
+####################
+
+commands for modresorts
+
+####################
+
+
+##run build
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api runBuild -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -b clean package
+
+
+##scan build
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api scanApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -b C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\target\modresorts-2.0.0.war --source-app-server=was855 --source-ee-version=ee6 --source-java-version=ibm6 --target-app-server=liberty --target-ee-version=ee7 --target-java-version=ibm8
+
+
+#get recipes
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api getAllAvailableRecipes -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\
+
+#add dependencies
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addLocalDependenciesToApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -l C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\db-drivers\db2jcc.jar
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addLocalDependenciesToApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -l C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\db-drivers\db2jcc_license_cisuz.jar
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addLocalDependenciesToApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -l C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\db-drivers\db2jcc_license_cu.jar
+
+##add server config
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addServerConfig -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -m C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\migration-bundle\modresorts.ear_migrationBundle.zip
+
+
+#run recipes
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api runAllRecipes -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\
+
+#add container
+
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api addContainerFile -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ 
+
+##rerun build
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api runBuild -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -b clean package
+
+##rescan
+java -jar C:\Users\I71663754\Downloads\jam_jar\latest\ta-jam-0.3.0.jar api scanApplication -a C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\ -b C:\Users\I71663754\Desktop\modResorts4wca\modResortsLatest\target\modresorts-2.0.0.war --source-app-server=was855 --source-ee-version=ee6 --source-java-version=ibm6 --target-app-server=liberty --target-ee-version=ee7 --target-java-version=ibm8
+
+
+

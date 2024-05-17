@@ -1,0 +1,3 @@
+         "ruleId": "DatabasesRule",
+         "ruleId": "DetectPropertiesFiles",
+         "ruleId": "URLRuleDockerCloud",

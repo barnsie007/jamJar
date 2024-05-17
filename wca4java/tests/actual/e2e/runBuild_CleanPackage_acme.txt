@@ -1,0 +1,42 @@
+2024-05-17 05:55:15 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 05:55:15 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----< acmeair-customerservice-java:acmeair-customerservice-java >------
+[INFO] Building acmeair-customerservice-java 6.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ acmeair-customerservice-java ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ acmeair-customerservice-java ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ acmeair-customerservice-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /root/source/acme/Acmeair-Customer-Service/target/classes
+[INFO] /root/source/acme/Acmeair-Customer-Service/src/main/java/com/acmeair/mongo/ConnectionManager.java: Some input files use or override a deprecated API.
+[INFO] /root/source/acme/Acmeair-Customer-Service/src/main/java/com/acmeair/mongo/ConnectionManager.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ acmeair-customerservice-java ---
+[INFO] skip non existing resourceDirectory /root/source/acme/Acmeair-Customer-Service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ acmeair-customerservice-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /root/source/acme/Acmeair-Customer-Service/target/test-classes
+[INFO] 
+[INFO] --- surefire:3.0.0-M1:test (default-test) @ acmeair-customerservice-java ---
+[INFO] 
+[INFO] --- war:3.4.0:war (default-war) @ acmeair-customerservice-java ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [acmeair-customerservice-java] in [/root/source/acme/Acmeair-Customer-Service/target/acmeair-customerservice-java-6.0]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/root/source/acme/Acmeair-Customer-Service/src/main/webapp]
+[INFO] Building war: /root/source/acme/Acmeair-Customer-Service/target/acmeair-customerservice-java-6.0.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.611 s
+[INFO] Finished at: 2024-05-17T05:55:22-04:00
+[INFO] ------------------------------------------------------------------------
+[0m

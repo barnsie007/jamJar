@@ -1,0 +1,62 @@
+INFO: Detected pom.xml, setting build tool type to "maven"
+INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.acme.modres:modresorts >---------------------
+[INFO] Building ModResorts 2.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ modresorts ---
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ modresorts ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 12 source files with javac [debug target 1.8] to target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /root/source/modresorts/modresorts/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ modresorts ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug target 1.8] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ modresorts ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- war:3.1.0:war (default-war) @ modresorts ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [modresorts] in [/root/source/modresorts/modresorts/target/modresorts-2.0.0]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [/root/source/modresorts/modresorts/src/main/resources] to [/root/source/modresorts/modresorts/target/modresorts-2.0.0]
+[INFO] Copying webapp resources [/root/source/modresorts/modresorts/WebContent]
+[INFO] Webapp assembled in [61 msecs]
+[INFO] Building war: /root/source/modresorts/modresorts/target/modresorts-2.0.0.war
+[INFO] 
+[INFO] --- resources:3.2.0:copy-resources (copy-resources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.606 s
+[INFO] Finished at: 2024-04-16T05:39:09-04:00
+[INFO] ------------------------------------------------------------------------
+[0m

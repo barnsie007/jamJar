@@ -1,0 +1,1 @@
+      "--excludePackages=ch.qos,com.cloudant,com.cognos,com.fasterxml,com.filenet,com.ibatis,com.ibm,com.informix,com.lowagie,com.mchange,com.meterware,com.microsoft,com.mongodb,com.mysql,com.sun,com.sybase,filenet,freemarker,groovy,jakarta,java,javax,net,oracle,org,sqlj,sun,twitter4j,_ibmjsp"

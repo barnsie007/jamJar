@@ -1,0 +1,1 @@
+    <application id="GarageSale.ear" location="GarageSale.ear" name="GarageSale.ear" type="ear"/>

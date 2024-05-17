@@ -1,0 +1,6 @@
+INFO: Detected pom.xml, setting build tool type to "maven"
+INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+INFO: Bundle is valid.
+INFO: Some or all rule help not found. Cleaning rule help directory and regenerating.
+INFO: Finished updating report with rule help
+/root/.ibm_java_app_mod/com.acme.modres_modresorts_2.0.0/migration_bundle/reports/modresorts-2.0.0.war_AnalysisReport.html

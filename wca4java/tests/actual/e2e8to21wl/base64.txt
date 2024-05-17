@@ -1,0 +1,172 @@
+<h3>Java SE 17 general information and potential issues</h3>
+<p>
+            This rule contains links to information on the changes in Java SE 17, as well as the previous non-LTS (long term support)
+            Java versions that have been released since Java SE 11. For each Java version, links are included to the release
+            notes as well as to specific changes that may cause issues, but that aren't detected by the WebSphere Application Migration
+            Toolkit. Additional details can also be found in the <a href="https://docs.oracle.com/en/java/javase/17/migrate/index.html"
+			title="Opens a new window" onclick="javascript:helpWindow('https://docs.oracle.com/en/java/javase/17/migrate/index.html'); return false;">
+			Oracle JDK Migration Guide</a>.
+		</p>
+		<p>    
+            Java SE 17:
+            <ul>
+            	<li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html'); return false;">
+					Release Notes</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8139348"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8139348'); return false;">
+					Deprecation of 3DES and RC4 in Kerberos</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8258432"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8258432'); return false;">
+					URL FTP Protocol Handler: IPv4 Address Validation in Passive Mode</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-6323374"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-6323374'); return false;">
+					Collections.unmodifiable* Methods Are Idempotent for Their Corresponding Collection</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8263202"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8263202'); return false;">
+					ISO 639 Language Codes for Hebrew/Indonesian/Yiddish</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8259801"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8259801'); return false;">
+					Enable XML Signature Secure Validation Mode by Default</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8259709"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8259709'); return false;">
+					Disable SHA-1 XML signatures</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8175916"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8175916'); return false;">
+					JEP 306: Restore Always-Strict Floating-Point Semantics</a></li>
+		  	</ul>
+		</p>
+		<p>    
+            Java SE 16:
+            <ul>
+            	<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html'); return false;">
+					Release Notes</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8256718"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8256718'); return false;">
+					Deprecated Tracing Flags are Obsolete and Must be Replaced with Unified Logging Equivalents</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8257572"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8257572'); return false;">
+					Parts of the Signal-Chaining API are Deprecated</a></li>						
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8248655"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8248655'); return false;">
+					Support Supplementary Characters in String Case Insensitive Operations</a></li>				
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8159746"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8159746'); return false;">
+					Proxy Classes Are Not Open for Reflective Access</a></li>				
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8254876"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8254876'); return false;">
+					NullPointerException Not Thrown When First Argument to Path.of or Paths.get is null</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8253459"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8253459'); return false;">
+					Argument Index of Zero or Unrepresentable by int Throws IllegalFormatException</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8253965"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-relnote-issues.html#JDK-8253965'); return false;">
+					Removal of java.awt.PeerFixer</a></li>		
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8243559"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8243559'); return false;">
+					Removed Root Certificates with 1024-bit Keys</a></li>	
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8202343"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8202343'); return false;">
+					Disable TLS 1.0 and 1.1</a></li>	
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8254631"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8254631'); return false;">
+					Improve Encoding of TLS Application-Layer Protocol Negotiation (ALPN) Values</a></li>	
+				<li><a href="https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8153005"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/16-all-relnotes.html#JDK-8153005'); return false;">
+					Upgraded the Default PKCS12 Encryption and MAC Algorithms</a></li>						
+		  	</ul>
+		</p>
+        <p>    
+            Java SE 15:
+            <ul>
+            	<li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/15-relnote-issues.html'); return false;">
+					Release Notes</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8176894"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8176894'); return false;">
+					Specialized Implementations of TreeMap Methods</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8214245"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8214245'); return false;">
+					Case Insensitive Matching Doesn't Work Correctly for Some Character Classes</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8227313"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8227313'); return false;">
+					Support Monetary Grouping Separator in DecimalFormat/DecimalFormatSymbols</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8239385"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8239385'); return false;">
+					Support for canonicalize in krb5.conf</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8231264"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8231264'); return false;">
+					Disabled Biased-locking and Deprecated Biased-locking Flags</a></li>
+		  	</ul>
+		</p>
+		<p>    
+            Java SE 14:
+            <ul>
+           	   <li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html'); return false;">
+					Release Notes</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8215181"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8215181'); return false;">
+					 Accounting Currency Format Support</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8229049"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8229049'); return false;">
+					Remove the concurrent mark and sew (CMS) Garbage collector</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8205132"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8205132'); return false;">
+					 Thread.countStackFrames Changed to Unconditionally Throw UnsupportedOperationException</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8229785"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8229785'); return false;">
+					MethodTypefromMethodDescriptorString Requires "getClassLoader" Permission</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-82303184"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8230318'); return false;">
+					New Checks on Trust Anchor Certificates</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8190492"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8190492'); return false;">
+					Removed SSLv2Hello and SSLv3 From Default Enabled TLS Protocols</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8228854"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/14-relnote-issues.html#JDK-8228854'); return false;">
+					Default ErrorListener No Longer Reports Warnings and Errors to the Console</a></li>
+		  	</ul>
+		</p>	
+		<p>    
+            Java SE 13:
+            <ul>
+           	   <li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/13-relnote-issues.html'); return false;">
+					Release Notes</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8212700"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8212700'); return false;">
+					Removal of art.tookit system property</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8220016"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8220016'); return false;">
+					Duplicated RSA Services No Longer Supported by SunJSSE Provider</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8211941"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8211941'); return false;">
+					Improved Handling of the "Class-Path" JAR Manifest Attribute</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8224477"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8224477'); return false;">
+					Change to Default Implementation of SocketImpl Methods supportedOptions, getOption, and setOption</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8221481"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8221481'); return false;">
+					JEP 353 Reimplement the Legacy Socket API</a></li>
+		  	</ul>
+		</p>
+		<p>    
+            Java SE 12:
+            <ul>
+           	   <li><a href="https://www.oracle.com/java/technologies/javase/12-relnote-issues.html"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/12-relnote-issues.html'); return false;">
+					Release Notes</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/12-relnote-issues.html#JDK-8196902"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/12-relnote-issues.html#JDK-8196902'); return false;">
+					Better HTTP Redirection Support</a></li>
+				<li><a href="https://www.oracle.com/java/technologies/javase/12-relnote-issues.html#JDK-8211883"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/12-relnote-issues.html#JDK-8211883'); return false;">
+					Disabled TLS anon and NULL Cipher suites</a></li>
+	            <li><a href="https://www.oracle.com/java/technologies/javase/12-relnote-issues.html#JDK-8208350"
+					title="Opens a new window" onclick="javascript:helpWindow('https://www.oracle.com/java/technologies/javase/12-relnote-issues.html#JDK-8208350'); return false;">
+					Disabled All DES TLS Cipher Suites</a></li>
+		  	</ul>
+		</p>
+	

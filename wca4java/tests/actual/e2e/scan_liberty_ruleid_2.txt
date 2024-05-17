@@ -1,0 +1,7 @@
+         "ruleId": "CollectionMethods",
+         "ruleId": "JREcheckisLowerCaseisUpperCase",
+         "ruleId": "JRELocaleGetDefault",
+         "ruleId": "JREUrlConnectionGetInputStream",
+         "ruleId": "MonthFormattingNames",
+         "ruleId": "MXBeanRuleExtended",
+         "ruleId": "StringSplit",

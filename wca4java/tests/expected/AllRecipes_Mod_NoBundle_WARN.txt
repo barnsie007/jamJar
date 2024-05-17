@@ -1,0 +1,7 @@
+[WARNING] Changes have been made to src/main/java/com/acme/modres/LogoutServlet.java by:
+[WARNING]     com.ibm.testRecipe
+[WARNING]         org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod
+[WARNING] Changes have been made to src/main/java/com/acme/modres/WeatherServlet.java by:
+[WARNING]     com.ibm.testRecipe
+[WARNING]         org.openrewrite.java.liberty.ServerName
+[WARNING] Please review and commit the results.

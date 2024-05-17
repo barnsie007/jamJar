@@ -1,0 +1,83 @@
+<h3>Use the default InitialContext JNDI properties</h3>
+<p>
+Use the default values for the <code>java.naming.factory.initial</code> and <code>java.naming.provider.url</code> JNDI properties when you migrate to Liberty.  
+The following WebSphere Application Server traditional values for these properties are not valid:
+</p>
+<ul>
+	<li><code>java.naming.factory.initial=com.ibm.websphere.naming.WsnInitialContextFactory</code></li>
+	<li><code>java.naming.provider.url=corbaloc:iiop:localhost:2809</code></li>
+</ul>
+<p>
+The migration tool scans Java and properties files for the properties mentioned earlier.
+</p>
+<p>
+In <code>jndi.properties</code> files the <code>java.naming.factory.initial</code> and <code>java.naming.provider.url</code> property keys are flagged regardless of the value.
+If the properties file rule detects a <code>jndi.properties</code> file, check the properties in the file. 
+Either remove the <code>java.naming.factory.initial</code> and <code>java.naming.provider.url</code> properties, or delete the file if none of the properties are needed.       
+<!-- Is the <q>property files rule</q> this rule or a different rule? -->
+</p>
+
+<p>
+The following example illustrates application code that this rule will flag:
+<p>
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1">
+<tr>
+<td><span class="Code">
+
+<br>
+<span class="JavaKeyword">import</span> <span class="JavaType">java.util.Hashtable;</span><br>
+
+<span class="JavaKeyword">import</span> <span class="JavaType">javax.naming.InitialContext;</span>
+<br>
+...
+<br>
+<span class="JavaType">void</span> main( <span class="JavaType">String</span>[] args ) {<br>
+
+<span class="indent"></span><span class="indent"></span><span class="JavaType">Hashtable</span> ht = <span class="JavaKeyword">new</span> <span class="JavaType">Hashtable</span>();<br>
+<br>
+<span class="indent"></span><span class="indent"></span>ht.put(<q><span class="redCode"><strong>java.naming.factory.initial</strong></span></q>, <q>com.ibm.websphere.naming.WsnInitialContextFactory</q>);<br>
+
+<span class="indent"></span><span class="indent"></span>ht.put(<q><span class="redCode"><strong>java.naming.provider.url</strong></span></q>, <q>corbaloc:iiop:localhost:2809</q>);<br>
+
+<br>
+
+<span class="indent"></span><span class="indent"></span><span class="JavaType">InitialContext</span> ctx = <span class="JavaKeyword">new</span> <span class="JavaType">InitialContext</span>(ht);<br>
+
+}<br>
+</span>
+</td>
+</tr>
+</table>
+<p>
+When you use the <code>InitialContext(Hashtable)</code> constructor, remove these two properties. If no other properties are being used, you can use the default constructor.       
+</p>
+<p>
+The following example illustrates the proper use of the code shown in the previous example:
+</p>
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1">
+<tr>
+<td><span class="Code">
+<br>
+<span class="JavaKeyword">import</span> <span class="JavaType">javax.naming.InitialContext;</span>
+<br>
+...
+<br>
+<span class="JavaType">void</span> main( <span class="JavaType">String</span>[] args ) {<br>
+
+<span class="indent"></span><span class="indent"></span><span class="JavaType">InitialContext</span> ctx = <span class="JavaKeyword">new</span> <span class="JavaType">InitialContext</span>();<br>
+
+}<br>
+</span>
+</td>
+</tr>
+</table>
+
+<p>
+When you use the <code>InitialContext(Hashtable)</code> constructor, remove these two properties. If no other properties are being used, you can use the default constructor.       
+</p>
+<p>
+This rule has an automated fix to remove those two properties. Copy the <a href="#analyze_AutomatedFixConfiguration">custom configuration</a> to your application build file to enable it.
+</p>
+<p>
+The rule will also flag <code>com.ibm.websphere.naming.WsnInitialContextFactory</code> anywhere in Java code.  Remove this string and verify that it is not being used as part of InitialContext initialization.      
+</p>

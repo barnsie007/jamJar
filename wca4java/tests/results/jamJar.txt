@@ -1,0 +1,45 @@
+...........F....................F...F..F.F.....
+======================================================================
+FAIL: test_jam_allrecipes_cluster (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTests.py", line 43, in test_jam_allrecipes_cluster
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/AllRecipes_Cluster.txt', '/root/jam/wca4java/tests/expected/AllRecipes_Cluster.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_rulehelp_websphere_url_nohelp (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTests.py", line 205, in test_jam_rulehelp_websphere_url_nohelp
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/ruleHelp_noRule.txt', '/root/jam/wca4java/tests/expected/ruleHelp_noRule.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_runreceipe_norecipe (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTests.py", line 67, in test_jam_runreceipe_norecipe
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/AllRecipes_NoRecipe.txt', '/root/jam/wca4java/tests/expected/AllRecipes_NoRecipe.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_scanbuild_java (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTests.py", line 82, in test_jam_scanbuild_java
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/modTargetJava_8_ee7.txt', '/root/jam/wca4java/tests/expected/modTargetJava_8_ee7.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_scanbuild_target_lib (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTests.py", line 85, in test_jam_scanbuild_target_lib
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/modTargetServer_Lib.txt', '/root/jam/wca4java/tests/expected/modTargetServer_Lib.txt'))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.016s
+
+FAILED (failures=5)

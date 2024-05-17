@@ -1,0 +1,3 @@
+ Detected pom.xml, setting build tool type to "maven"
+ Using 'mvn --version' for maven home location
+  Running recipe(s)...

@@ -1,0 +1,15 @@
+2024-05-17 06:04:51 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 06:04:51 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+2024-05-17 06:04:52 INFO: Bundle is valid.
+2024-05-17 06:04:52 INFO: Some or all rule help not found. Regenerating.
+2024-05-17 06:04:52 INFO: Finished updating report with rule help
+[36m[0m[36m2024-05-17 06:05:23 INFO:  Running recipe(s)...
+2024-05-17 06:05:25 INFO:  Changes have been made to src/main/java/com/acme/modres/LogoutServlet.java by:
+2024-05-17 06:05:25 INFO:      com.ibm.testRecipe
+2024-05-17 06:05:25 INFO:          org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod
+2024-05-17 06:05:25 INFO:  Changes have been made to src/main/java/com/acme/modres/WeatherServlet.java by:
+2024-05-17 06:05:25 INFO:      com.ibm.testRecipe
+2024-05-17 06:05:25 INFO:          org.openrewrite.java.liberty.ServerName
+2024-05-17 06:05:25 INFO:          org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup
+2024-05-17 06:05:25 INFO:  Please review and commit the results.
+[0m[36m[0m

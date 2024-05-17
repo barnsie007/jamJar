@@ -1,0 +1,5 @@
+         "ruleId": "BeansXmlNamespace",
+         "ruleId": "DatabasesRule",
+         "ruleId": "DetectPropertiesFiles",
+         "ruleId": "MissingBeansFile",
+         "ruleId": "URLRuleDockerCloud",

@@ -1,0 +1,2 @@
+         "recipe": null,
+         "recipe": "org.openrewrite.java.migrate.BeansXmlNamespace",

@@ -1,0 +1,1 @@
+      "ruleHelpLocationLocal": "/root/.ibm_java_app_mod/com.acme.modres_modresorts_2.0.0/rule_help/TWAS/ruleinfo/appmigration/cloud/Databases.html"

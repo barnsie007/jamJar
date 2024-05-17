@@ -1,0 +1,7 @@
+ Detected pom.xml, setting build tool type to "maven"
+ Using 'mvn --version' for maven home location
+  Running recipe(s)...
+  Changes have been made to websphere-cafe-web/src/main/resources/META-INF/persistence.xml by
+      com.ibm.testRecipe
+          org.openrewrite.java.migrate.JpaCacheProperties
+  Please review and commit the results.

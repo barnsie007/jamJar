@@ -1,0 +1,75 @@
+INFO: Detected pom.xml, setting build tool type to "maven"
+INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.acme.modres:modresorts >---------------------
+[INFO] Building ModResorts 2.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ modresorts ---
+[INFO] Deleting /root/source/modresorts/modresorts/target
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources to /root/source/modresorts/modresorts/target/liberty/wlp/usr/shared/config/lib/global
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ modresorts ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 11 source files with javac [debug target 1.8] to target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /root/source/modresorts/modresorts/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ modresorts ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug target 1.8] to target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ modresorts ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.pom (4.5 kB at 13 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.2/surefire-providers-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.2/surefire-providers-3.2.2.pom (2.5 kB at 94 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.pom (2.7 kB at 109 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.jar (27 kB at 650 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.jar (18 kB at 418 kB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- war:3.1.0:war (default-war) @ modresorts ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [modresorts] in [/root/source/modresorts/modresorts/target/modresorts-2.0.0]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [/root/source/modresorts/modresorts/src/main/resources] to [/root/source/modresorts/modresorts/target/modresorts-2.0.0]
+[INFO] Copying webapp resources [/root/source/modresorts/modresorts/WebContent]
+[INFO] Webapp assembled in [69 msecs]
+[INFO] Building war: /root/source/modresorts/modresorts/target/modresorts-2.0.0.war
+[INFO] 
+[INFO] --- resources:3.2.0:copy-resources (copy-resources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.067 s
+[INFO] Finished at: 2024-04-04T09:29:10-04:00
+[INFO] ------------------------------------------------------------------------
+[0m

@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Detailed Migration Analysis Report</title>
+<meta name="description" content="Detailed Migration Analysis Report">
+<meta name="author" content="IBM WebSphere Application Server Migration Toolkit for Application Binaries V24.0.0.1 Bv20240310_2333">
+<style type="text/css">
+html,body,div,iframe,h1,h2,h3,h4,p,a,em,sup,b,center,tfoot,ul,.archive-info,.analyze-bold{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}th h3{font-size:1em}table,thead,tbody,tr,td,th{margin:0;padding:0;font-size:100%;font:inherit;vertical-align:baseline}html{font-size:100%}.log-message-title{padding-top:50px}.log-message-textbox{background-color:white;padding:20px}.rec-generateConfig{list-style:disc inside;margin-left:20px}.command-text{font-style:italic;font-weight:800;font-size:.875rem;color:#c0504d}.summary-tooltip{margin:.5rem 1rem;font-size:.875rem}div.evaluate{margin-bottom:20px}.inventory table,.analyze table{border-collapse:collapse;border-spacing:0}.inventory .utility-jar-contents table{font-family:Arial,Helvetica,sans-serif;font-size:12px;border-collapse:separate;border-spacing:0;table-layout:fixed;page-break-inside:avoid;width:80%}.inventory .utility-jar-contents th,.inventory .utility-jar-contents td{text-align:left;width:30%}.inventory .utility-jar-contents th:first-child,.inventory .utility-jar-contents td:first-child{text-align:left;vertical-align:top;width:40%}.inventory .utility-jar-contents td{word-wrap:break-word}.inventory .duplicate-jar-contents table{font-family:Arial,Helvetica,sans-serif;font-size:12px;border-collapse:separate;border-spacing:0;table-layout:fixed;page-break-inside:avoid;width:90%}.inventory .duplicate-jar-contents td,.inventory .duplicate-jar-contents th{text-align:left;vertical-align:top;width:35%}.inventory .duplicate-jar-contents td:first-child,.inventory .duplicate-jar-contents th:first-child{text-align:left;vertical-align:top;width:35%}.inventory .duplicate-jar-contents td{word-wrap:break-word}.inventory .conflicting-jar-contents table{font-family:Arial,Helvetica,sans-serif;font-size:12px;border-collapse:separate;border-spacing:0;table-layout:fixed;page-break-inside:avoid;width:90%}.inventory .conflicting-jar-contents td,.inventory .conflicting-jar-contents th{text-align:left;vertical-align:top;width:35%}.inventory .shared-library-contents td,.inventory .shared-library-contents th{text-align:left;vertical-align:top;width:20%}.inventory .conflicting-jar-contents td:first-child,.inventory .conflicting-jar-contents th:first-child{text-align:left;vertical-align:top;width:50%}.inventory .shared-library-contents td:last-child,.inventory .shared-library-contents th:last-child{text-align:left;vertical-align:top;width:60%}.summary-item{margin:0}.summary-item-title{margin-bottom:0;font-weight:bold}.deployment-targets{margin:30px 0;padding:3px 15px;border-top:3px solid white;border-bottom:3px solid white;background-color:white}li.targets-root{position:relative;top:-10px}ul.targets,ul.targets ul{list-style:none;margin:0;padding:0;margin-top:5px}ul.targets ul{margin-left:15px}ul.targets ul ul{margin-left:43px}ul.targets li{margin:0;padding:0 7px;line-height:20px;font-size:14px;border-left:2px solid #646464}ul.targets li svg{position:relative;top:12px;margin-right:4px;width:24px}ul.targets li:last-child{border-left:0}ul.targets li:not(.targets-root):before{position:relative;top:-3.2px;height:32px;width:30px;color:white;border-bottom:2px solid #646464;content:"";display:inline-block;left:-7px}ul.targets li:last-child:before{border-left:2px solid #646464}.treeKey ul{padding-bottom:25px}.treeKey li{float:left;font-size:16px}.rectangle{position:relative;display:inline-block;width:20px;height:10px;background:green;margin-left:5px;margin-right:3px}.unused{background-color:#f0f}.missing{background-color:#008000}.websphere{background-color:#9855d4}.thirdparty{background-color:orange}.javaee{background-color:#478de4}.dup{background-color:red}.evaluate table,.inventory table{font-family:Arial,Helvetica,sans-serif;font-size:12px;border-collapse:separate;border-spacing:0;table-layout:fixed;page-break-inside:avoid;width:100%}.evaluate table th,.evaluate table td,.inventory table th,.inventory table td{font-size:1.1em;line-height:1.3em;padding:10px 10px;width:8%}.evaluate table thead,.inventory table thead{margin-top:26px}.evaluate table .highlight{background:#d4f0ff}.evaluate table .banner th{font-size:1em;letter-spacing:.4px;padding:6px 6px 6px 10px}.evaluate table th:first-child,.evaluate table td:first-child{width:18%}.inventory table th:first-child,.inventory table td:first-child{width:20%;word-wrap:break-word}.inventory table tr th{font-weight:bold;text-align:center;vertical-align:bottom}.evaluate table tr th{font-weight:bold;text-align:left;vertical-align:bottom}.inventory table tr,.evaluate table tr{text-align:center}.inventory tr.alternate-row>td,.inventory tr.alternate-row>th,.evaluate tr.alternate-row>td{background:#f6f6f6}.evaluate table th{border-right:1px solid #d6d6d6;border-top:1px solid #d6d6d6}.inventory table td,.inventory table th,.evaluate table td{background:#fff;border-right:1px solid #d6d6d6;border-top:1px solid #d6d6d6;vertical-align:middle}.evaluate table th[colspan="0"]{background:#d6d6d6;color:#5a5a5a;font-weight:bold;text-transform:uppercase}.inventory table td:first-child,.inventory table th:first-child,.evaluate table td:first-child{text-align:left;word-wrap:break-word}.inventory table td:last-child,.inventory table th:last-child,.evaluate table td:last-child{border-right:0 none}.evaluate table .checkmark{font-size:large;color:#136800;font-weight:bold}.disclaimer{font-size:.8em;margin:10px 0;text-align:center}.footnotetech{padding-left:.25em}.footnote{padding-right:.25em}details,nav{display:block}body{line-height:1}ul{list-style:none}body{background:#ededed;color:#333;font-size:1em;font-family:"HelvRegularIBM","Helvetica Neue",Arial,sans-serif;padding-bottom:22px;position:relative}h1{font-size:1.75em;font-weight:bold}h1:first-of-type{margin-top:20px}h2{color:#008571;font-size:1.3em;font-weight:bold}h3{font-size:1.125em;font-weight:bold}h1,h2,h3,h4,.archive-info,.analyze-bold,p{margin:10px 0}p,a,.interactable-div{font-size:.875rem}.interactable-div{cursor:pointer}p>a{font-size:1em}a,.interactable-div{color:#333;text-decoration:none}p b,caption b{font-weight:bold}a:hover{color:#203c60;text-decoration:underline}.interactable-div:hover{color:#203c60;text-decoration:underline}ul ul .indent1{padding-left:20px}ul ul .indent2{padding-left:40px}ul ul .indent3{padding-left:60px}ul ul .indent4{padding-left:80px}ul ul .indent5{padding-left:100px}pre{background:#fff;font-family:"Courier New",Courier,monospace,sans-serif;font-size:.8em;line-height:20px;padding:0 20px;text-align:left;overflow:auto;width:100%}.blueAnchor{color:#203c60;text-decoration:underline}code{color:#333;font-family:"Courier New",Courier,monospace,sans-serif;font-size:.875em;text-align:left;display:block;white-space:pre-wrap}li code{color:#333;font-family:"Courier New",Courier,monospace,sans-serif;font-size:.875em;text-align:left;display:inline}.courier{font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace}.bolden{font-weight:bold;font-family:"HelvNeueBold"}.scan_options{font-weight:bold;font-family:"HelvNeueBold";font-size:1.1em}.bulletList{font-size:.75em;list-style:disc;margin-left:20px;line-height:1.75em}.analyze .flash__numbers,.inventory .flash__numbers{font-family:"HelvBoldIBM","HelveticaNeue-Bold","Helvetica Neue Bold","HelveticaNeue","Helvetica Neue",Helvetica,Arial,Roboto,sans-serif;font-size:2.75em}.analyze .shared ul,.analyze .shared ol{list-style:disc inside;margin-left:20px}.analyze .shared li,.analyze .shared li{line-height:1em;margin:5px 0}.lineOverride li{line-height:1 !important;margin:0 0 !important}.archivePath{word-wrap:break-word}.wrapper{position:relative;margin-right:auto;margin-left:auto;width:96%}.wrapper:nth-child(2){padding-bottom:22px}.clear{clear:both}.show{display:block}.hide{display:none}.inventory .wrapSummary{position:relative}.inventory .wrapSummary table{width:85%}.wrapSummary canvas{right:0;top:0}.fixedCanvasContainer{position:relative;height:400px}.fixedCanvas{max-height:400px}.floating-box-narrow{display:inline-block;min-height:400px;width:30%}.floating-box-wide{width:69%;display:inline-block;min-height:50px}.evaluate .floating-box-wider{width:100%;display:inline-block}.evaluate .floating-box{width:100%;display:inline-block}.inventory .floating-box-medium{display:inline-block;min-height:200px;width:50%}.performance-considerations{width:50%}.performance-considerations-list-of-jars{margin-top:15px}.nav-wrapper{background-color:#fff;position:absolute;right:0;top:0;z-index:5}.fixed nav{position:fixed;right:2%;top:0}.fixed-in-bluemix nav{position:fixed;top:52px}.na-fixed nav{position:relative}.na-fixed #backToTopNav{display:none}.fixed-in-bluemix #backToTopNav,.fixed #backToTopNav{display:block}nav ul{padding:0;margin:0;list-style:none;position:relative}.redCode{color:#d1160c}nav li{background-color:#203c60;color:#fff;display:inline-block}nav a{color:#fff;display:block;font-size:.9em;min-width:88px;padding:15px 60px 15px 10px;position:relative;text-align:right;text-decoration:none}nav a .scroll-bottom-caret{font-family:arial;font-size:50px;position:absolute;right:15px;top:-5px;transform:scale(1,.5)}nav a:hover{background-color:#203c60;color:#fff;text-decoration:none}nav ul ul{border:1px solid #d6d6d6;display:none;max-height:85vh;overflow:auto;position:absolute;right:0;top:100%}nav ul li:hover>ul{display:block}nav ul ul li{background-color:#fff;display:list-item;float:none;min-width:400px;position:relative}nav ul ul a{color:#000;line-height:18px;padding:9px 20px 9px 40px;text-align:left}nav ul ul .na-title{font-weight:bold;padding-left:20px}.consolidated nav ul ul .na-sub-title{padding-left:30px}nav ul ul .na-sub-title{font-weight:bold;padding-left:25px}nav ul ul .na-sub-sub-title{padding-left:50px}.date-time{margin-bottom:5px}.date-time+.courier{margin-top:5px}.date-time .date{margin-right:10px}.recap{margin-top:20px}.recap ul{overflow:hidden}.inventory .recap li{background:#fff;display:block;float:left;margin:10px;padding:10px 3px;width:11.5%;min-height:100px;text-align:center;word-wrap:break-word}.analyze .recap li{background:#fff;display:block;float:left;margin:10px;padding:10px 3px;width:14.5%;min-height:125px;text-align:center}.consolidated .recap-alternate li,.inventory .recap-alternate li{background:#ededed;display:block;float:left;margin:10px;padding:10px 3px;width:14.5%;min-height:125px;max-height:125px;text-align:center}.recap li:first-child{margin-left:0}.analyze>.wrapper>.recap li:last-child{background:transparent;margin-right:0;padding:0;text-align:left;min-width:49.5%;max-width:49.5%}.analyze>.wrapper>.recap li:last-child p{font-size:.8em;margin:5px 0 8px;line-height:1.3em}.header-sections{margin-top:20px;overflow:hidden}.consolidated-header-sections{overflow:hidden}.consolidated-header-sections h2{margin-top:0}.header-sections h2,.consolidated-header-sections h2,.maven-gradle-holder,.maven-gradle-holder a,.expand-collapse-holder,.expand-collapse-holder a,.expand-collapse-holder .interactable-div{display:inline-block}.analyze .header-sections h2,.inventory .header-sections h2,.analyze .expand-collapse-holder,.inventory .expand-collapse-holder{line-height:42px}.analyze .header-sections h2,.inventory .header-sections h2,.analyze .maven-gradle-holder a,.analyze .expand-collapse-holder a,.analyze .expand-collapse-holder .interactable-div,.inventory .expand-collapse-holder a,.inventory .expand-collapse-holder .interactable-div{float:left}.analyze .header-sections h2,.inventory .header-sections h2{margin-top:0}#rewritegradleconfig-copyarea,#rewritemavenconfig-copyarea,#serverxml-copyarea{width:80%;background-color:#fff;border:1px solid #63349b;border-left:8px solid #63349b;border-radius:3px;word-wrap:break-word;position:relative;padding:10px}#copyarea:not(div){overflow:hidden}#rewritegradleconfig-copyimg,#rewritemavenconfig-copyimg,#serverxml-copyimg{cursor:pointer;border:1px dashed #cac6c6;border-radius:3px;padding:5px;background-color:#f07d84}.copyButton{border:hidden;white-space:unset;display:inline-block;border:0;position:absolute;top:0;right:0}textarea{position:absolute;left:-100%}.maven-gradle-holder,.expand-collapse-holder{float:right;margin-top:4px;margin-bottom:4px}.maven-gradle-holder a,.expand-collapse-holder a,.expand-collapse-holder .interactable-div{border-right:1px solid #000;color:#203c60;line-height:12px;margin-right:0;padding:5px 15px 10px}.maven-gradle-holder a:last-child,.expand-collapse-holder a:last-child,.expand-collapse-holder .interactable-div:last-child{border-right:0 none}.maven-gradle-holder .disabled,.expand-collapse-holder .disabled{color:#203c60;cursor:default;opacity:.75;pointer-events:none}.detailed-results-title{color:#008571}.consolidated .detailed-results-by-severity{padding:0}.detailed-results-by-severity,.detailed-results-config{padding:20px;background:#fff}.consolidated .detailed-results-by-rule{margin-left:0}.detailed-results-by-rule{padding-bottom:0;margin-left:5px;padding-top:10px;background:#ededed}.rule{background:#fff;margin-bottom:40px;padding:20px;position:relative}.rules{margin:10px;padding:15px;width:95%}.rule:last-child{margin-bottom:0}.rule-title h3{display:inline-block}.rule-title h3{margin:0;line-height:22px;width:70%}.rule-title h3 em{font-size:.8em;font-weight:normal}.trees{border-bottom:3px solid #d6d6d6;border-top:3px solid #d6d6d6;margin-bottom:5px;margin-top:5px;padding-bottom:5px;clear:left;overflow:visible}.horizontal-breaks{border-top:3px solid #d6d6d6;margin-bottom:15px;margin-top:15px;padding-top:10px}.inventory .inventory-details-by-app{padding-bottom:22px}.archive{background:#fff;margin-bottom:40px;padding:20px;position:relative}.problemSummary{background:#fff;margin-bottom:40px;padding:20px;position:relative}.archive:last-child{margin-bottom:0}.archive-title h3{display:inline-block}.archive-title h3{margin:0;line-height:22px;width:70%}.archive-title h3 span{font-size:.8em;font-weight:normal}.js-toggle-actions{display:inline-block;position:absolute;text-align:center;top:19px;right:20px}.js-toggle-actions a,.interactable-div{color:#203c60;display:inline-block;float:left;padding:5px 10px}.rule-fix,.rule-result{margin-top:20px}.rule-fix h3,.rule-additional-help h3,.rule-result h3{margin-bottom:20px}.rule-fix h4{font-weight:bold}.rule-fix p,.rule-additional-help p,.rule-result p{line-height:1.5em}.rule-fix a,.rule-additional-help a{color:#203c60;text-decoration:underline}.rule-fix{border-bottom:3px solid #d6d6d6;margin-bottom:30px;margin-top:30px;padding-bottom:20px}.rule-additional-help{background-color:#fff;padding-left:20px;padding-bottom:10px}.rule-additional-help h3:first-child{padding-top:10px}.analyze .table-code{width:100%}.rule-fix pre,.rule-additional-help pre{padding:10px 0 10px 20px;width:auto;white-space:pre;white-space:-moz-pre;white-space:-pre;white-space:-o-pre;word-wrap:break-word}.consolidated .connectivity-summary{padding-top:0;padding-left:0;padding-right:0}.connectivity-summary{background:#fff;margin-bottom:20px;padding:20px}.connectivity-summary table{font-family:Arial,Helvetica,sans-serif;font-size:.8em;border-collapse:separate;border-spacing:0;table-layout:fixed;width:100%}.connectivity-summary table caption{line-height:1.4em;padding-bottom:20px;text-align:left}.connectivity-summary tr.summary{background:#d4f0ff}.connectivity-summary tr.hiddenRow{display:none;vertical-align:middle;visibility:hidden}.connectivity-summary tr.visibleRow{vertical-align:middle;visibility:visible}.connectivity-summary tr.summary .col1summarymodule{font-weight:bold;word-break:break-all}.connectivity-summary tr.visibleRow .col1main{padding-left:.2em;word-wrap:break-word}.connectivity-summary tr.visibleRow .col1child{padding-left:.7em;word-wrap:break-word}.connectivity-summary tr.visibleRow .col1grandchild{padding-left:1.2em;word-wrap:break-word}.connectivity-summary th,.connectivity-summary td{border-bottom:1px solid #d6d6d6;border-right:1px solid #d6d6d6;line-height:1.2em;text-align:center;width:8%}.connectivity-summary th:first-child,.connectivity-summary td:first-child,.connectivity-summary .visibleRow td:first-child{text-align:left;width:15%}.connectivity-summary .summary td:first-child:hover{cursor:pointer}.connectivity-summary th:last-child,.connectivity-summary td:last-child{border-right:0 none}.connectivity-summary th{color:#5a5a5a;font-weight:bold;padding:.5em;vertical-align:bottom}.connectivity-summary td{padding:.5em}.rule-result table{font-family:Arial,Helvetica,sans-serif;table-layout:fixed;width:100%}.rule-result tbody tr{border-top:1px solid #d6d6d6}.rule-result tbody tr.results{border-top:0 none}.rule-result th,.rule-result td{font-size:.875em;line-height:1.2em;padding-bottom:10px;padding-left:0;padding-right:10px;padding-top:10px;text-align:left;width:23%;white-space:pre-wrap;word-wrap:break-word}.rule-result tr.header-archive th[colspan="4"]{padding-left:5px;background-color:#ededed;font-weight:bold}.custom-colspan{background-color:#ededed;font-weight:bold}.custom-colspan td{padding-left:5px}.rule-result td.indentFileName{padding-left:15px}.rule-result th:first-child,.rule-result td:first-child{width:40%}.rule-result th:last-child,.rule-result td:last-child{width:10%;text-align:right}.rule-result th[colspan="4"]{text-align:left}.rule-result thead th{color:#5a5a5a;font-weight:bold;padding-top:0;text-transform:uppercase;vertical-align:bottom}.rule-result td:first-child{padding-right:30px}.rule-result td{vertical-align:top}.rule-severity table{font-family:Arial,Helvetica,sans-serif;table-layout:fixed;width:100%}.rule-severity tbody tr{border-top:1px solid #d6d6d6}.rule-severity th,.rule-severity td{font-size:.875em;line-height:1.2em;padding-bottom:10px;padding-left:0;padding-right:10px;padding-top:10px;text-align:left;width:15%;white-space:pre-wrap;word-wrap:normal}.rule-severity th:first-child,.rule-severity td:first-child{text-align:center;width:10%}.rule-severity th:last-child,.rule-severity td:last-child{width:50%;text-align:left}.rule-severity td.center,.rule-severity th.center{text-align:center}.rule-severity td.severity-label,.rule-severity th.severity-label{width:10%}.rule-severity th{color:#5a5a5a;font-weight:bold;padding-top:0;text-transform:uppercase;vertical-align:bottom}.rule-severity td{vertical-align:top}.rule-severity-summary{background:#fff;padding:20px 20px 20px 20px;position:relative}#jsRulesAnalyzedTitle{margin-top:22px;position:relative}.detailed-analysis-by-rule{background:#fff;padding:20px 20px 50px 20px;position:relative}.detailed-analysis-by-rule.read-more{height:auto}.detailed-analysis-by-rule.read-less{height:400px;overflow:hidden}.detailed-read-more-button{background-color:#f6f6f6;background-image:-ms-linear-gradient(top,#fff 0,#f6f6f6 27%,#ededed 100%);background-image:-moz-linear-gradient(top,#fff 0,#f6f6f6 27%,#ededed 100%);background-image:-o-linear-gradient(top,#fff 0,#f6f6f6 27%,#ededed 100%);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(27,#f6f6f6),color-stop(100,#ededed));background-image:-webkit-linear-gradient(top,#fff 0,#f6f6f6 27%,#ededed 100%);background-image:linear-gradient(to bottom,#fff 0,#f6f6f6 27%,#ededed 100%);bottom:0;color:#203c60;display:block;height:20px;left:0;padding:20px 0;position:absolute;text-align:center;width:100%}.detailed-analysis-by-rule h4,.detailed-analysis-by-rule h5,.analyze-bold,.rule-type{font-weight:bold}.analyzed-rule h3,.analyzed-rule h4,.analyzed-rule h5,.analyze-bold,.rule-type{margin-bottom:15px}.analyzed-rule ul{margin-bottom:20px;margin-top:20px}.analyze-bold-small{display:block;font-size:.83em;margin-block-start:1.67em;margin-block-end:1.67em;margin-inline-start:0;margin-inline-end:0;font-weight:bold}.archive-details{margin-bottom:20px;margin-top:20px;padding-bottom:10px}.inventory .archive-details h3{margin-bottom:20px}.cons-li-p,.inventory .archive-details p{line-height:1.5em}.inventory .archive-details a{color:#203c60;text-decoration:underline}@keyframes shake{10%,90%{transform:translate3d(-1px,0,0)}20%,80%{transform:translate3d(2px,0,0)}30%,50%,70%{transform:translate3d(-4px,0,0)}40%,60%{transform:translate3d(4px,0,0)}}.shake{-webkit-animation-name:animation;-webkit-animation-duration:2s;-webkit-animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;-webkit-animation-play-state:running;animation-name:animation;animation-duration:2s;animation-timing-function:ease-in-out;animation-iteration-count:1;animation-play-state:running;background-color:#fff}@-webkit-keyframes animation{100.0{background-color:#d4f0ff}50.0{background-color:#e9f7ff}0{background-color:#fff}}@keyframes animation{100.0{background-color:#d4f0ff}50.0{background-color:#e9f7ff}0{background-color:#fff}}.is-paused{animation-play-state:paused}.rule-fix table.borders,.rule-additional-help table.borders{table-layout:auto;width:auto;border-collapse:collapse;border:solid 2px gray;border-spacing:0}.rule-fix .borders td,.rule-additional-help .borders td,.rule-fix .borders th,.rule-additional-help .borders th,.rule-fix .borders tr,.rule-additional-help .borders tr,.rule-fix .borders thead,.rule-additional-help .borders thead{table-layout:auto;width:auto;border-collapse:collapse;border:solid 1px gray;padding:5px;vertical-align:text-top}.rule-fix .borders thead.highlight,.rule-additional-help .borders thead.highlight{background:#d4f0ff}.rule-fix table.borders tr:nth-child(even){background:#f2f2f2}.rule-fix table.borders tr:nth-child(odd){background:white}.rule-fix table.borders thead.highlight tr th{background:#d4f0ff}.rule-fix ul{list-style:disc outside;margin-left:20px}.rule-fix ol{list-style:decimal outside;margin-left:20px}.svg{position:relative;display:inline-block;width:28px;height:28px;margin-right:3px}.svg-small{position:relative;display:inline-block;width:20px;height:20px;margin-right:3px}.center{vertical-align:middle}.rule-category{background-color:#203c60;border-radius:5px;color:white;font-size:1em;padding:3px 6px;margin-left:20px}.analyze table.code{table-layout:auto;width:auto;border-collapse:collapse;border:solid 2px gray;border-spacing:0;background-color:#f7f8f9}.analyze table.code td{table-layout:auto;width:auto;border-right:1px;border-bottom:1px;border:solid 1px gray;padding:5px}.analyze .Italic{font-family:tahoma;font-size:80%;font-style:italic}.analyze .Strong{font-family:tahoma;font-size:80%;font-weight:bold}.analyze .Header{font-family:tahoma;font-size:16px;color:black;font-weight:bold}.analyze .SubHeader{font-size:100%;color:black;font-weight:bold}.analyze .SectionHeader{font-size:90%;color:black;font-weight:bold}.analyze .Code{font-family:monospace;color:black;font-size:100%}.analyze .JavaType{font-family:tahoma;font-size:80%;color:black}.analyze .JavaKeyword{font-family:tahoma;font-size:80%;color:#7f0055;font-weight:bold}.analyze .JavaConst{font-family:tahoma;font-size:80%;color:#2a00ff}.analyze .JavaComment{font-family:tahoma;font-size:80%;color:#2c5959}.analyze .Javadoc{font-family:tahoma;font-size:80%;color:blue}.analyze .XmlDefinition{font-family:tahoma;font-size:80%;color:black;font-style:italic}.analyze .XmlElement{font-family:tahoma;font-size:80%;color:#2c5959}.analyze .XmlElementVal{font-family:tahoma;font-size:80%;color:black}.analyze .XmlAttr{font-family:tahoma;font-size:80%;color:#7f007f}.analyze .XmlAttrVal{font-family:tahoma;font-size:80%;color:#2a00ff;font-style:italic}.analyze .indent{padding-left:10px}.analyze .indent2{padding-left:20px}.analyze .indent3{padding-left:30px}.analyze .indent4{padding-left:40px}.analyze .tableIndent1{margin-left:20px}.analyze .FilePath{font-style:italic}.node circle{cursor:pointer;fill:#fff;stroke:steelblue;stroke-width:1.5px}.node text{font-size:14px}path.link{fill:none;stroke:#ccc;stroke-width:1.5px}.alternate{background:#ededed}@media screen and (forced-colors:active){@media(prefers-color-scheme:dark){.critical-icon .cls-critical{fill:#fa4d56}.info-icon .cls-info{fill:#4589ff}}.targets svg{fill:buttonText}}@media print{@page{margin-left:.5cm;margin-right:.5cm;margin-top:1.5cm;margin-bottom:1.5cm}body,.evaluate table{font-size:.8em}.analyze a:link,.inventory a:link,.analyze a:visited,.inventory a:visited{color:#781351}.inventory h2,.inventory h3{page-break-after:avoid}.evaluate table th,.evaluate table td{padding:5px}.evaluate .highlight{color:#008571}.evaluate body{-webkit-print-color-adjust:exact}.evaluate .archive-title h3{page-break-before:always;margin-bottom:0}.noprint,.rule-title .js-toggle-actions,.archive-title .js-toggle-actions{display:none}.rule-fix.hide,.rule-result.hide,.detailed-analysis-by-rule.hide{display:block}.archive-details.hide{display:block}.flash__numbers{font-size:2.75rem}.circle{border:1px solid #000;font-size:14px;width:20px;padding:10px 0}.rule-category{border:1px solid #000}.inventory .wrapSummary{page-break-inside:avoid}.inventory .recap{page-break-before:avoid;page-break-inside:avoid}.analyze .recap li,.inventory .recap li{border:1px solid #000;margin:5px}.analyze>.wrapper>.recap li:last-child{border:0 none}.header-sections{margin-top:0}.inventory .header-sections,.evaluate .header-sections{page-break-after:avoid}.consolidated>.wrapper>ul>li>div.archive-title{border-top:4px solid #000}.archive{padding:0}.problemSummary{padding:0}#inventoryDetailsByApp{border-top:4px solid #000;padding-top:22px}.archive-details{padding-left:15px;page-break-before:avoid;margin-bottom:10px;margin-top:10px;padding-bottom:10px;height:auto;max-height:none}.archive-title{page-break-after:avoid}.evaluate .archive-title{page-break-before:always}.utility-jar-contents{page-break-before:avoid}.connectivity-summary,.rule{padding:0}.connectivity-summary{padding-bottom:22px}.connectivity-summary table tr.hiddenRow{display:table-row;vertical-align:middle;visibility:visible}.connectivity-summary table tr.summary td{border-bottom:4px solid #000;border-top:4px solid #000}.connectivity-summary th,.connectivity-summary td{font-size:10px}.connectivity-summary th{word-break:break-all}.connectivity-summary td{padding:5px}#detailResultsByRule{border-top:4px solid #000;padding-top:22px}#AdditionalHelpTitle{border-top:4px solid #000;padding-top:22px}#jsRulesAnalyzedTitle{border-top:4px solid #000;padding-top:22px}.rules li{list-style:inside disc;list-style:none}.rule-fix,.rule-additional-help,.rule-result{padding-left:15px}.rule-fix,.rule-additional-help{margin-bottom:10px;margin-top:10px;padding-bottom:10px;height:auto;max-height:none}.detailed-analysis-by-rule.read-less{height:auto;overflow:auto;padding:0}.detailed-analysis-by-rule.read-less .detailed-read-more-button{display:none}.code-comparison-table td{border-bottom:1px solid #000;border-right:1px solid #000;border-top:1px solid #000;width:auto}.code-comparison-table td pre{display:block;margin:0 auto}.rule-fix pre{border:1px solid #000;margin:0 0 0 20px;padding:0 0 0 10px;width:95%}.inventory .wrapper:nth-child(2),.evaluate .wrapper:nth-child(2){padding-bottom:0}.trees{height:auto;width:auto;max-height:none;overflow:visible}.floating-box-wide{height:auto;width:auto;max-height:none;overflow:visible}.floating-box-wider{height:auto;width:auto;max-height:none;overflow:visible}.evaluate .inventory-details-by-app{page-break-before:always}.evaluate table{page-break-before:avoid;margin-top:1px;border-left:1px solid #d6d6d6;border-right:1px solid #d6d6d6;border-bottom:1px solid #d6d6d6}.evaluate table th{border-top:1px solid #d6d6d6}.evaluate table td[colspan="0"]{padding-left:5px}}</style>
+</head>
+<body id="top" class="analyze">
+  <div id="wrapper" class="wrapper" role="main">
+  <div class="nav-wrapper na-fixed noprint" role="navigation" aria-label="Report Navigation Menu">
+    <nav class="jump-to-nav" aria-label="Report Navigation Menu Links">
+      <ul>
+        <li><a href="#">Jump To Rule<div class="scroll-bottom-caret show">v</div></a>
+          <ul class="inner--list--hide">
+            <li id="backToTopNav"><a href="#top" class="na-title jump-item">Back to top</a></li>
+            <li><a href="#ruleSeveritySummary" class="na-title jump-item">Rule Severity Summary</a></li>
+            <li><a href="#analyze_ConnectivitySummary" class="na-title jump-item">Connectivity Rules Summary</a></li>
+            <li><a href="#detailResultsByRule" class="na-title jump-item">Detailed Results by Rule</a></li>
+<li><a href="#analyze_severity1" class="na-sub-title jump-item"><svg class="center svg-small critical-icon" aria-labelledby="jump-to-severe-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="jump-to-severe-title">Critical</title>
+<desc>Critical rules indicate an API removal or behavior change that will break the application and must be addressed if used.</desc>
+<defs>
+<style> .cls-critical { fill: #da1e28; } </style>
+</defs>
+<g>
+<path d="M16,2A13.91,13.91,0,0,0,2,16,13.91,13.91,0,0,0,16,30,13.91,13.91,0,0,0,30,16,13.91,13.91,0,0,0,16,2Zm5.4,21L9,10.6,10.6,9,23,21.4Z" class="cls-critical" />
+<path d="M21.4,23,9,10.6,10.6,9,23,21.4Z" fill="none" />
+</g>
+</svg>
+<span class="center">Critical Rules</span></a></li>            <li><a href="#category1" class="na-sub-sub-title jump-item">WebSphere traditional to Liberty (5)</a></li>
+<li><a href="#analyze_severity2" class="na-sub-title jump-item"><svg class="center svg-small warning-icon" aria-labelledby="jump-to-warning-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="jump-to-warning-title">Warning</title>
+<desc>Warning rules indicate differences exist that might need to be addressed.</desc>
+<g>
+<path d="M29.89,28.07,17.06,3a1,1,0,0,0-1.35-.41,1,1,0,0,0-.41.4L2.13,27.88a1,1,0,0,0,0,1,1,1,0,0,0,.88.49l26,.18a1,1,0,0,0,.86-.49A1,1,0,0,0,29.89,28.07Z" fill="#f1c21b"/>
+<path d="M15,10.45l2.25,0-.07,10-2.25,0Zm1,16A1.5,1.5,0,1,1,17.53,25,1.5,1.5,0,0,1,16,26.46Zm-1-16,2.25,0-.07,10-2.25,0Zm1,16A1.5,1.5,0,1,1,17.53,25,1.5,1.5,0,0,1,16,26.46Z" fill="#161616"/>
+</g>
+</svg>
+<span class="center">Warning Rules</span></a></li>            <li><a href="#category2" class="na-sub-sub-title jump-item">WebSphere traditional to Liberty (1)</a></li>
+<li><a href="#analyze_severity3" class="na-sub-title jump-item"><svg class="center svg-small info-icon" aria-labelledby="jump-to-info-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="jump-to-info-title">Information</title>
+<desc>Information rules provide migration related considerations. Be aware of these rules during testing.</desc>
+<defs>
+<style> .cls-info { fill: #0f62fe; } </style>
+</defs>
+<path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16.14,8.29a1.29,1.29,0,0,1,0,2.57,1.29,1.29,0,1,1,0-2.57ZM19.57,23H12.71V21h2.47V15.25H13.57V13.33H17.1V21h2.47Z" class="cls-info"/>
+</svg>
+<span class="center">Information Rules</span></a></li>            <li><a href="#category3" class="na-sub-sub-title jump-item">Connectivity considerations for IBM Cloud (Containers and Virtual machines) (1)</a></li>
+            <li><a href="#category4" class="na-sub-sub-title jump-item">Containers (OpenShift, Kubernetes) (1)</a></li>
+            <li><a href="#category5" class="na-sub-sub-title jump-item">Technology connectivity considerations for IBM Cloud (3)</a></li>
+            <li><a href="#analyze_AdditionalRuleHelp" class="na-title jump-item">Additional Rule Help</a></li>
+            <li><a href="#jsAutomatedFixConfigurationTitle" class="na-title jump-item">Automated Fix Configuration</a></li>
+            <li><a href="#jsRulesAnalyzedTitle" class="na-title jump-item">Rules Analyzed</a></li>
+          </ul> <!-- end of first tier drop down -->
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <h1>Detailed Migration Analysis Report</h1>
+    <p class="date-time"><span class="date">4/6/24 8:27 AM</span></p>
+<p class="courier archivePath">&#x2F;opt&#x2F;IBM&#x2F;WebSphere&#x2F;AppServer&#x2F;profiles&#x2F;AppSrv01&#x2F;config&#x2F;cells&#x2F;demo-data-vm1Node01Cell&#x2F;applications&#x2F;ModResorts.ear&#x2F;ModResorts.ear </p>
+  <div class="recap">
+<ul>
+      <li><p class="flash__numbers bolden cons-li-p">8</p><p class="cons-li-p">Rules flagged</p></li>
+      <li><p class="flash__numbers bolden cons-li-p">11</p><p class="cons-li-p">Total results</p></li>
+    <li>
+          <p class="courier"><span class="scan_options">Source options</span><br/>&#8209;&#8209;sourceAppServer=was90 &#8209;&#8209;sourceJava=ibm8 &#8209;&#8209;sourceJavaEE=ee7</p>
+          <p class="courier"><span class="scan_options">Target options</span><br/>&#8209;&#8209;targetAppServer=openLiberty &#8209;&#8209;targetJava=ibm8 &#8209;&#8209;targetJavaEE=ee7 &#8209;&#8209;targetCloud=containers</p>
+          <p class="courier"><span class="scan_options">Scan options</span><br/>&#8209;&#8209;maxUserDefinedRuleResults=100 &#8209;&#8209;userRuleLocation=&#x2F;root&#x2F;jc&#x2F;transformationadvisor-3.9.0&#x2F;bin&#x2F;..&#x2F;conf&#x2F;userDefinedRules</p>
+          <p class="courier"><span class="scan_options">Excluded packages</span><br/>--excludePackages=ch.qos, com.cloudant, com.cognos, com.fasterxml, com.filenet, com.ibatis, com.ibm, com.informix, com.lowagie, com.mchange, com.meterware, com.microsoft, com.mongodb, com.mysql, com.sun, com.sybase, filenet, freemarker, groovy, jakarta, java, javax, net, oracle, org, sqlj, sun, twitter4j, _ibmjsp</p>
+    </li>
+    </ul>
+  </div>
+<div id="ruleSeveritySummary" class="detailed-results-header header-sections">
+  <h2 class="detailed-results-title">Rule Severity Summary</h2>
+</div>
+<div id="js-rule-severity" class="rule-severity-summary">
+<div class="rule-severity">
+<table summary="This table summarizes how many rules and rule results are included in the report for each rule severity. A description for each rule severity is also provided.">
+<thead>
+  <tr>
+    <th class="center">Symbol</th>
+    <th class="severity-label">Label</th>
+    <th class="center">Rules flagged</th>
+    <th class="center">Total results</th>
+    <th class="center">Rules <svg title="Automated Fix" class="center svg-small" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}</style><switch><foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"></foreignObject><g><path d="M16,27c-3.6,0-7.1-1.8-9.2-5H12v-2H4v8h2v-3.7c2.5,3,6.1,4.7,10,4.7V27z"/><path d="m31 23v-2h-2.1c-0.1-0.6-0.4-1.2-0.7-1.8l1.5-1.5-1.4-1.4-1.5 1.5c-0.5-0.3-1.1-0.6-1.8-0.7v-2.1h-2v2.1c-0.6 0.1-1.2 0.4-1.8 0.7l-1.5-1.5-1.4 1.4 1.5 1.5c-0.3 0.5-0.6 1.1-0.7 1.8h-2.1v2h2.1c0.1 0.6 0.4 1.2 0.7 1.8l-1.5 1.5 1.4 1.4 1.5-1.5c0.5 0.3 1.1 0.6 1.8 0.7v2.1h2v-2.1c0.6-0.1 1.2-0.4 1.8-0.7l1.5 1.5 1.4-1.4-1.5-1.5c0.3-0.5 0.6-1.1 0.7-1.8h2.1zm-7 2c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/><path d="M20,10h5.2C21.9,4.9,15.1,3.5,10,6.8c-3.1,2-5,5.5-5,9.2H3C3,8.8,8.8,3,16,3c3.9,0,7.5,1.7,10,4.7V4h2v8h-8V10z"/><rect class="st0" width="32" height="32"/></g></switch></svg></th>
+    <th class="center">Occurrences <svg title="Automated Fix" class="center svg-small" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}</style><switch><foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"></foreignObject><g><path d="M16,27c-3.6,0-7.1-1.8-9.2-5H12v-2H4v8h2v-3.7c2.5,3,6.1,4.7,10,4.7V27z"/><path d="m31 23v-2h-2.1c-0.1-0.6-0.4-1.2-0.7-1.8l1.5-1.5-1.4-1.4-1.5 1.5c-0.5-0.3-1.1-0.6-1.8-0.7v-2.1h-2v2.1c-0.6 0.1-1.2 0.4-1.8 0.7l-1.5-1.5-1.4 1.4 1.5 1.5c-0.3 0.5-0.6 1.1-0.7 1.8h-2.1v2h2.1c0.1 0.6 0.4 1.2 0.7 1.8l-1.5 1.5 1.4 1.4 1.5-1.5c0.5 0.3 1.1 0.6 1.8 0.7v2.1h2v-2.1c0.6-0.1 1.2-0.4 1.8-0.7l1.5 1.5 1.4-1.4-1.5-1.5c0.3-0.5 0.6-1.1 0.7-1.8h2.1zm-7 2c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/><path d="M20,10h5.2C21.9,4.9,15.1,3.5,10,6.8c-3.1,2-5,5.5-5,9.2H3C3,8.8,8.8,3,16,3c3.9,0,7.5,1.7,10,4.7V4h2v8h-8V10z"/><rect class="st0" width="32" height="32"/></g></switch></svg></th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+<td><svg class="center svg critical-icon" aria-labelledby="summary-severe-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="summary-severe-title">Critical</title>
+<desc>Critical rules indicate an API removal or behavior change that will break the application and must be addressed if used.</desc>
+<defs>
+<style> .cls-critical { fill: #da1e28; } </style>
+</defs>
+<g>
+<path d="M16,2A13.91,13.91,0,0,0,2,16,13.91,13.91,0,0,0,16,30,13.91,13.91,0,0,0,30,16,13.91,13.91,0,0,0,16,2Zm5.4,21L9,10.6,10.6,9,23,21.4Z" class="cls-critical" />
+<path d="M21.4,23,9,10.6,10.6,9,23,21.4Z" fill="none" />
+</g>
+</svg>
+</td>
+<td class="severity-label"><a class="blueAnchor jump-item" href="#analyze_severity1">Critical</a></td>
+<td class="center">3</td>
+<td class="center">5</td>
+<td class="center">3</td>
+<td class="center">5</td>
+<td>Critical rules indicate an API removal or behavior change that will break the application and must be addressed if used.</td>
+</tr>
+<tr>
+<td><svg class="center svg warning-icon" aria-labelledby="summary-warning-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="summary-warning-title">Warning</title>
+<desc>Warning rules indicate differences exist that might need to be addressed.</desc>
+<g>
+<path d="M29.89,28.07,17.06,3a1,1,0,0,0-1.35-.41,1,1,0,0,0-.41.4L2.13,27.88a1,1,0,0,0,0,1,1,1,0,0,0,.88.49l26,.18a1,1,0,0,0,.86-.49A1,1,0,0,0,29.89,28.07Z" fill="#f1c21b"/>
+<path d="M15,10.45l2.25,0-.07,10-2.25,0Zm1,16A1.5,1.5,0,1,1,17.53,25,1.5,1.5,0,0,1,16,26.46Zm-1-16,2.25,0-.07,10-2.25,0Zm1,16A1.5,1.5,0,1,1,17.53,25,1.5,1.5,0,0,1,16,26.46Z" fill="#161616"/>
+</g>
+</svg>
+</td>
+<td class="severity-label"><a class="blueAnchor jump-item" href="#analyze_severity2">Warning</a></td>
+<td class="center">1</td>
+<td class="center">1</td>
+<td class="center">0</td>
+<td class="center">0</td>
+<td>Warning rules indicate differences exist that might need to be addressed.</td>
+</tr>
+<tr>
+<td><svg class="center svg info-icon" aria-labelledby="summary-info-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="summary-info-title">Information</title>
+<desc>Information rules provide migration related considerations. Be aware of these rules during testing.</desc>
+<defs>
+<style> .cls-info { fill: #0f62fe; } </style>
+</defs>
+<path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16.14,8.29a1.29,1.29,0,0,1,0,2.57,1.29,1.29,0,1,1,0-2.57ZM19.57,23H12.71V21h2.47V15.25H13.57V13.33H17.1V21h2.47Z" class="cls-info"/>
+</svg>
+</td>
+<td class="severity-label"><a class="blueAnchor jump-item" href="#analyze_severity3">Information</a></td>
+<td class="center">4</td>
+<td class="center">5</td>
+<td class="center">0</td>
+<td class="center">0</td>
+<td>Information rules provide migration related considerations. Be aware of these rules during testing.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="summary-tooltip">The <svg title="Automated Fix" class="center svg-small" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}</style><switch><foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"></foreignObject><g><path d="M16,27c-3.6,0-7.1-1.8-9.2-5H12v-2H4v8h2v-3.7c2.5,3,6.1,4.7,10,4.7V27z"/><path d="m31 23v-2h-2.1c-0.1-0.6-0.4-1.2-0.7-1.8l1.5-1.5-1.4-1.4-1.5 1.5c-0.5-0.3-1.1-0.6-1.8-0.7v-2.1h-2v2.1c-0.6 0.1-1.2 0.4-1.8 0.7l-1.5-1.5-1.4 1.4 1.5 1.5c-0.3 0.5-0.6 1.1-0.7 1.8h-2.1v2h2.1c0.1 0.6 0.4 1.2 0.7 1.8l-1.5 1.5 1.4 1.4 1.5-1.5c0.5 0.3 1.1 0.6 1.8 0.7v2.1h2v-2.1c0.6-0.1 1.2-0.4 1.8-0.7l1.5 1.5 1.4-1.4-1.5-1.5c0.3-0.5 0.6-1.1 0.7-1.8h2.1zm-7 2c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/><path d="M20,10h5.2C21.9,4.9,15.1,3.5,10,6.8c-3.1,2-5,5.5-5,9.2H3C3,8.8,8.8,3,16,3c3.9,0,7.5,1.7,10,4.7V4h2v8h-8V10z"/><rect class="st0" width="32" height="32"/></g></switch></svg> symbol represents rules with an automated fix. These rules provide an OpenRewrite recipe to make the necessary code changes for you by running the OpenRewrite plugin.</div><div class="header-sections list-header"><h2 id="analyze_ConnectivitySummary" class="detailed-results-title">Connectivity Rules Summary</h2>
+</div>
+<div class="connectivity-summary">
+<table summary="This table summarizes the flagged connectivity rules for each Java archive.">
+<caption>This table summarizes the flagged connectivity rules for each Java archive. Select the links in the column header to view all detailed results for that rule. Select the number links within this table to view the detailed results for that specific Java archive.</caption>
+<thead>
+<tr class="results"> 
+<th class="col1module"></th>
+<th class="col2thru12"><a href="#analyze_DatabasesRule">Databases</a></th>
+<th class="col2thru12">Enterprise information systems (EIS)</th>
+<th class="col2thru12"><a href="#analyze_ApplicationSecurityRule">Java EE security</a></th>
+<th class="col2thru12">Java Message Service (JMS)</th>
+<th class="col2thru12">JavaMail server</th>
+<th class="col2thru12">Message-Driven Beans (MDB)</th>
+<th class="col2thru12">Remote EJB lookups</th>
+<th class="col2thru12">Remote EJB providers</th>
+<th class="col2thru12">Remote web services</th>
+<th class="col2thru12">Third-party security</th>
+<th class="col2thru12">Vendor specific messaging</th>
+</tr>
+</thead>
+<tbody>
+<tr class="summary"><td class="col1summarymodule"><span class="status">&#43;</span> ModResorts.ear</td>
+<td class="col2thru12"><a href="#analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war"><b>2</b></a></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"><a href="#analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war"><b>1</b></a></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+</tr>
+<tr class="hiddenRow" id="rowHiddenMod1-1">
+<td class="col1main">ModResorts.ear</td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+</tr>
+<tr class="hiddenRow" id="rowHiddenMod1-2">
+<td class="col1child">  modresorts-2.0.0.war</td>
+<td class="col2thru12"><a href="#analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">1</a></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"><a href="#analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">1</a></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+</tr>
+<tr class="hiddenRow" id="rowHiddenMod1-3">
+<td class="col1grandchild">    gson-2.10.1.jar</td>
+<td class="col2thru12"><a href="#analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar">1</a></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+<td class="col2thru12"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="detailResultsByRule" class="detailed-results-header header-sections">
+  <h2 class="detailed-results-title">Detailed Results by Rule</h2>
+  <div class="expand-collapse-holder noprint">
+    <a href="#" class="expand-all almighty">Expand all</a>
+    <a href="#" class="collapse-all almighty disabled">Collapse all</a>
+  </div>
+</div>
+<div class="detailed-results-by-severity">
+<div class="detailed-results-header">
+<h2 class="detailed-results-title" id="analyze_severity1">Critical Rules</h2></div><div class="detailed-results-by-rule"><p>
+<span class="rule-category" id="category1">
+WebSphere traditional to Liberty</span></p>  <ul class="rules">
+    <li id="analyze_WebSphereUnavailableSSOCookieMethod" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg critical-icon" aria-labelledby="do-not-use-the-wssecurityhelper-revokessocookies-method-severe-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="do-not-use-the-wssecurityhelper-revokessocookies-method-severe-title">Critical</title>
+<desc>Critical rules indicate an API removal or behavior change that will break the application and must be addressed if used.</desc>
+<defs>
+<style> .cls-critical { fill: #da1e28; } </style>
+</defs>
+<g>
+<path d="M16,2A13.91,13.91,0,0,0,2,16,13.91,13.91,0,0,0,16,30,13.91,13.91,0,0,0,30,16,13.91,13.91,0,0,0,16,2Zm5.4,21L9,10.6,10.6,9,23,21.4Z" class="cls-critical" />
+<path d="M21.4,23,9,10.6,10.6,9,23,21.4Z" fill="none" />
+</g>
+</svg>
+<svg title="Automated Fix" class="center svg" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}</style><switch><foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"></foreignObject><g><path d="M16,27c-3.6,0-7.1-1.8-9.2-5H12v-2H4v8h2v-3.7c2.5,3,6.1,4.7,10,4.7V27z"/><path d="m31 23v-2h-2.1c-0.1-0.6-0.4-1.2-0.7-1.8l1.5-1.5-1.4-1.4-1.5 1.5c-0.5-0.3-1.1-0.6-1.8-0.7v-2.1h-2v2.1c-0.6 0.1-1.2 0.4-1.8 0.7l-1.5-1.5-1.4 1.4 1.5 1.5c-0.3 0.5-0.6 1.1-0.7 1.8h-2.1v2h2.1c0.1 0.6 0.4 1.2 0.7 1.8l-1.5 1.5 1.4 1.4 1.5-1.5c0.5 0.3 1.1 0.6 1.8 0.7v2.1h2v-2.1c0.6-0.1 1.2-0.4 1.8-0.7l1.5 1.5 1.4-1.4-1.5-1.5c0.3-0.5 0.6-1.1 0.7-1.8h2.1zm-7 2c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/><path d="M20,10h5.2C21.9,4.9,15.1,3.5,10,6.8c-3.1,2-5,5.5-5,9.2H3C3,8.8,8.8,3,16,3c3.9,0,7.5,1.7,10,4.7V4h2v8h-8V10z"/><rect class="st0" width="32" height="32"/></g></switch></svg><span class="center">Do not use the WSSecurityHelper revokeSSOCookies method <em>(1)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpWSSecurityHelperRevokeSSOCookies" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>
+This rule flags the following deprecated method from the 
+<span class="Code">com.ibm.websphere.security.WSSecurityHelper</span>
+class: 
+</p>
+<ul>
+<li><span class="Code">revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span></li> 
+</ul>
+<p>This method is deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. 
+It is not available on Liberty.        
+</p>
+<p>
+The functionality provided by 
+<span class="Code">WSSecurityHelper.revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span>
+ is replaced by the Java Servlet-3.0 specification's <span class="Code">logout()</span> method.
+The Java Servlet-3.0 <span class="Code">logout()</span> method will perform all of the work that 
+<span class="Code">WSSecurityHelper.revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span> 
+performs as well as doing additional state clean up, such as invalidating the session and clearing the security 
+<span class="Code">Subject</span> from the thread.
+</p>
+<p>
+Use the new method to be compatible on both WebSphere Application Server traditional and Liberty. Also note that with the 
+<span class="Code">logout()</span> method in use, the application requires WebSphere Application 
+Server V8.0 or later.
+</p>
+<p>
+In the source scanner, the quick fix replaces calls to
+<span class="Code">revokeSSOCookies(HttpServletRequest req, HttpServletResponse res)</span>
+with calls to the <span class="Code">logout()</span> method.  For example, the following code
+</p>
+
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1" cellpadding="2px">
+<tr>
+<td>  
+import javax.servlet.http.HttpServletRequest; 
+<br>
+<span class="indent2"></span>...
+<br>
+<span class="indent2"></span>WSSecurityHelper.revokeSSOCookies(req, res);
+</td>
+</tr>
+</table>
+<p>is replaced by 
+</p>
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1" cellpadding="2px">
+<tr>
+<td>  
+import javax.servlet.http.HttpServletRequest; 
+<br>
+<span class="indent2"></span>...<br>
+<span class="indent2"></span>req.logout();
+</td>
+</tr>
+</table>
+<p>
+This rule has an automated fix. Copy the <a href="#analyze_AutomatedFixConfiguration">custom configuration</a> to your application build file to enable it.
+</p>
+<p>
+For additional information, see 
+</p>
+<ul>
+	<li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=providers-java-servlet-30-support-security" 
+	   title="Opens a new window" target="_blank" rel="noopener noreferrer">
+	   Java Servlet 3.0 support for security</a> documentation. 
+	</li>
+	<li><a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/com/ibm/websphere/security/WSSecurityHelper.html"                 
+	   title="Opens a new window" target="_blank" rel="noopener noreferrer">
+	   Class WSSecurityHelper</a> Java documentation. 
+	</li>
+	<li><a href="https://www.ibm.com/docs/en/was-nd/8.5.5?topic=applications-servlet-security-methods"                 
+	   title="Opens a new window" target="_blank" rel="noopener noreferrer">
+	   Servlet security methods</a> documentation. 
+	</li>
+
+
+
+</ul>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method">File name</th>
+    <th id="ref_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method">Reference details</th>
+    <th id="criteria_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method">Match criteria</th>
+    <th id="line_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_WebSphereUnavailableSSOCookieMethod-ModResorts.ear&#x2F;modresorts-2.0.0.war" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method analyze_WebSphereUnavailableSSOCookieMethod-ModResorts.ear&#x2F;modresorts-2.0.0.war">WEB-INF&#x2F;classes&#x2F;com&#x2F;acme&#x2F;modres&#x2F;LogoutServlet.class</td>
+<td headers="ref_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method analyze_WebSphereUnavailableSSOCookieMethod-ModResorts.ear&#x2F;modresorts-2.0.0.war">Method doGet</td>
+<td headers="criteria_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method analyze_WebSphereUnavailableSSOCookieMethod-ModResorts.ear&#x2F;modresorts-2.0.0.war">com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)</td>
+<td headers="line_Do-not-use-the-WSSecurityHelper-revokeSSOCookies-method analyze_WebSphereUnavailableSSOCookieMethod-ModResorts.ear&#x2F;modresorts-2.0.0.war">21</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+    <li id="analyze_ServerName" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg critical-icon" aria-labelledby="getting-the-server-name-on-liberty-severe-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="getting-the-server-name-on-liberty-severe-title">Critical</title>
+<desc>Critical rules indicate an API removal or behavior change that will break the application and must be addressed if used.</desc>
+<defs>
+<style> .cls-critical { fill: #da1e28; } </style>
+</defs>
+<g>
+<path d="M16,2A13.91,13.91,0,0,0,2,16,13.91,13.91,0,0,0,16,30,13.91,13.91,0,0,0,30,16,13.91,13.91,0,0,0,16,2Zm5.4,21L9,10.6,10.6,9,23,21.4Z" class="cls-critical" />
+<path d="M21.4,23,9,10.6,10.6,9,23,21.4Z" fill="none" />
+</g>
+</svg>
+<svg title="Automated Fix" class="center svg" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}</style><switch><foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"></foreignObject><g><path d="M16,27c-3.6,0-7.1-1.8-9.2-5H12v-2H4v8h2v-3.7c2.5,3,6.1,4.7,10,4.7V27z"/><path d="m31 23v-2h-2.1c-0.1-0.6-0.4-1.2-0.7-1.8l1.5-1.5-1.4-1.4-1.5 1.5c-0.5-0.3-1.1-0.6-1.8-0.7v-2.1h-2v2.1c-0.6 0.1-1.2 0.4-1.8 0.7l-1.5-1.5-1.4 1.4 1.5 1.5c-0.3 0.5-0.6 1.1-0.7 1.8h-2.1v2h2.1c0.1 0.6 0.4 1.2 0.7 1.8l-1.5 1.5 1.4 1.4 1.5-1.5c0.5 0.3 1.1 0.6 1.8 0.7v2.1h2v-2.1c0.6-0.1 1.2-0.4 1.8-0.7l1.5 1.5 1.4-1.4-1.5-1.5c0.3-0.5 0.6-1.1 0.7-1.8h2.1zm-7 2c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/><path d="M20,10h5.2C21.9,4.9,15.1,3.5,10,6.8c-3.1,2-5,5.5-5,9.2H3C3,8.8,8.8,3,16,3c3.9,0,7.5,1.7,10,4.7V4h2v8h-8V10z"/><rect class="st0" width="32" height="32"/></g></switch></svg><span class="center">Getting the server name on Liberty <em>(2)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpServerName" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>
+This rule flags references to the following methods:
+</p>
+<ul>
+<li><code>com.ibm.websphere.management.AdminService.getProcessName()</code></li>
+<li><code>com.ibm.ejs.ras.RasHelper.getServerName()</code></li>
+<li><code>com.ibm.websphere.runtime.ServerName.getDisplayName()</code></li>
+<li><code>com.ibm.websphere.runtime.ServerName.getFullName()</code></li>
+</ul>
+<p>
+These methods are not available on Liberty.
+</p>
+<p>
+This rule has an automated fix. Copy the <a href="#analyze_AutomatedFixConfiguration">custom configuration</a> to your application build file to enable the fix automation.
+</p>
+<p>
+The source scanner has a quick fix to change any reference to the methods mentioned earlier to <code>java.lang.System.getProperty("wlp.server.name")</code> 
+which retrieves the name of your Liberty server. This solution does not work on WebSphere Application Server traditional.
+<p>
+For alternative solutions, see the <a href="https://www.ibm.com/docs/en/was-liberty/base?topic=liberty-directory-locations-properties#rwlp_dirs__title__3" 
+title="Opens a new window" target="_blank" rel="noopener noreferrer">
+Programmatic access to location properties</a> section in the documentation.
+</p>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Getting-the-server-name-on-Liberty">File name</th>
+    <th id="ref_Getting-the-server-name-on-Liberty">Reference details</th>
+    <th id="criteria_Getting-the-server-name-on-Liberty">Match criteria</th>
+    <th id="line_Getting-the-server-name-on-Liberty">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">WEB-INF&#x2F;classes&#x2F;com&#x2F;acme&#x2F;modres&#x2F;WeatherServlet.class</td>
+<td headers="ref_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">Method configureEnvDiscovery</td>
+<td headers="criteria_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">com.ibm.websphere.runtime.ServerName.getDisplayName(*)</td>
+<td headers="line_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">243</td>
+</tr>
+<tr>
+<td headers="analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war"></td><td headers="ref_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">Method configureEnvDiscovery</td>
+<td headers="criteria_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">com.ibm.websphere.runtime.ServerName.getFullName(*)</td>
+<td headers="line_Getting-the-server-name-on-Liberty analyze_ServerName-ModResorts.ear&#x2F;modresorts-2.0.0.war">244</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+    <li id="analyze_RemoveWas2LibertyNonPortableJndiLookup" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg critical-icon" aria-labelledby="use-the-default-initialcontext-jndi-properties-severe-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="use-the-default-initialcontext-jndi-properties-severe-title">Critical</title>
+<desc>Critical rules indicate an API removal or behavior change that will break the application and must be addressed if used.</desc>
+<defs>
+<style> .cls-critical { fill: #da1e28; } </style>
+</defs>
+<g>
+<path d="M16,2A13.91,13.91,0,0,0,2,16,13.91,13.91,0,0,0,16,30,13.91,13.91,0,0,0,30,16,13.91,13.91,0,0,0,16,2Zm5.4,21L9,10.6,10.6,9,23,21.4Z" class="cls-critical" />
+<path d="M21.4,23,9,10.6,10.6,9,23,21.4Z" fill="none" />
+</g>
+</svg>
+<svg title="Automated Fix" class="center svg" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}</style><switch><foreignObject width="1" height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"></foreignObject><g><path d="M16,27c-3.6,0-7.1-1.8-9.2-5H12v-2H4v8h2v-3.7c2.5,3,6.1,4.7,10,4.7V27z"/><path d="m31 23v-2h-2.1c-0.1-0.6-0.4-1.2-0.7-1.8l1.5-1.5-1.4-1.4-1.5 1.5c-0.5-0.3-1.1-0.6-1.8-0.7v-2.1h-2v2.1c-0.6 0.1-1.2 0.4-1.8 0.7l-1.5-1.5-1.4 1.4 1.5 1.5c-0.3 0.5-0.6 1.1-0.7 1.8h-2.1v2h2.1c0.1 0.6 0.4 1.2 0.7 1.8l-1.5 1.5 1.4 1.4 1.5-1.5c0.5 0.3 1.1 0.6 1.8 0.7v2.1h2v-2.1c0.6-0.1 1.2-0.4 1.8-0.7l1.5 1.5 1.4-1.4-1.5-1.5c0.3-0.5 0.6-1.1 0.7-1.8h2.1zm-7 2c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/><path d="M20,10h5.2C21.9,4.9,15.1,3.5,10,6.8c-3.1,2-5,5.5-5,9.2H3C3,8.8,8.8,3,16,3c3.9,0,7.5,1.7,10,4.7V4h2v8h-8V10z"/><rect class="st0" width="32" height="32"/></g></switch></svg><span class="center">Use the default InitialContext JNDI properties <em>(2)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpInitialContext" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>
+Use the default values for the <code>java.naming.factory.initial</code> and <code>java.naming.provider.url</code> JNDI properties when you migrate to Liberty.  
+The following WebSphere Application Server traditional values for these properties are not valid:
+</p>
+<ul>
+	<li><code>java.naming.factory.initial=com.ibm.websphere.naming.WsnInitialContextFactory</code></li>
+	<li><code>java.naming.provider.url=corbaloc:iiop:localhost:2809</code></li>
+</ul>
+<p>
+The migration tool scans Java and properties files for the properties mentioned earlier.
+</p>
+<p>
+In <code>jndi.properties</code> files the <code>java.naming.factory.initial</code> and <code>java.naming.provider.url</code> property keys are flagged regardless of the value.
+If the properties file rule detects a <code>jndi.properties</code> file, check the properties in the file. 
+Either remove the <code>java.naming.factory.initial</code> and <code>java.naming.provider.url</code> properties, or delete the file if none of the properties are needed.       
+<!-- Is the <q>property files rule</q> this rule or a different rule? -->
+</p>
+
+<p>
+The following example illustrates application code that this rule will flag:
+<p>
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1">
+<tr>
+<td><span class="Code">
+
+<br>
+<span class="JavaKeyword">import</span> <span class="JavaType">java.util.Hashtable;</span><br>
+
+<span class="JavaKeyword">import</span> <span class="JavaType">javax.naming.InitialContext;</span>
+<br>
+...
+<br>
+<span class="JavaType">void</span> main( <span class="JavaType">String</span>[] args ) {<br>
+
+<span class="indent"></span><span class="indent"></span><span class="JavaType">Hashtable</span> ht = <span class="JavaKeyword">new</span> <span class="JavaType">Hashtable</span>();<br>
+<br>
+<span class="indent"></span><span class="indent"></span>ht.put(<q><span class="redCode"><strong>java.naming.factory.initial</strong></span></q>, <q>com.ibm.websphere.naming.WsnInitialContextFactory</q>);<br>
+
+<span class="indent"></span><span class="indent"></span>ht.put(<q><span class="redCode"><strong>java.naming.provider.url</strong></span></q>, <q>corbaloc:iiop:localhost:2809</q>);<br>
+
+<br>
+
+<span class="indent"></span><span class="indent"></span><span class="JavaType">InitialContext</span> ctx = <span class="JavaKeyword">new</span> <span class="JavaType">InitialContext</span>(ht);<br>
+
+}<br>
+</span>
+</td>
+</tr>
+</table>
+<p>
+When you use the <code>InitialContext(Hashtable)</code> constructor, remove these two properties. If no other properties are being used, you can use the default constructor.       
+</p>
+<p>
+The following example illustrates the proper use of the code shown in the previous example:
+</p>
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1">
+<tr>
+<td><span class="Code">
+<br>
+<span class="JavaKeyword">import</span> <span class="JavaType">javax.naming.InitialContext;</span>
+<br>
+...
+<br>
+<span class="JavaType">void</span> main( <span class="JavaType">String</span>[] args ) {<br>
+
+<span class="indent"></span><span class="indent"></span><span class="JavaType">InitialContext</span> ctx = <span class="JavaKeyword">new</span> <span class="JavaType">InitialContext</span>();<br>
+
+}<br>
+</span>
+</td>
+</tr>
+</table>
+
+<p>
+When you use the <code>InitialContext(Hashtable)</code> constructor, remove these two properties. If no other properties are being used, you can use the default constructor.       
+</p>
+<p>
+This rule has an automated fix to remove those two properties. Copy the <a href="#analyze_AutomatedFixConfiguration">custom configuration</a> to your application build file to enable it.
+</p>
+<p>
+The rule will also flag <code>com.ibm.websphere.naming.WsnInitialContextFactory</code> anywhere in Java code.  Remove this string and verify that it is not being used as part of InitialContext initialization.      
+</p>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Use-the-default-InitialContext-JNDI-properties">File name</th>
+    <th id="ref_Use-the-default-InitialContext-JNDI-properties">Reference details</th>
+    <th id="criteria_Use-the-default-InitialContext-JNDI-properties">Match criteria</th>
+    <th id="line_Use-the-default-InitialContext-JNDI-properties">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">WEB-INF&#x2F;classes&#x2F;com&#x2F;acme&#x2F;modres&#x2F;WeatherServlet.class</td>
+<td headers="ref_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">Method setInitialContextProps</td>
+<td headers="criteria_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">java.util.Hashtable.put(java.naming.factory.initial,com.ibm.websphere.naming.WsnInitialContextFactory)</td>
+<td headers="line_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">253</td>
+</tr>
+<tr>
+<td headers="analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war"></td><td headers="ref_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">Method setInitialContextProps</td>
+<td headers="criteria_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">java.util.Hashtable.put(java.naming.provider.url,corbaloc:iiop:localhost:2809)</td>
+<td headers="line_Use-the-default-InitialContext-JNDI-properties analyze_RemoveWas2LibertyNonPortableJndiLookup-ModResorts.ear&#x2F;modresorts-2.0.0.war">254</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+  </ul>
+</div></div>
+<div class="detailed-results-by-severity">
+<div class="detailed-results-header">
+<h2 class="detailed-results-title" id="analyze_severity2">Warning Rules</h2></div><div class="detailed-results-by-rule"><p>
+<span class="rule-category" id="category2">
+WebSphere traditional to Liberty</span></p>  <ul class="rules">
+    <li id="analyze_HiddenThirdPartyAPIInUseApache" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg warning-icon" aria-labelledby="org.apache-third-party-apis-are-unavailable-on-liberty-warning-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="org.apache-third-party-apis-are-unavailable-on-liberty-warning-title">Warning</title>
+<desc>Warning rules indicate differences exist that might need to be addressed.</desc>
+<g>
+<path d="M29.89,28.07,17.06,3a1,1,0,0,0-1.35-.41,1,1,0,0,0-.41.4L2.13,27.88a1,1,0,0,0,0,1,1,1,0,0,0,.88.49l26,.18a1,1,0,0,0,.86-.49A1,1,0,0,0,29.89,28.07Z" fill="#f1c21b"/>
+<path d="M15,10.45l2.25,0-.07,10-2.25,0Zm1,16A1.5,1.5,0,1,1,17.53,25,1.5,1.5,0,0,1,16,26.46Zm-1-16,2.25,0-.07,10-2.25,0Zm1,16A1.5,1.5,0,1,1,17.53,25,1.5,1.5,0,0,1,16,26.46Z" fill="#161616"/>
+</g>
+</svg>
+<span class="center">org.apache third-party APIs are unavailable on Liberty <em>(1)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpHiddenThirdPartyAPIInUseRule" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>
+This rule flags the use of unavailable third-party APIs so that you can assess the complexity of your migration.
+</p>
+<p>	    
+If your application requires the third-party APIs, place the corresponding JAR files in a location that is visible to the application classloader, such as the <code>WEB-INF/lib</code> directory. 
+If you do not have the JAR files or the license does not allow you to package them with your application, modify your application to remove the dependency on the third-party APIs.
+</p>
+<p>A project is flagged once for each third-party API that is referenced.
+</p>
+<p>
+For information about other APIs and SPIs that are not supported on Liberty, see <a href="#helpUnavailableAPIsSPIs" class="Rule-Help__Inner-Link">Some APIs and SPIs are not available on Liberty</a>.
+</p>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_org.apache-third-party-APIs-are-unavailable-on-Liberty">File name</th>
+    <th id="ref_org.apache-third-party-APIs-are-unavailable-on-Liberty">Reference details</th>
+    <th id="criteria_org.apache-third-party-APIs-are-unavailable-on-Liberty">Match criteria</th>
+    <th id="line_org.apache-third-party-APIs-are-unavailable-on-Liberty">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_HiddenThirdPartyAPIInUseApache-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_org.apache-third-party-APIs-are-unavailable-on-Liberty analyze_HiddenThirdPartyAPIInUseApache-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">lombok&#x2F;delombok&#x2F;ant&#x2F;Tasks$Delombok.class</td>
+<td headers="ref_org.apache-third-party-APIs-are-unavailable-on-Liberty analyze_HiddenThirdPartyAPIInUseApache-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">Constructor</td>
+<td headers="criteria_org.apache-third-party-APIs-are-unavailable-on-Liberty analyze_HiddenThirdPartyAPIInUseApache-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">org.apache.tools.ant</td>
+<td headers="line_org.apache-third-party-APIs-are-unavailable-on-Liberty analyze_HiddenThirdPartyAPIInUseApache-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">75</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+  </ul>
+</div></div>
+<div class="detailed-results-by-severity">
+<div class="detailed-results-header">
+<h2 class="detailed-results-title" id="analyze_severity3">Information Rules</h2></div><div class="detailed-results-by-rule"><p>
+<span class="rule-category" id="category3">
+Connectivity considerations for IBM Cloud (Containers and Virtual machines)</span></p>  <ul class="rules">
+    <li id="analyze_URLRuleDockerCloud" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg info-icon" aria-labelledby="validate-the-url-host-and-port-for-cloud-access-info-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="validate-the-url-host-and-port-for-cloud-access-info-title">Information</title>
+<desc>Information rules provide migration related considerations. Be aware of these rules during testing.</desc>
+<defs>
+<style> .cls-info { fill: #0f62fe; } </style>
+</defs>
+<path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16.14,8.29a1.29,1.29,0,0,1,0,2.57,1.29,1.29,0,1,1,0-2.57ZM19.57,23H12.71V21h2.47V15.25H13.57V13.33H17.1V21h2.47Z" class="cls-info"/>
+</svg>
+<span class="center">Validate the URL host and port for cloud access <em>(1)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpUrlRule" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>In a cloud environment, there are many things to consider when accessing URLs from your application.
+</p>
+<ol>
+<li>Does the host name or IP address need to change?</li>
+<ul><li>If the target service moved with the application, then the host name or IP address needs to change.</li></ul>
+
+<li>Can the host be accessed from the cloud environment?</li>
+<ul><li>If the target host is not on the public internet, you need to configure a secure connection using a VPN tunnel.
+See <a href="#SecureConnection">Create a Secure Connection</a> for more information.</li></ul>
+
+<li>Can the port be accessed from the cloud environment?</li>
+<ul><li>If the target host is on the public cloud, you might need to open the port when using non-default ports.
+See <a href="#OpenPort">Open a Port</a> for more information.</li></ul>
+
+<li>Can the host name or IP address change dynamically in the cloud environment after deployment?</li>
+<ul><li>In a cloud environment, services or peers can be relocated or regenerated, which shifts them to new host
+names and IP addresses. When these shifts occur, application calls to particular host names or IP addresses can break.</li>
+<li>Instead of using host names or IP addresses, consult an external service registry to resolve service endpoints, 
+or delegate the entire routing function to a service bus or a load balancer with a virtual name instead.</li></ul>
+
+<li>If the host name is <code>localhost</code>, did the target service move with the application?</li>
+<ul><li>If it did not move, you need to configure a secure connection using a VPN tunnel. See <a href="#SecureConnection">Create a Secure Connection</a> for more information.</li></ul>
+</ol>
+
+<p>This rule flags references to the following in Java string literals and in property values in .properties files:
+</p>
+<ul>
+<li>corbaloc:&lt;protocol&gt;:&lt;host&gt;:&lt;port&gt;/ (protocol and port are optional)</li>
+<li>corbaname:&lt;protocol&gt;:&lt;host&gt;:&lt;port&gt;/ (protocol and port are optional)</li>
+<li>http://</li>
+<li>https://</li>
+<li>iiop://</li>
+<li>imap://</li>
+<li>jdbc:&lt;database type&gt;://</li>
+<li>ldap://</li>
+<li>ldaps://</li>
+<li>pop2://</li>
+<li>smtp://</li>
+<li>ssl://</li>
+<li>tcp://</li>
+</ul>
+<p>If the target cloud runtime environment is IBM Cloud or Third-party PaaS, the following protocols are not flagged by this rule because
+they are flagged by the <a href="#helpProtocolRule" class="Rule-Help__Inner-Link">Do not use older or non-standard protocols</a> rule.</p>
+<ul>
+<li>corbaloc</li>
+<li>iiop</li>
+<li>ssl</li>
+<li>tcp</li>
+</ul>
+<p>This rule also flags references to "http://" or "https://" in the <code>location</code> attribute on the <span class="XmlDefinition">&lt;address&gt;</span> element in WSDL files.
+</p>
+<p>
+Note: References to "http://www.w3.org/" and "http://schemas.xmlsoap.org/" are not flagged because they identify defined
+namespaces in the Web Services Addressing specification. 
+</p>
+<h4>How to Resolve</h4>
+		<p>If your application is able to directly access the service endpoint or peer, no further action is required.
+		Otherwise, there are two potential solutions:</p>
+<h5 id="SecureConnection">Create a Secure Connection</h5>
+		<p>You can use a VPN tunnel, such as the IBM Secure Gateway for IBM Cloud, 
+			to create a secure connection to your service endpoint or peer. 
+			For more information about configuring a secure connection, see 
+			<a href="#helpSecureConnection" class="Rule-Help__Inner-Link">Configuring a VPN</a>. 
+			After configuring your gateway, connect your application to the
+			new destination by using the cloud host and port number that is
+			provided when you created the destination.</p>
+<h5 id="OpenPort">Open a Port</h5>
+<p>Only certain ports are open by default in a cloud environment. For information on how to open additional ports, see the <code>Firewall Ports</code> section in 
+<a href="https://cloud.ibm.com/docs/ApplicationServeronCloud?topic=ApplicationServeronCloud-system_access#firewall_ports" 
+title="Opens a new window" target="_blank" rel="noopener noreferrer">
+WebSphere Application Server in IBM Cloud System access</a>.</p>
+<p>
+For more information, see <a href="https://developer.ibm.com/depmodels/cloud/articles/1404-brown/" 
+title="Opens a new window" target="_blank" rel="noopener noreferrer">
+Top 9 rules for cloud applications</a>.
+</p>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Validate-the-URL-host-and-port-for-cloud-access">File name</th>
+    <th id="ref_Validate-the-URL-host-and-port-for-cloud-access">Reference details</th>
+    <th id="criteria_Validate-the-URL-host-and-port-for-cloud-access">Match criteria</th>
+    <th id="line_Validate-the-URL-host-and-port-for-cloud-access">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_URLRuleDockerCloud-ModResorts.ear&#x2F;modresorts-2.0.0.war" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Validate-the-URL-host-and-port-for-cloud-access analyze_URLRuleDockerCloud-ModResorts.ear&#x2F;modresorts-2.0.0.war"></td>
+<td headers="ref_Validate-the-URL-host-and-port-for-cloud-access analyze_URLRuleDockerCloud-ModResorts.ear&#x2F;modresorts-2.0.0.war">2 reference(s)</td>
+<td headers="criteria_Validate-the-URL-host-and-port-for-cloud-access analyze_URLRuleDockerCloud-ModResorts.ear&#x2F;modresorts-2.0.0.war">http://api.wunderground.com/api/</td>
+<td headers="line_Validate-the-URL-host-and-port-for-cloud-access analyze_URLRuleDockerCloud-ModResorts.ear&#x2F;modresorts-2.0.0.war"></td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+  </ul>
+<p>
+<span class="rule-category" id="category4">
+Containers (OpenShift, Kubernetes)</span></p>  <ul class="rules">
+    <li id="analyze_FileSystemRule" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg info-icon" aria-labelledby="managing-data-inside-and-between-docker-containers-info-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="managing-data-inside-and-between-docker-containers-info-title">Information</title>
+<desc>Information rules provide migration related considerations. Be aware of these rules during testing.</desc>
+<defs>
+<style> .cls-info { fill: #0f62fe; } </style>
+</defs>
+<path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16.14,8.29a1.29,1.29,0,0,1,0,2.57,1.29,1.29,0,1,1,0-2.57ZM19.57,23H12.71V21h2.47V15.25H13.57V13.33H17.1V21h2.47Z" class="cls-info"/>
+</svg>
+<span class="center">Managing data inside and between Docker containers <em>(1)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpFileSystemRule" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>
+Data written to the file system does not persist across Docker container lifecycles. 
+You can manage data in Docker containers using data volumes and data volume containers.
+</p>
+<p>
+This rule flags Java code that references the following classes, constructors, and methods that are used for writing files.
+</p>
+<h4>Classes</h4>
+<ul>
+<li><code>java.io.FileOutputStream</code></li>
+<li><code>java.io.FileWriter</code></li>
+</ul>
+<h4>Constructors</h4>
+<ul>
+<li><code>new java.io.PrintWriter(java.io.File)</code></li>
+<li><code>new java.io.PrintWriter(java.io.File, java.lang.String)</code></li>
+<li><code>new java.io.PrintWriter(java.lang.String)</code></li>
+<li><code>new java.io.PrintWriter(java.lang.String, java.lang.String)</code></li>
+</ul>
+<h4>Methods</h4>
+<p><code>java.io.RandomAccessFile</code></p>
+<ul>
+<li><code>write</code></li>
+<li><code>writeBoolean</code></li>
+<li><code>writeByte</code></li>
+<li><code>writeBytes</code></li>
+<li><code>writeChar</code></li>
+<li><code>writeChars</code></li>
+<li><code>writeDouble</code></li>
+<li><code>writeFloat</code></li>
+<li><code>writeInt</code></li>
+<li><code>writeLong</code></li>
+<li><code>writeShort</code></li>
+<li><code>writeUTF</code></li>
+<li><code>setLength</code></li>
+</ul>
+<p><code>java.nio.file.Files</code>:</p>
+<ul>
+<li><code>copy</code></li>
+<li><code>createDirectories</code></li>
+<li><code>createFile</code></li>
+<li><code>move</code></li>
+<li><code>newBufferedWriter</code></li>
+<li><code>newByteChannel</code></li>
+<li><code>write</code></li>
+</ul>
+<p><code>org.apache.commons.io.FileUtils</code></p>
+<ul>
+<li><code>copyDirectory</code></li>
+<li><code>copyDirectoryToDirectory</code></li>
+<li><code>copyFile</code></li>
+<li><code>copyFileToDirectory</code></li>
+<li><code>copyInputStreamToFile</code></li>
+<li><code>copyToFile</code></li>
+<li><code>copyURLToFile</code></li>
+<li><code>moveDirectory</code></li>
+<li><code>moveDirectoryToDirectory</code></li>
+<li><code>moveFile</code></li>
+<li><code>moveFileToDirectory</code></li>
+<li><code>moveToDirectory</code></li>
+<li><code>write</code></li>
+<li><code>writeByteArrayToFile</code></li>
+<li><code>writeLines</code></li>
+<li><code>writeStringToFile</code></li>
+</ul>
+<p>
+For more information, see <a href="https://docs.docker.com/engine/admin/volumes/" 
+title="Opens a new window" target="_blank" rel="noopener noreferrer">
+Manage data in Docker</a>.
+</p> 
+
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Managing-data-inside-and-between-Docker-containers">File name</th>
+    <th id="ref_Managing-data-inside-and-between-Docker-containers">Reference details</th>
+    <th id="criteria_Managing-data-inside-and-between-Docker-containers">Match criteria</th>
+    <th id="line_Managing-data-inside-and-between-Docker-containers">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_FileSystemRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Managing-data-inside-and-between-Docker-containers analyze_FileSystemRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">lombok&#x2F;javac&#x2F;apt&#x2F;Processor.class</td>
+<td headers="ref_Managing-data-inside-and-between-Docker-containers analyze_FileSystemRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">Method writeFile</td>
+<td headers="criteria_Managing-data-inside-and-between-Docker-containers analyze_FileSystemRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">java.io.FileOutputStream</td>
+<td headers="line_Managing-data-inside-and-between-Docker-containers analyze_FileSystemRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;lombok-1.18.30.jar">86</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+  </ul>
+<p>
+<span class="rule-category" id="category5">
+Technology connectivity considerations for IBM Cloud</span></p>  <ul class="rules">
+    <li id="analyze_DatabasesRule" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg info-icon" aria-labelledby="databases-info-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="databases-info-title">Information</title>
+<desc>Information rules provide migration related considerations. Be aware of these rules during testing.</desc>
+<defs>
+<style> .cls-info { fill: #0f62fe; } </style>
+</defs>
+<path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16.14,8.29a1.29,1.29,0,0,1,0,2.57,1.29,1.29,0,1,1,0-2.57ZM19.57,23H12.71V21h2.47V15.25H13.57V13.33H17.1V21h2.47Z" class="cls-info"/>
+</svg>
+<span class="center">Databases <em>(2)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpDatabases" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>When migrating applications using databases to a cloud platform, 
+consider how to maintain access to the database from the cloud.
+</p>
+<p>The following Java packages indicate use of a database:</p>
+<ul>
+<li><code>java.sql</code></li>
+<li><code>javax.sql</code></li>
+<li><code>javax.persistence</code></li>
+<li><code>org.apache.ibatis</code></li>
+<li><code>org.hibernate</code></li>
+<li><code>org.springframework.dao</code></li>
+<li><code>org.springframework.jdbc</code></li>
+<li><code>org.ektorp</code></li>
+<li><code>org.lightcouch</code></li>
+<li><code>org.jcouchdb</code></li>
+<li><code>com.buycentives.jrelax</code></li>
+<li><code>com.mongodb</code></li>
+</ul>
+<p>This rule flags the following references in the <span class="FilePath">persistence.xml</span> file: 
+</p>
+<ul>
+<li><code>&lt;property name="javax.persistence.jdbc.url"/&gt;</code></li>
+<li><code>&lt;jta-data-source&gt;<i>data source name</i>&lt;/jta-data-source&gt;</code></li>
+<li><code>&lt;non-jta-data-source&gt;<i>data source name</i>&lt;/non-jta-data-source&gt;</code></li>
+</ul>
+<p>
+This rule also flags resource references with a type of
+<code>&lt;res-type&gt;javax.sql.DataSource&lt;/res-type&gt;</code> element in <code>application.xml</code>, 
+<code>application-client.xml</code>, <code>ejb-jar.xml</code>, or <code>web.xml</code> files.
+</p>
+<p>Each database Java API type referenced by an application is flagged only once per Eclipse project or Java archive. 
+For example, if <code>java.sql</code> and <code>javax.persistence</code> APIs are both used in an Eclipse project, 
+you get two results for that project.  The results do not give you an indication of how
+many databases are being accessed. Rather, they give an indication of the technologies that you use 
+to access databases.
+</p>
+<p>
+All <code>javax.persistence.jdbc.url</code> properties are flagged because
+they must be reconfigured when you use a VPN tunnel.
+</p>
+<p>
+In the following <span class="FilePath">persistence.xml</span> file, 
+the <code>property</code> element with <code>name="javax.persistence.jdbc.url"</code> is flagged by this rule. 
+</p>
+<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." bgcolor="#F7F8F9" border="1" cellpadding="2px">
+<tr><td>
+<pre>
+&lt;persistence&gt;
+  &lt;persistence-unit name="openjpa"&gt;
+    &lt;properties&gt;
+      ...
+      &lt;property name="javax.persistence.jdbc.url"
+                   value="jdbc:db2://host.ibm.com:50000/mydb2user" /&gt;
+       ...
+    &lt;/properties&gt;
+  &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</pre>
+</td></tr></table>
+<h4>How to Resolve</h4>
+		<p>If your application is able to directly access the database provider, no further action is required.
+		</p>
+		<p>
+			Otherwise, you can use a VPN tunnel, such as the IBM Secure Gateway for IBM Cloud, 
+			to create a secure connection to your existing on-premises database provider.
+			For more information about configuring a secure connection, see 
+			<a href="#helpSecureConnection" class="Rule-Help__Inner-Link">Configuring a VPN</a>. After configuring your gateway, connect your application to the
+			new destination by using the cloud host and port number that is
+			provided when you created the destination.
+			The following URL is an example of an IBM DB2 database URL:</p>
+			<ul>
+			<li><span class="Code">jdbc:db2://&lt;cloud host&gt;:&lt;cloud port&gt;/&lt;database name&gt;</span></li>
+			</ul>
+<p>
+For situations where you want to move your data to the cloud, you can use <a href="https://www.ibm.com/cloud/data"
+title="Opens a new window" target="_blank" rel="noopener noreferrer">
+IBM Cloud databases</a>.
+</p>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Databases">File name</th>
+    <th id="ref_Databases">Reference details</th>
+    <th id="criteria_Databases">Match criteria</th>
+    <th id="line_Databases">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">WEB-INF&#x2F;classes&#x2F;com&#x2F;acme&#x2F;modres&#x2F;db&#x2F;ModResortsCustomerInformation.class</td>
+<td headers="ref_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">Field dataSource</td>
+<td headers="criteria_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">javax.sql</td>
+<td headers="line_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war"></td>
+</tr>
+<tr class="header-archive">
+<th id="analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar">com&#x2F;google&#x2F;gson&#x2F;internal&#x2F;sql&#x2F;SqlDateTypeAdapter$1.class</td>
+<td headers="ref_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar">Method create</td>
+<td headers="criteria_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar">java.sql</td>
+<td headers="line_Databases analyze_DatabasesRule-ModResorts.ear&#x2F;modresorts-2.0.0.war&#x2F;WEB-INF&#x2F;lib&#x2F;gson-2.10.1.jar">43</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+    <li id="analyze_ApplicationSecurityRule" class="rule">
+      <div class="rule-title">        <h3><svg class="center svg info-icon" aria-labelledby="java-ee-security-info-title" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title id="java-ee-security-info-title">Information</title>
+<desc>Information rules provide migration related considerations. Be aware of these rules during testing.</desc>
+<defs>
+<style> .cls-info { fill: #0f62fe; } </style>
+</defs>
+<path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16.14,8.29a1.29,1.29,0,0,1,0,2.57,1.29,1.29,0,1,1,0-2.57ZM19.57,23H12.71V21h2.47V15.25H13.57V13.33H17.1V21h2.47Z" class="cls-info"/>
+</svg>
+<span class="center">Java EE security <em>(1)</em></span></h3>
+        <div class="js-toggle-actions noprint">
+          <a href="#" class="recommendation-toggle-help rule-help-toggle">Show rule help</a>
+          <a href="#" class="recommendation-toggle-results results-toggle">Show results</a>
+        </div>
+      </div>
+      <div id="helpApplicationSecurity" class="rule-fix shared hide">
+        <h3>Rule Help</h3>
+
+<p>
+When moving applications that use Java EE security to the cloud, 
+consider how the application uses the user registry, Trust Association Interceptors (TAI), and JAAS custom login modules,
+as well as your on-premises security server. 
+</p>
+<p>
+This rule flags the following elements related to Java EE security:</p>
+<h4>Java Servlet</h4>
+<p>The following Java annotations and method calls indicate use of Java EE security:</p>
+<ul>
+<li><code>javax.servlet.annotation.ServletSecurity</code></li>
+<li><code>javax.servlet.http.HttpServletRequest.getRemoteUser</code></li>
+<li><code>javax.servlet.http.HttpServletRequest.getUserPrincipal</code></li>
+<li><code>javax.servlet.http.HttpServletRequest.isUserInRole</code></li>
+</ul>
+<p>The following deployment descriptor elements also indicate use of Java EE security in the web container:</p>
+<ul>
+<li><code>&lt;security-constraint&gt;</code> in the <code>WEB-INF/web.xml</code> file.</li>
+</ul>
+<!-- Note to translator, do not translate the terms <q>BASIC</q>, <q>FORM</q> or <q>CLIENT-CERT</q> -->
+<p>Applications that authenticate users specify a standard authentication method (BASIC, FORM, CLIENT-CERT) on the
+<code>&lt;login-config&gt;</code> element and its <code>&lt;auth-method&gt;</code> sub-element in the <code>WEB-INF/web.xml</code> file.</p>
+ 
+<h4>Enterprise Java Beans</h4>
+<p>The following Java annotations and method calls indicate use of Java EE security in the EJB container:</p>
+<ul>
+<li><code>javax.annotation.security.RolesAllowed</code></li>
+<li><code>javax.annotation.security.PermitAll</code></li>
+<li><code>javax.annotation.security.DenyAll</code></li>
+<li><code>javax.ejb.EJBContext.getCallerPrincipal</code></li>
+<li><code>javax.ejb.EJBContext.isCallerInRole</code></li>
+
+</ul>
+<p>The following deployment descriptor elements also indicate use of Java EE security:</p>
+<ul>
+<li><code>&lt;method-permission&gt;</code> in the <code>ejb-jar.xml</code> file.</li>
+</ul>
+<p>This rule is flagged once per Eclipse project or Java archive.</p>
+
+		<h4>How to Resolve</h4>
+		<p>If your application is able to directly access the security provider, no further action is required.
+		</p>
+		<p>
+			Otherwise, you can use a VPN tunnel, such as the IBM Secure Gateway for IBM Cloud, 
+			to create a secure connection to your existing on-premises security provider.
+			For more information about configuring a secure connection, see
+			<a href="#helpSecureConnection" class="Rule-Help__Inner-Link">Configuring a VPN</a>. After configuring your gateway, connect your application to the
+			new destination by using the cloud host and port number that is
+			provided when you created the destination.
+			The following URLs are examples of Lightweight Directory Access Protocol (LDAP) URLs:
+		</p>
+			<ul>
+			<li><span class="Code">ldap://&lt;cloud host&gt;:&lt;cloud port&gt;/...</span></li>
+			<li><span class="Code">ldaps://&lt;cloud host&gt;:&lt;cloud port&gt;/...</span></li>
+			</ul>
+      </div>
+      <div class="rule-result hide">
+        <h3>Results</h3>
+<table summary="This table provides details on rule results, including the affected file name, reference information, match criteria, and line number if available. Results are grouped together by archive name with a row that spans all columns.">
+<thead>
+  <tr>
+    <th id="file_Java-EE-security">File name</th>
+    <th id="ref_Java-EE-security">Reference details</th>
+    <th id="criteria_Java-EE-security">Match criteria</th>
+    <th id="line_Java-EE-security">Line number</th>
+  </tr>
+</thead>
+<tbody>
+<tr class="header-archive">
+<th id="analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war" colspan="4"><b>ModResorts.ear&#x2F;modresorts-2.0.0.war</b></th>
+</tr>
+<tr>
+<td class="indentFileName" headers="file_Java-EE-security analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">WEB-INF&#x2F;web.xml</td>
+<td headers="ref_Java-EE-security analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war"></td>
+<td headers="criteria_Java-EE-security analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">security-constraint</td>
+<td headers="line_Java-EE-security analyze_ApplicationSecurityRule-ModResorts.ear&#x2F;modresorts-2.0.0.war">26</td>
+</tr>
+</tbody>
+</table>
+      </div>
+    </li>
+  </ul>
+</div></div>
+<div class="detailed-results-header header-sections">
+  <h2 id="analyze_AdditionalRuleHelp" class="detailed-results-title">Additional Rule Help</h2>
+</div>
+<div>
+      <div id="helpProtocolRule" class="rule-additional-help shared">
+<h3>Do not use older or non-standard protocols</h3>
+<p>
+In a cloud environment, certain protocols related to EJB 2.0, CICS Transaction Gateway, and IMS Connect are not supported.
+Updating your applications to use newer, standardized protocols, such as an HTTP-based infrastructure that incorporates REST,
+makes it easier to port your applications to new environments. You can also assess whether asynchronous protocols, such as IBM MQ or MQTT, 
+are a good choice for your application needs.
+</p>
+<p>
+Protocols related to EJB 2.0 are not supported. Update your application to use EJB 3.0 or later.
+This rule flags references to <code>t3://</code>, <code>iiop://</code> and <code>corbaloc:</code> in the following locations:
+</p>
+<ul>
+<li>In Java string literals</li>
+<li>In the <code>java.naming.provider.url</code> property value in the jndi.properties files</li>
+</ul>
+<p>For CICS Transaction Gateway, the <code>tcp</code>, <code>ssl</code>, and <code>local</code> protocols are not supported.
+Use the <code>http</code> and <code>https</code> protocols instead. 
+This rule flags references to <code>tcp://</code>, <code>ssl://</code>, and <code>local:</code> in the following locations:
+</p>
+<ul>
+<li>In Java string literals</li>
+<li>In the <code>com.ibm.ctg.JavaGateway</code> and <code>com.ibm.ctg.epi.EPIGateway</code> constructors</li>
+<li>In the <code>com.ibm.ctg.JavaGateway</code> and <code>com.ibm.ctg.epi.EPIGateway</code> methods <code>setProtocol(String)</code> and <code>setURL(String)</code></li>
+<li>In the <code>com.ibm.connector2.cics.CICSManagedConnectionFactory.setConnectionURL(String)</code> method</li>
+</ul>
+<p>IMS Connect is not supported. This rule flags references to the IMS Connect API for Java provided by the <code>com.ibm.ims.connect</code> package.
+</p>
+<p>
+For more information, see <a href="https://developer.ibm.com/depmodels/cloud/articles/1404-brown/"
+title="Opens a new window" target="_blank" rel="noopener noreferrer">
+Top 9 rules for cloud applications</a>.
+</p>
+      </div>
+      <div id="helpSecureConnection" class="rule-additional-help shared">
+<h3>Configuring a VPN</h3>
+<p>To securely connect cloud applications to
+			on-premises or cloud-based remote locations, you can use a VPN tunnel such as
+			the IBM Secure Gateway for IBM Cloud.</p>
+		<p>For more information about the IBM Secure Gateway for IBM Cloud, see</p>
+		<ul>
+			<li><a href="https://cloud.ibm.com/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg"
+				title="Opens a new window" target="_blank" rel="noopener noreferrer">
+				Getting started with Secure Gateway</a></li>
+			<li><a href="https://www.ibm.com/blogs/bluemix/2015/03/bluemix-secure-gateway-yes-can-get/"
+				title="Opens a new window" target="_blank" rel="noopener noreferrer">
+				What is a secure gateway and how to connect on-premises to the cloud or from cloud to cloud</a></li>
+		</ul>
+	      </div>
+      <div id="helpUnavailableAPIsSPIs" class="rule-additional-help shared">
+<h3>Some APIs and SPIs are not available on Liberty</h3>
+<p>
+If your application uses any of the following APIs, you must modify the application 
+so that it can run on Liberty.
+</p>
+	<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." class="borders">
+	<tr>
+		<th>API name</th>
+		<th>API package</th>
+	</tr>
+	<tr>
+		<td>Activity Session</td>
+		<td>com.ibm.websphere.ActivitySession</td>		
+	</tr>
+	<tr>
+		<td>Apache Axis2</td>
+		<td>org.apache.axis2<br>
+		    org.apache.ideaplugin<br>
+            org.apache.ws.java2wsdl</td>		
+	</tr>
+	<tr>
+		<td>Application Client</td>
+		<td>com.ibm.websphere.client.applicationclient</td>		
+	</tr>
+	<tr>
+		<td>Application Profiling</td>
+		<td>com.ibm.websphere.appprofile<br>
+		    com.ibm.websphere.appprofile.accessintent</td>		
+	</tr>
+    <tr>
+		<td>Asynchronous Beans</td>
+		<td>com.ibm.websphere.asynchbeans<br>
+		    com.ibm.websphere.asynchbeans.pool</td>		
+	</tr>
+	<tr>
+		<td>Batch</td>
+		<td>com.ibm.websphere.batch<br>
+			com.ibm.websphere.ci<br>
+   			com.ibm.websphere.grid.spi<br>
+   			com.ibm.websphere.longrun</td>		
+	</tr>
+	<tr>
+		<td>Common Exceptions</td>
+		<td>com.ibm.websphere.ce.j2c</td>
+	</tr>
+	<tr>
+		<td>Connector Architecture</td>
+		<td>com.ibm.websphere.j2c</td>
+	</tr>
+	<tr>
+		<td>Dynamic Cache Service</td>
+		<td>com.ibm.websphere.cache.ServletCache</td>
+	</tr>
+	<tr>
+		<td>Enterprise JavaBeans (EJB)</td>
+		<td>com.ibm.websphere.ejbcontainer<br>
+		    com.ibm.websphere.ejbpersistence</td>
+	</tr>
+	<tr>
+		<td>Enterprise JavaBeans (EJB) query service</td>
+		<td>com.ibm.websphere.ejbquery</td>
+	</tr>
+	<tr>
+		<td>Extension Registry</td>
+		<td>com.ibm.workplace.extension</td>
+	</tr>
+	<tr>
+		<td>Integrated Solutions Console (ISC)</td>
+		<td>com.ibm.isc.api.platform</td>
+	</tr>
+	<tr>
+		<td>Management APIs</td>
+		<td>com.ibm.websphere.management<br>
+	     	com.ibm.websphere.naming<br>
+			com.ibm.websphere.product<br>
+			com.ibm.websphere.hamanager.jmx<br>
+			com.ibm.websphere.interrupt<br>
+			com.ibm.websphere.ant.tasks</td>
+	</tr>
+	<tr>
+		<td>ORB Extensions</td>
+		<td>com.ibm.websphere.orbext<br>
+		    com.ibm.ejs.oa.EJSORB</td>
+	</tr>	
+	<tr>
+		<td>Performance Monitoring Infrastructure (PMI)</td>
+		<td>com.ibm.websphere.pmi</td>
+	</tr>
+	<tr>
+		<td>Portal</td>
+		<td>com.ibm.portal</td>
+	</tr>
+	<tr>
+		<td>Resource Adapters</td>
+		<td>com.ibm.websphere.rsadapter.Beginnable<br>
+			com.ibm.websphere.rsadapter.CloudscapeDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.CloudscapeNetworkServerDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.DataAccessFunctionSet<br>
+			com.ibm.websphere.rsadapter.DataStoreHelper<br>
+			com.ibm.websphere.rsadapter.DataStoreHelperMetaData<br>
+			com.ibm.websphere.rsadapter.DB2390DataStoreHelper<br>
+			com.ibm.websphere.rsadapter.DB2390LocalDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.DB2DataStoreHelper<br>
+			com.ibm.websphere.rsadapter.HandleStates<br>
+			com.ibm.websphere.rsadapter.JdbcAccessorImpl<br>
+			com.ibm.websphere.rsadapter.Oracle10gDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.OracleDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.ProxyDataSource<br>
+			com.ibm.websphere.rsadapter.ProxyDSDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.Reassociateable<br>
+			com.ibm.websphere.rsadapter.SybaseDataStoreHelper<br>
+			com.ibm.websphere.rsadapter.WSCciConnectionSpec<br>
+			com.ibm.websphere.rsadapter.WSConnection<br>
+			com.ibm.websphere.rsadapter.WSInteractionSpec<br>
+			com.ibm.websphere.rsadapter.WSNativeConnectionAccessor<br>
+			com.ibm.websphere.rsadapter.WSRdbRecord<br>
+			com.ibm.websphere.rsadapter.WSSystemMonitor</td>
+	</tr>
+	<tr>
+		<td>Scheduler</td>
+		<td>com.ibm.websphere.scheduler</td>
+	</tr>
+	<tr>
+		<td>Service Component Architecture (SCA)</td>
+		<td>com.ibm.websphere.sca.context<br>
+			com.ibm.websphere.soa.sca<br>
+			org.apache.tuscany.sca<br>
+			org.oasisopen.sca<br>
+			org.osoa.sca</td>		
+	</tr>
+	<tr>
+		<td>Service Data Objects (SDO)</td>
+		<td>com.ibm.websphere.sdo<br>
+		    com.ibm.websphere.sdox</td>		
+	</tr>
+	<tr>
+		<td>Service Integration Bus (SIB)</td>
+		<td>com.ibm.websphere.sib</td>
+	</tr>
+	<tr>
+		<td>SMF recording</td>
+		<td>com.ibm.websphere.smf</td>
+	</tr>
+	<tr>
+		<td>Startup Beans Service</td>
+		<td>com.ibm.websphere.startupservice</td>
+	</tr>
+	<tr>
+		<td>Universal Description, Discovery and Integration (UDDI)</td>
+		<td>com.ibm.uddi</td>
+	</tr>
+	<tr>
+		<td>Web services</td>
+		<td>com.ibm.websphere.webservices<br>
+			com.ibm.websphere.websvcs.rm<br>
+			com.ibm.websphere.wssecurity<br>
+			com.ibm.websphere.cache.webservices<br>
+			com.ibm.ws.webservices<br>
+			com.ibm.ws.websvcs<br>
+			com.ibm.ws.wssecurity<br>
+			com.ibm.websphere.wsaddressing<br>
+			com.ibm.websphere.wsrf</td>		
+	</tr>
+	<tr>
+		<td>Web Services Business Activity (WS-BA)</td>
+		<td>com.ibm.websphere.wsba</td>		
+	</tr>
+	<tr>
+		<td>Web Services Notification (WS-Notification)</td>
+		<td>com.ibm.websphere.sib.wsn</td>		
+	</tr>
+	<tr>
+		<td>WebSphere exceptions</td>
+		<td>com.ibm.websphere.exception.DistributedEJBCreateException<br> 	
+			com.ibm.websphere.exception.DistributedEJBRemoveException</td>
+	</tr>
+	<tr>
+		<td>WebSphere i18n</td>
+		<td>com.ibm.websphere.i18n.context</td>		
+	</tr>
+	<tr>
+		<td>WebSphere logging and RAS</td>
+		<td>com.ibm.websphere.logging.RawTraceList<br>
+		com.ibm.websphere.logging.RawTraceList$PatternLevel<br>
+		com.ibm.websphere.logging.MessageConverter<br>
+		com.ibm.websphere.logging.WsLevel<br>
+		com.ibm.websphere.logging.cbe<br>
+		com.ibm.websphere.als<br>
+		com.ibm.websphere.ras<br>
+		com.ibm.ejs.ras<br>  				
+		com.ibm.ffdc<br>
+		com.ibm.ras</td>
+	</tr>
+	<tr>
+		<td>WebSphere Optimized Local Adapters (WOLA)</td>
+		<td>com.ibm.websphere.ola.OLAConnectionHandle<br>
+			com.ibm.websphere.ola.OLAHeader<br>
+			com.ibm.websphere.ola.OLARGE<br>
+			com.ibm.websphere.ola.OLARGEInformation<br>
+			com.ibm.websphere.ola.OLARGEList<br>
+			com.ibm.websphere.ola.OLASearchObject<br>
+			com.ibm.websphere.ola.OLAStatusInformation</td>
+	</tr>
+	<tr>
+		<td>WebSphere Runtime</td>
+		<td>com.ibm.websphere.runtime</td>		
+	</tr>
+	<tr>
+		<td>WebSphere security</td>
+		<td>com.ibm.websphere.crypto.KeyGenerator<br>
+		com.ibm.websphere.crypto.KeyPair<br>
+		com.ibm.websphere.crypto.KeyPairGenerator<br>
+		com.ibm.websphere.crypto.KeySetHelper<br>
+		com.ibm.websphere.security.auth.WSPrincipal<br> 		
+		com.ibm.websphere.security.auth.AuthenticationFailedException<br> 	
+		com.ibm.websphere.security.auth.AuthenticationNotSupportedException<br> 
+		com.ibm.websphere.security.auth.IdentityPrincipal<br> 	
+		com.ibm.websphere.security.auth.MappingAuthData<br> 	
+		com.ibm.websphere.security.auth.MapCredentialFailedException<br>
+		com.ibm.websphere.security.auth.MapCredentialNotSupportedException<br> 
+		com.ibm.websphere.security.auth.UnsupportedRealmException<br> 	
+		com.ibm.websphere.security.auth.ValidationFailedException<br> 	
+		com.ibm.websphere.security.auth.ValidationNotSupportedException<br> 
+		com.ibm.websphere.security.auth.callback.NonPromptCallbackHandler<br> 	
+		com.ibm.websphere.security.auth.callback.WSCcacheCallBackHandlerImpl<br> 	
+		com.ibm.websphere.security.auth.callback.WSGUICallbackHandlerImpl<br>
+		com.ibm.websphere.security.auth.callback.WSStdinCallbackHandlerImpl<br>
+		com.ibm.websphere.security.DistributedUserMappingFailedException<br>
+		com.ibm.websphere.security.oidc.util<br>
+		com.ibm.websphere.security.ProviderFailureException<br>
+		com.ibm.websphere.security.SAFRoleMapper<br>
+		com.ibm.websphere.security.TrustAssociationInterceptor<br>
+		com.ibm.websphere.security.UserMapping<br>
+		com.ibm.websphere.security.UserMappingException<br>
+		com.ibm.websphere.security.WebSphereBaseTrustAssociationInterceptor<br>
+		com.ibm.websphere.ssl.protocol<br>
+		com.ibm.ws.security.core.SecurityContext<br>
+		com.ibm.ws.security.util.LoginHelper<br>
+		com.ibm.IExtendedSecurity</td>
+	</tr>
+	<tr>
+		<td>WebSphere Servlet</td>
+		<td>com.ibm.servlet.ClientList<br>
+			com.ibm.servlet.ClientListElement<br>
+			com.ibm.servlet.MLNotFoundException<br>
+			com.ibm.servlet.PageListServlet<br>
+			com.ibm.servlet.PageNotFoundException<br>
+			com.ibm.websphere.servlet.filter.ChainedRequest<br>
+			com.ibm.websphere.servlet.filter.ChainedResponse<br>
+			com.ibm.websphere.servlet.filter.ChainerServlet<br>
+			com.ibm.websphere.servlet.filter.ServletChain<br>
+			com.ibm.websphere.servlet.response.IResponse<br>
+			com.ibm.websphere.servlet.response.StoredResponseCompat<br>
+			com.ibm.websphere.servlet.response.HttpServletResponseProxy<br>
+			com.ibm.websphere.servlet.response.ResponseUtils<br>
+			com.ibm.websphere.servlet.response.ServletOutputStreamAdapter<br>
+			com.ibm.websphere.servlet.response.ResponseErrorReport<br>
+			com.ibm.websphere.servlet.request<br>
+			com.ibm.websphere.webcontainer.async
+		</td>		
+	</tr>
+	<tr>
+		<td>WebSphere Studio Application Developer Integration Edition</td>
+		<td>com.ibm.etools.ctc.physicalrep<br>
+			com.ibm.etools.ctc.plugin.binding.connector<br>
+			com.ibm.etools.ctc.wsdl.extensions.physicalrep<br>
+			com.ibm.etools.logging<br>
+			com.ibm.etools.xsltypeconverter<br>
+			com.ibm.jca.importservice<br>
+			com.ibm.webtools.runtime.AbstractStudioServlet<br>
+			com.ibm.webtools.runtime.BuildNumber<br>
+			com.ibm.webtools.runtime.NoDataException<br>
+			com.ibm.webtools.runtime.StudioPervasiveServlet<br>
+			com.ibm.webtools.runtime.TransactionFailureException<br>
+			com.ibm.webtools.runtime.WSUtilities<br>
+			com.ibm.wsdl.extensions.physicalrep<br>
+			com.ibm.wsdl.extensions.transformer<br>
+			com.ibm.wsif.format.jca<br>
+			com.ibm.wsif.format.literal<br>
+			com.ibm.wsif.format.transformer<br>
+			com.ibm.wsif.jca<br>
+			com.ibm.wsif.providers.ejb.proxy<br>
+			com.ibm.wsif.providers.transformer<br>
+			com.ibm.wsif.providers.transformerrt<br>
+			org.xmlsoap.schemas.wsdl.wsadie.messages
+		</td>		
+	</tr>
+	<tr>
+		<td>Work Area</td>
+		<td>com.ibm.websphere.workarea</td>		
+	</tr>
+	<tr>
+		<td>Workload Manager</td>
+		<td>com.ibm.websphere.wlm<br> 
+        com.ibm.websphere.wlm.exception</td>
+	</tr>
+	<tr>
+		<td>WSSecurityHelper methods</td>
+		<td>getCallerList<br>
+		getFirstCaller<br>
+		getFirstServer<br>
+		getServerList<br>
+		addPropagationAttribute<br>
+		getPropagationAttributes<br>
+		convertCookieStringToBytes<br>
+		revokeSSOCookies<br> 
+		revokeSSOCookiesForPortlets<br>
+		getLTPACookieFromSSOToken</td>
+	</tr>
+</table>
+<p>
+The following SPIs are not available on Liberty:
+</p>
+	<table summary="This table provides more information about the rule, sometimes in the form of an excerpt from a file demonstrating the migration issue." class="borders">
+	<tr>
+		<th>SPI name</th>
+		<th>SPI package</th>
+	</tr>
+	<tr>
+		<td>Batch</td>
+		<td>com.ibm.wsspi.batch</td>		
+	</tr>
+	<tr>
+		<td>Dynamic Cache Service</td>
+		<td>com.ibm.wsspi.cache.CacheInstanceResourceBinder<br>
+			com.ibm.wsspi.cache.CacheMonitor<br>
+			com.ibm.wsspi.cache.ESIStats<br>
+			com.ibm.wsspi.cache.ESIStats$ESIServerStats<br>
+			com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats<br>
+			com.ibm.wsspi.cache.ESIStats$ESIServerStats$ESIProcessorStats$ESICacheEntryStats</td>
+	</tr>
+	<tr>
+		<td>Enterprise JavaBeans (EJB)</td>
+		<td>com.ibm.wsspi.ejbpersistence<br>
+			com.ibm.websphere.csi</td>		
+	</tr>
+	<tr>
+		<td>Management</td>
+		<td>com.ibm.wsspi.management.metadata</td>		
+	</tr>
+    <tr>
+		<td>Resource Adapters</td>
+		<td>com.ibm.wsspi.rsadapter<br>
+		    com.ibm.wsspi.rawrapper</td>		
+	</tr>
+	<tr>
+		<td>Service Component Architecture (SCA)</td>
+		<td>com.ibm.wsspi.container<br>
+			com.ibm.wsspi.monitoring.soa.sca</td>		
+	</tr>
+	<tr>
+		<td>Tivoli Performance Viewer</td>
+		<td>com.ibm.ws.tpv</td>		
+	</tr>
+	<tr>
+		<td>WebSphere exceptions</td>
+		<td>com.ibm.ws.exception</td>
+	</tr>
+	<tr>
+		<td>WebSphere Extension Helper</td>
+		<td>com.ibm.ws.extensionhelper</td>		
+	</tr>
+	<tr>
+		<td>WebSphere i18n</td>
+		<td>com.ibm.wsspi.i18n.context.util</td>		
+	</tr>
+	<tr>
+		<td>WebSphere logging and RAS</td>
+		<td>com.ibm.wsspi.rasdiag<br>
+			com.ibm.wsspi.xct</td>		
+	</tr>
+	<tr>
+		<td>WebSphere Performance Monitoring Infrastructure</td>
+		<td>com.ibm.wsspi.pmi<br>
+			com.ibm.ws.performance.tuning.rule<br>
+		    com.ibm.ws.pmi.server</td>		
+	</tr>
+	<tr>
+		<td>WebSphere Remote Request Dispatcher</td>
+		<td>com.ibm.wsspi.rrd</td>		
+	</tr>
+	<tr>
+		<td>WebSphere Runtime</td>
+		<td>com.ibm.ws.runtime.metadata</td>		
+	</tr>
+	<tr>
+		<td>WebSphere security</td>
+		<td>com.ibm.ws.security.util.ByteArray<br>
+			com.ibm.wsspi.security.audit<br>
+			com.ibm.wsspi.security.auth.callback.WSIdentityCallback<br>
+			com.ibm.wsspi.security.auth.callback.WSMappingCallbackHandlerFactory<br>
+			com.ibm.wsspi.security.auth.callback.WSProtocolPolicyCallback<br>
+			com.ibm.wsspi.security.auth.callback.WSTokenHolderCallback<br>
+			com.ibm.wsspi.security.auth.WSSubjectWrapper<br>
+			com.ibm.wsspi.security.authorization<br>
+			com.ibm.wsspi.security.context<br>
+			com.ibm.wsspi.security.crypto.aes<br>
+			com.ibm.wsspi.security.csiv2<br>
+			com.ibm.wsspi.security.ltpa<br>
+			com.ibm.wsspi.security.policy<br>
+			com.ibm.wsspi.security.securitydomain<br>
+			com.ibm.wsspi.security.spnego<br>
+			com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptor<br>
+			com.ibm.wsspi.security.tai.NegotiateTrustAssociationInterceptorImpl<br>
+			com.ibm.wsspi.security.tai.TrustAssociationInterceptorExt<br>
+			com.ibm.wsspi.security.token.AuthenticationToken<br>
+			com.ibm.wsspi.security.token.AuthorizationToken<br>
+			com.ibm.wsspi.security.token.KerberosToken<br>
+			com.ibm.wsspi.security.token.PropagationToken<br>
+			com.ibm.wsspi.security.token.TokenHolder<br>
+			com.ibm.wsspi.security.token.WSOpaqueTokenHelper<br>
+			com.ibm.wsspi.security.web.saml<br>
+			com.ibm.wsspi.ssl.RetrieveSignersHelper<br>
+		    com.ibm.wsspi.ssl.WSPKIClient</td>		
+	</tr>
+	<tr>
+		<td>WebSphere web services</td>
+		<td>com.ibm.wsspi.soapcontainer<br>
+			com.ibm.wsspi.webservices<br>
+			com.ibm.wsspi.wssecurity<br>
+			com.ibm.wsspi.wsaddressing<br>
+			com.ibm.wsspi.wsrm</td>		
+	</tr>
+	<tr>
+		<td>Work Area</td>
+		<td>com.ibm.wsspi.workarea</td>		
+	</tr>
+</table>
+      </div>
+</div>
+<div id="jsAutomatedFixConfigurationTitle" class="detailed-results-header header-sections" role="complementary" aria-labelledby="analyze_AutomatedFixConfiguration">
+  <h2 id="analyze_AutomatedFixConfiguration" class="detailed-results-title">Automated Fix Configuration</h2>
+  <div class="maven-gradle-holder noprint">
+    <a href="#" class="maven-config disabled">Maven</a>
+    <a href="#" class="gradle-config">Gradle</a>
+  </div>
+</div>
+<div id="js-maven-config" class="detailed-results-config show">
+  <div>
+  <p>Automated changes are enabled using OpenRewrite recipes to activate the available migration recipes. Copy the following config into the <plugins> section of your pom.xml file: 
+</p><div id="rewritemavenconfig-copyarea">
+<div class="copyButton">
+<svg id= 'rewritemavenconfig-copyimg' src='guides_copy_button.svg' onmousedown='copyRewriteMavenConfig()' onmouseup='copyRewriteMavenConfigButtonResetBorder()' onfocus='' alt='copy button icon' width='18' height='21' xmlns='http://www.w3.org/2000/svg'>
+<g fill='#5E6B8D' fill-rule='nonzero'>
+<path d='M12.857 5.25V1a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v13.75a1 1 0 0 0 1 1h4.143V20a1 1 0 0 0 1 1H17a1 1 0 0 0 1-1V6.25a1 1 0 0 0-1-1h-4.143zm-7.714 7.875H2.57v-10.5h7.715V5.25H6.143a1 1 0 0 0-1 1v6.875zm10.286 5.25H7.714v-10.5h7.715v10.5z'/>
+<rect x='9' y='9.188' width='5.143' height='2.625' rx='1'/>
+<rect x='9' y='13.125' width='5.143' height='2.625' rx='1'/>
+</g>
+</svg>
+</div><div id='rewriteMavenConfigInput'>
+<code>&lt;plugin&gt;
+    &lt;groupId&gt;org.openrewrite.maven&lt;/groupId&gt;
+    &lt;artifactId&gt;rewrite-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;5.23.1&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;activeRecipes&gt;
+            &lt;!--Getting the server name on Liberty--&gt;
+            &lt;recipe&gt;org.openrewrite.java.liberty.ServerName&lt;/recipe&gt;
+            &lt;!--Use the default InitialContext JNDI properties--&gt;
+            &lt;recipe&gt;org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup&lt;/recipe&gt;
+            &lt;!--Do not use the WSSecurityHelper revokeSSOCookies method--&gt;
+            &lt;recipe&gt;org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod&lt;/recipe&gt;
+        &lt;/activeRecipes&gt;
+    &lt;/configuration&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.openrewrite.recipe&lt;/groupId&gt;
+            &lt;artifactId&gt;rewrite-liberty&lt;/artifactId&gt;
+            &lt;version&gt;1.1.3&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/plugin&gt;
+</code>
+</div>
+</div>
+  <p>Then run:
+<div class="command-text indent">./mvnw rewrite:run</div></p>  <p>See <a class="blueAnchor" href="https://github.com/openrewrite">https://github.com/openrewrite</a> to learn more.</p>  </div>
+</div>
+<div id="js-gradle-config" class="detailed-results-config hide">
+  <div>
+  <p>Automated changes are enabled using OpenRewrite recipes to activate the available migration recipes. Add the following config into the appropriate sections in your build.gradle file: 
+</p><div id="rewritegradleconfig-copyarea">
+<div class="copyButton">
+<svg id= 'rewritegradleconfig-copyimg' src='guides_copy_button.svg' onmousedown='copyRewriteGradleConfig()' onmouseup='copyRewriteGradleConfigButtonResetBorder()' onfocus='' alt='copy button icon' width='18' height='21' xmlns='http://www.w3.org/2000/svg'>
+<g fill='#5E6B8D' fill-rule='nonzero'>
+<path d='M12.857 5.25V1a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v13.75a1 1 0 0 0 1 1h4.143V20a1 1 0 0 0 1 1H17a1 1 0 0 0 1-1V6.25a1 1 0 0 0-1-1h-4.143zm-7.714 7.875H2.57v-10.5h7.715V5.25H6.143a1 1 0 0 0-1 1v6.875zm10.286 5.25H7.714v-10.5h7.715v10.5z'/>
+<rect x='9' y='9.188' width='5.143' height='2.625' rx='1'/>
+<rect x='9' y='13.125' width='5.143' height='2.625' rx='1'/>
+</g>
+</svg>
+</div><div id='rewriteGradleConfigInput'>
+<code>plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.openrewrite.rewrite' version '6.8.4'
+}
+
+rewrite {
+    activeRecipe(
+        // Getting the server name on Liberty
+        'org.openrewrite.java.liberty.ServerName',
+        // Use the default InitialContext JNDI properties
+        'org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup',
+        // Do not use the WSSecurityHelper revokeSSOCookies method
+        'org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod',
+    )
+}
+
+dependencies {
+        rewrite('org.openrewrite.recipe:rewrite-liberty:1.1.3')
+}</code>
+</div>
+</div>
+  <p>Then run:
+<div class="command-text indent">./gradlew rewriteRun</div></p>  <p>See <a class="blueAnchor" href="https://github.com/openrewrite">https://github.com/openrewrite</a> to learn more.</p>  </div>
+</div>
+<div id="jsRulesAnalyzedTitle" class="detailed-results-header header-sections" role="complementary" aria-labelledby="analyze_RulesAnalyzed">
+  <h2 id="analyze_RulesAnalyzed" class="detailed-results-title">Rules Analyzed</h2>
+  <div class="expand-collapse-holder noprint">
+    <a href="#" class="read-more almighty">Show more</a>
+    <a href="#" class="read-less almighty disabled">Show less</a>
+  </div>
+</div>
+<div id="js-rules-analyzed-detail" class="detailed-analysis-by-rule clear read-less">
+  <a href="#" title="Show more" class="detailed-read-more-button">Show more</a>
+  <ul>
+    <li class="analyzed-rule shared">
+<h3>All application servers</h3>
+<div class="rule-type">File Rules</div>
+<ul>
+<li>Do not start unmanaged threads within the web or EJB container</li>
+</ul>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Check for compatibility when using system modules</li>
+<li>Do not set certain JVM configuration properties from within an application</li>
+<li>Do not start unmanaged threads within the web or EJB container</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>Connectivity considerations for IBM Cloud (Containers and Virtual machines)</h3>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Validate the URL host and port for cloud access</li>
+</ul>
+<div class="rule-type">Property Rules</div>
+<ul>
+<li>Validate the URL host and port for cloud access</li>
+</ul>
+<div class="rule-type">XML Rules</div>
+<ul>
+<li>Validate the URL host and port for cloud access</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>Containers (OpenShift, Kubernetes)</h3>
+<div class="rule-type">File Rules</div>
+<ul>
+<li>Handling application configuration in Docker containers</li>
+</ul>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Handling application configuration in Docker containers</li>
+<li>Managing data inside and between Docker containers</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>Java Technology Support for Liberty</h3>
+<div class="rule-type">File Rules</div>
+<ul>
+<li>JAX-RPC - Not valid candidate for JAX-RPC Conversion Tool</li>
+<li>JAX-RPC - Valid candidate for JAX-RPC Conversion Tool</li>
+<li>JAX-RPC with implementation provided - Valid candidate for JAX-RPC Conversion Tool</li>
+</ul>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>JAX-RPC - Not valid candidate for JAX-RPC Conversion Tool</li>
+<li>JAX-RPC - Valid candidate for JAX-RPC Conversion Tool</li>
+<li>JAX-RPC with implementation provided - Valid candidate for JAX-RPC Conversion Tool</li>
+<li>Java API for XML Registries (JAXR) is unavailable</li>
+<li>Java EE Application Deployment API is unavailable</li>
+<li>Java Portlet is unsupported</li>
+<li>Spring applications might fail to run from a non-expanded WAR file</li>
+<li>Stub classes must be included when using remote Enterprise JavaBeans (EJB) 2.x</li>
+<li>Transaction propagation is not supported for Enterprise JavaBeans (EJB) remote interfaces</li>
+<li>Web Services Notification (WS-Notification) is unavailable</li>
+</ul>
+<div class="rule-type">XML Rules</div>
+<ul>
+<li>EXtensible Stylesheet Language (XSLT) 2.x is unavailable</li>
+<li>Entity Enterprise JavaBeans (EJB) are unavailable</li>
+<li>JAX-RPC - Not valid candidate for JAX-RPC Conversion Tool</li>
+<li>JAX-RPC - Valid candidate for JAX-RPC Conversion Tool</li>
+<li>JAX-RPC with implementation provided - Valid candidate for JAX-RPC Conversion Tool</li>
+<li>Java Portlet is unsupported</li>
+<li>JavaServer Faces (JSF) 1.1/1.2 compatibility</li>
+<li>Stub classes must be included when using remote Enterprise JavaBeans (EJB) 2.x</li>
+<li>Transaction propagation is not supported for Enterprise JavaBeans (EJB) remote interfaces</li>
+<li>Web Services Notification (WS-Notification) is unavailable</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>Scanning problems</h3>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Class files contain unresolved compilation problems</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>Technology connectivity considerations for IBM Cloud</h3>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Databases</li>
+<li>Java EE security</li>
+<li>JavaMail server</li>
+<li>Remote web services</li>
+<li>Third-party security</li>
+<li>Vendor specific messaging</li>
+</ul>
+<div class="rule-type">XML Rules</div>
+<ul>
+<li>Databases</li>
+<li>Java EE security</li>
+<li>JavaMail server</li>
+<li>Remote web services</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>Technology connectivity considerations for IBM Cloud (not Liberty Core)</h3>
+<div class="rule-type">File Rules</div>
+<ul>
+<li>Enterprise information systems (EIS)</li>
+</ul>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Enterprise information systems (EIS)</li>
+<li>Java Message Service (JMS)</li>
+<li>Message-Driven Beans (MDB)</li>
+<li>Remote EJB lookups</li>
+<li>Remote EJB providers</li>
+</ul>
+<div class="rule-type">XML Rules</div>
+<ul>
+<li>Enterprise information systems (EIS)</li>
+<li>Java Message Service (JMS)</li>
+<li>Message-Driven Beans (MDB)</li>
+<li>Remote EJB lookups</li>
+<li>Remote EJB providers</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>WebSphere traditional to Liberty</h3>
+<div class="rule-type">File Rules</div>
+<ul>
+<li>JAR files in subfolders are not loaded</li>
+<li>Web Services Policy Sets are unavailable in Liberty</li>
+</ul>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Access to JSF third-party packages requires configuration </li>
+<li>Application contains WSDL2Java generated classes</li>
+<li>Behavior change on lookups for Enterprise JavaBeans in previous versions of Liberty</li>
+<li>Behavior difference for web service host name validation</li>
+<li>CommonJ SDO API is unavailable on Liberty</li>
+<li>Component Authentication is not supported in Liberty</li>
+<li>Do not use the WSSecurityHelper getLTPACookieFromSSOToken method</li>
+<li>Do not use the WSSecurityHelper revokeSSOCookies method</li>
+<li>Getting the server name on Liberty</li>
+<li>Ported locally transacted JMS sessions do not work in Liberty</li>
+<li>Precompiled JSP classes will be ignored</li>
+<li>Review differences in WebSphere MBeans</li>
+<li>Review differences in the WebSphere z/OS Optimized Local Adapters API</li>
+<li>Review use of the dynamic cache service</li>
+<li>Review use of the javax.activation.DataHandler object</li>
+<li>SOAP over Java Message Service (JMS) is unavailable</li>
+<li>Some JSF packages are unavailable in Liberty</li>
+<li>Some WSSecurityHelper methods are unavailable</li>
+<li>Some WebSphere Exception APIs and SPIs are unavailable</li>
+<li>Some WebSphere Extension Helper SPIs are unavailable</li>
+<li>Some WebSphere Security APIs and SPIs are unavailable</li>
+<li>Some WebSphere z/OS Optimized Local Adapters APIs are unavailable</li>
+<li>Some third-party APIs are unavailable on Liberty</li>
+<li>The Activity Session service is unavailable</li>
+<li>The Apache Axis2 API is unavailable</li>
+<li>The Extension Registry APIs are unavailable</li>
+<li>The InitialContext lookup method can return primitive types</li>
+<li>The Integrated Solutions Console (ISC) APIs are unavailable</li>
+<li>The Tivoli Performance Viewer SPIs are unavailable</li>
+<li>The Universal Description, Discovery and Integration (UDDI) APIs are unavailable</li>
+<li>The WebSphere Application Client APIs are unavailable</li>
+<li>The WebSphere Application Profiling APIs are unavailable</li>
+<li>The WebSphere Asynchronous Beans API was superseded by a newer implementation</li>
+<li>The WebSphere Batch API and SPI are unavailable</li>
+<li>The WebSphere Common Exception APIs are unavailable</li>
+<li>The WebSphere Connector Architecture APIs are unavailable</li>
+<li>The WebSphere EJB Query API is unavailable</li>
+<li>The WebSphere Enterprise JavaBeans APIs and SPIs are unavailable</li>
+<li>The WebSphere Management APIs and SPIs are unavailable</li>
+<li>The WebSphere ORB Extensions APIs are unavailable</li>
+<li>The WebSphere Performance Monitoring Infrastructure (PMI) APIs and SPIs are unavailable</li>
+<li>The WebSphere Portal APIs are unavailable</li>
+<li>The WebSphere Remote Request Dispatcher (RRD) SPIs are unavailable</li>
+<li>The WebSphere Resource Adapter APIs and SPIs are unavailable</li>
+<li>The WebSphere Runtime APIs and SPIs are unavailable</li>
+<li>The WebSphere SMF recording APIs are unavailable</li>
+<li>The WebSphere Scheduler API was superseded by a newer implementation</li>
+<li>The WebSphere Service Data Objects (SDO) APIs are unavailable</li>
+<li>The WebSphere Service Integration Bus (SIB) APIs are unavailable</li>
+<li>The WebSphere Servlet API was superseded by a newer implementation</li>
+<li>The WebSphere Startup Beans Service API was superseded by a newer implementation</li>
+<li>The WebSphere Studio Application Developer Integration Edition APIs are unavailable</li>
+<li>The WebSphere Work Area APIs and SPIs are unavailable</li>
+<li>The WebSphere Workload Manager APIs are unavailable</li>
+<li>The WebSphere i18n APIs and SPIs are unavailable</li>
+<li>The WebSphere logging and RAS APIs and SPIs are unavailable</li>
+<li>The WebSphere web services APIs and SPIs are unavailable</li>
+<li>The use of java.sql.Driver and java.sql.DriverManager interfaces might require configuration </li>
+<li>The use of system provided Eclipse Equinox APIs requires configuration</li>
+<li>The use of the WebSphere XPath, XQuery, and XSLT API requires configuration</li>
+<li>Use the default InitialContext JNDI properties</li>
+<li>Validate the result of concatenation with getRealPath("")</li>
+<li>Web Services Business Activity (WS-BA) is unavailable</li>
+<li>com.tivoli third-party APIs are unavailable on Liberty</li>
+<li>org.apache third-party APIs are unavailable on Liberty</li>
+<li>org.apache.aries third-party APIs are unavailable on Liberty</li>
+<li>org.codehaus.jackson third-party APIs are unavailable on Liberty</li>
+</ul>
+<div class="rule-type">Property Rules</div>
+<ul>
+<li>Component Authentication is not supported in Liberty</li>
+<li>Use the default InitialContext JNDI properties</li>
+</ul>
+<div class="rule-type">XML Rules</div>
+<ul>
+<li>Behavior change on lookups for Enterprise JavaBeans in previous versions of Liberty</li>
+<li>Component Authentication is not supported in Liberty</li>
+<li>Namespace values in application.xml must be consistent with the descriptor version</li>
+<li>Namespace values in ejb-jar.xml must be consistent with the descriptor version</li>
+<li>Namespace values in ra.xml must be consistent with the descriptor version</li>
+<li>Namespace values in web.xml must be consistent with the descriptor version</li>
+<li>SOAP over Java Message Service (JMS) is unavailable</li>
+<li>Some WebSphere z/OS Optimized Local Adapters APIs are unavailable</li>
+<li>The Activity Session service is unavailable</li>
+<li>The WebSphere Batch API and SPI are unavailable</li>
+<li>The WebSphere EJB Query API is unavailable</li>
+<li>The WebSphere Scheduler API was superseded by a newer implementation</li>
+<li>The WebSphere Startup Beans Service API was superseded by a newer implementation</li>
+<li>The persistence.xml file must be in a specification-recognized location</li>
+<li>User-defined EJB binding locations were previously ignored in Liberty</li>
+<li>Web Services Atomic Transaction (WS-AT) Version 1.2 is available</li>
+</ul>
+    </li>
+    <li class="analyzed-rule shared">
+<h3>WebSphere traditional to Open Liberty</h3>
+<div class="rule-type">Java Rules</div>
+<ul>
+<li>Detect CommonJ Timer and Work Manager APIs</li>
+<li>Detect the WebSphere Common Exception JDBC APIs</li>
+<li>Detect usage of the Quartz scheduler</li>
+<li>WebSphere DataStoreHelper APIs in Open Liberty</li>
+<li>WebSphere JDBC APIs in Open Liberty</li>
+</ul>
+    </li>
+  </ul>
+</div>
+</div>
+<script type="text/javascript"> 
+function helpWindow(a){var b=window.open(a,"WebSphereApplicationMigration");b.focus()};</script> 
+<script type="text/javascript"> 
+var detectIE=function(){var c=window.navigator.userAgent;var b=c.indexOf("MSIE ");if(b>0){return parseInt(c.substring(b+5,c.indexOf(".",b)),10)}var a=c.indexOf("Trident/");if(a>0){var e=c.indexOf("rv:");return parseInt(c.substring(e+3,c.indexOf(".",e)),10)}var d=c.indexOf("Edge/");if(d>0){return parseInt(c.substring(d+5,c.indexOf(".",d)),10)}return false};if(detectIE()){if("document" in self){if(!("classList" in document.createElement("_"))||document.createElementNS&&!("classList" in document.createElementNS("http://www.w3.org/2000/svg","g"))){(function(A){if(!("Element" in A)){return}var v="classList",m="prototype",j=A.Element[m],B=Object,b=String[m].trim||function(){return this.replace(/^\s+|\s+$/g,"")},y=Array[m].indexOf||function(c){var d=0,a=this.length;for(;d<a;d++){if(d in this&&this[d]===c){return d}}return -1},g=function(a,c){this.name=a;this.code=DOMException[a];this.message=c},k=function(a,c){if(c===""){throw new g("SYNTAX_ERR","An invalid or illegal string was specified")}if(/\s/.test(c)){throw new g("INVALID_CHARACTER_ERR","String contains an invalid character")}return y.call(a,c)},x=function(c){var f=b.call(c.getAttribute("class")||""),a=f?f.split(/\s+/):[],h=0,d=a.length;for(;h<d;h++){this.push(a[h])}this._updateClassName=function(){c.setAttribute("class",this.toString())}},z=x[m]=[],q=function(){return new x(this)};g[m]=Error[m];z.item=function(a){return this[a]||null};z.contains=function(a){a+="";return k(this,a)!==-1};z.add=function(){var c=arguments,f=0,a=c.length,h,d=false;do{h=c[f]+"";if(k(this,h)===-1){this.push(h);d=true}}while(++f<a);if(d){this._updateClassName()}};z.remove=function(){var c=arguments,h=0,a=c.length,l,d=false,f;do{l=c[h]+"";f=k(this,l);while(f!==-1){this.splice(f,1);d=true;f=k(this,l)}}while(++h<a);if(d){this._updateClassName()}};z.toggle=function(c,d){c+="";var a=this.contains(c),f=a?d!==true&&"remove":d!==false&&"add";if(f){this[f](c)}if(d===true||d===false){return d}else{return !a}};z.toString=function(){return this.join(" ")};if(B.defineProperty){var p={get:q,enumerable:true,configurable:true};try{B.defineProperty(j,v,p)}catch(w){if(w.number===-2146823252){p.enumerable=false;B.defineProperty(j,v,p)}}}else{if(B[m].__defineGetter__){j.__defineGetter__(v,q)}}})(self)}else{(function(){var b=document.createElement("_");b.classList.add("c1","c2");if(!b.classList.contains("c2")){var c=function(d){var f=DOMTokenList.prototype[d];DOMTokenList.prototype[d]=function(g){var e,h=arguments.length;for(e=0;e<h;e++){g=arguments[e];f.call(this,g)}}};c("add");c("remove")}b.classList.toggle("c3",false);if(b.classList.contains("c3")){var a=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(d,f){if(1 in arguments&&!this.contains(d)===!f){return f}else{return a.call(this,d)}}}b=null})()}}}document.addEventListener("DOMContentLoaded",function(){var p=function(){var h=document;return Math.max(h.body.scrollHeight,h.documentElement.scrollHeight,h.body.offsetHeight,h.documentElement.offsetHeight,h.body.clientHeight,h.documentElement.clientHeight)};var f=function(az,j){var o,l,aF;if(j){aF=document.getElementById(az);o=aF.getBoundingClientRect().top;l=500}else{aF=document.querySelector("#"+az);o=aF.getBoundingClientRect().top;l=arguments.length<=1||arguments[1]===undefined?500:arguments[1]}var k=15,aA=window.scrollY,ay=aA+(o-44),aB=0,i=Math.PI/(l/k),h=ay>aA?1:-1,aC=Math.abs(ay-aA)/2,aE=p(),aD=Math.ceil(aC-aC*Math.cos(1*i)),aw;var ax=setInterval(function(){var aG=h>0?window.scrollY+window.innerHeight>=aE-1:window.scrollY<1;if(Math.abs(ay-window.scrollY)>aD&&!aG){aB+=1;aw=aC-aC*Math.cos(aB*i);window.scrollTo(0,aA+aw*h)}else{clearInterval(ax);if(j){aF.classList.add("shake");aF.classList.add("is-paused");setTimeout(function(){aF.classList.remove("is-paused")},0)}}},k)};var ac=detectIE();var B=44;var U=document.getElementsByClassName("recommendation-toggle");var av=document.getElementsByClassName("recommendation-toggle-help");var J=document.getElementsByClassName("recommendation-toggle-results");var Z=function(i,h){return i!=null&&i.className&&new RegExp("(\\s|^)"+h+"(\\s|$)").test(i.className)};var W=function(){var i=document.querySelectorAll(".rule-fix.show").length;var h=document.querySelectorAll(".rule-result.show").length;if(i===0&&h===0){return true}else{return false}};var F=function(){var h=document.querySelectorAll(".archive-details.show").length;if(h===0){return true}else{return false}};var ap=function(k,i,l,j){var h=l||"hide";var o=j||"show";if(i){k.classList.remove(h);k.classList.add(o)}else{k.classList.remove(o);k.classList.add(h)}};var L=document.querySelectorAll(".jump-item");var ae=document.querySelectorAll(".inner--list--hide")[0];var O=function(ay){ay.preventDefault();var aB,j,i,l,ax,aA,az,o=ay.target.closest("a");if(o.tagName==="SPAN"){o=o.parentElement}var aw,h,k;if(o.href){i=o.href.split("#")[1];l=document.getElementById(i);if(Z(l,"archive")){aw=l.querySelector(".archive-details");h=Z(aw,"hide");if(h){ap(aw,h);k=aw.previousElementSibling.querySelector(".archive-toggle");k.text="Close details";if(!F()&&Z(n,"disabled")){n.classList.remove("disabled")}}}else{if(l.tagName==="H2"||l.tagName==="H3"||l.tagName==="H4"||Z(l,"rule")){aB=i.split("_")[0];j=document.getElementById(aB);if(j!=null){if(Z(j,"archive")){aw=j.querySelector(".archive-details");h=Z(aw,"hide");if(h){ap(aw,h);k=aw.previousElementSibling.querySelector(".archive-toggle");k.text="Close details";if(!F()&&Z(n,"disabled")){n.classList.remove("disabled")}}}}}}if(ac){ax=l.getBoundingClientRect();aA=ax.top;az=aA-B;window.scrollBy(0,az)}else{f(i)}ae.style.display="none";setTimeout(function(){ae.removeAttribute("style")},1000)}};for(var ao=0;ao<L.length;ao++){var e=L[ao];e.addEventListener("click",O,false)}var aq=document.querySelector(".nav-wrapper");var am=function(){var o=window.pageYOffset;var i=document.getElementById("reportContainer");if(i){var h=o>=490;ap(aq,h,"na-fixed","fixed-in-bluemix");var l=document.getElementsByClassName("jump-to-nav");if(h){l[0].style.right=document.getElementById("js-rule-severity").getBoundingClientRect().left+"px"}else{l[0].removeAttribute("style")}}else{var k=aq.getBoundingClientRect();var j=k.top;var h=o>=j;ap(aq,h,"na-fixed","fixed")}};window.addEventListener("scroll",am,false);var m="+",s="-";var E=document.querySelectorAll(".summary .col1summarymodule, .summary .col1summarymodule .status");var x=document.querySelectorAll(".summary");var v=document.querySelectorAll('[id^="rowHiddenMod"]');var M=function(aw){aw.preventDefault();aw.stopPropagation();var ax;if(aw.target.tagName==="SPAN"){ax=aw.target.parentElement.parentElement}else{ax=aw.target.parentElement}for(var l=0;l<x.length;l++){if(ax===x[l]){var aC;var aA=l+1;var aB='[id^="rowHiddenMod'+aA+'"]';var ay=document.querySelectorAll(aB);for(var k=0;k<ay.length;k++){var j=ay[k];var h=Z(j,"visibleRow");ap(j,!h,"hiddenRow","visibleRow");if(h){if(k===0){aC=j.previousElementSibling.querySelector(".status");aC.textContent=m}}else{if(k===0){aC=j.previousElementSibling.querySelector(".status");aC.textContent=s}var az=j.querySelectorAll(".col2thru12 a");for(var i=0;i<az.length;i++){var o=az[i];o.addEventListener("click",a,false)}}}}}};for(var ah=0;ah<E.length;ah++){var S=E[ah];S.addEventListener("click",M,false)}var au=document.querySelectorAll(".connectivity-summary .results th a");var P=function(k){k.preventDefault();var o,h,j,i=k.target;if(i.href){o=i.href.split("#")[1];h=document.getElementById(o);if(ac){var l=h.getBoundingClientRect();l=l.top-B;window.scrollBy(0,l)}else{setTimeout(function(){f(o)},0)}}};for(var af=0;af<au.length;af++){var ag=au[af];ag.addEventListener("click",P,false)}var K=document.querySelectorAll(".summary .col2thru12 a");var a=function(o){o.preventDefault();var ax,j,l,i,k,h;if(o.target.tagName==="A"){k=o.target}else{k=o.target.parentElement}if(k.href){ax=k.href.split("#")[1];j=document.getElementById(ax);l=j.parentElement.parentElement.parentElement;h=l.previousElementSibling.previousElementSibling.querySelector(".results-toggle");i=Z(l,"hide");if(i){ap(l,i);h.text="Close results";if(!W()&&Z(n,"disabled")){n.classList.remove("disabled")}}if(ac){var aw=j.getBoundingClientRect();aw=aw.top-B;window.scrollBy(0,aw)}else{setTimeout(function(){f(ax,true)},0)}}};for(var ad=0;ad<K.length;ad++){var Q=K[ad];Q.addEventListener("click",a,false)}var D=document.querySelectorAll(".Rule-Help__Inner-Link");var G=function(aw){aw.preventDefault();var h,ay,o,i,j,ax,l;if(aw.target.href){h=aw.target.href.split("#")[1];o=document.getElementById(h);j=Z(o,"rule-additional-help");if(!j){l=o.previousElementSibling.querySelector(".rule-help-toggle");i=Z(o,"hide");if(i){ap(o,i);l.text="Close rule help";if(!W()&&Z(n,"disabled")){n.classList.remove("disabled")}}}if(ac){var k=o.getBoundingClientRect();k=k.top-B;window.scrollBy(0,k)}else{f(h)}}};for(var ab=0;ab<D.length;ab++){var R=D[ab];R.addEventListener("click",G,false)}var Y=function(o){o.preventDefault();var ax,j,l,i,k,h;if(o.target.href){ax=o.target.href.split("#")[1];l=document.getElementById(ax);h=l.previousElementSibling.querySelector(".archive-toggle");i=Z(l,"hide");if(i){ap(l,i);h.text="Close details";if(!F()&&Z(n,"disabled")){n.classList.remove("disabled")}}if(ac){var aw=l.getBoundingClientRect();aw=aw.top-B;window.scrollBy(0,aw)}else{f(ax)}}};var d=document.getElementsByClassName("maven-config");var aj=document.getElementsByClassName("gradle-config");if(d.length>0&&aj.length>0){d=d[0];aj=aj[0];var z=function(j){var h=j.target.closest("a"),i=h.parentElement.getElementsByClassName("disabled")[0];isGradleAnchor=Z(h,"gradle-config");mavenConfig=document.getElementById("js-maven-config");gradleConfig=document.getElementById("js-gradle-config");j.preventDefault();if(isGradleAnchor){mavenConfig.classList.remove("show");mavenConfig.classList.add("hide");gradleConfig.classList.remove("hide");gradleConfig.classList.add("show")}else{gradleConfig.classList.remove("show");gradleConfig.classList.add("hide");mavenConfig.classList.remove("hide");mavenConfig.classList.add("show")}if(i){i.classList.remove("disabled");h.classList.add("disabled")}};d.addEventListener("click",z);aj.addEventListener("click",z)}var al=document.getElementsByClassName("expand-all")[0];var n=document.getElementsByClassName("collapse-all")[0];var N=document.getElementsByClassName("archive");var C=document.getElementsByClassName("archive-details");var g=document.getElementsByClassName("archive-toggle");var w=document.getElementsByClassName("rule");var A=document.getElementsByClassName("rule-fix");var V=document.getElementsByClassName("rule-result");var b=document.getElementsByClassName("rule-help-toggle");var c=document.getElementsByClassName("results-toggle");var H=function(aH){var l=aH.target.closest("a"),ay=l.parentElement.getElementsByClassName("disabled")[0],aD=Z(l,"expand-all"),i=N.length,aC=i-1;ruleListLength=w.length,ruleListLengthAt0=ruleListLength-1;aH.preventDefault();for(var o=0;o<i;o++){var aI=g[o];var aE=aI.closest(".archive").getElementsByClassName("archive-details")[0];var j=Z(aE,"hide");var h=aD&&j;var aB=!aD&&!j;ap(aE,aD);if(aD){aI.text="Close details";if(o===aC){al.classList.add("disabled")}}else{aI.text="Show details";if(F()){n.classList.add("disabled")}}}for(var k=0;k<ruleListLength;k++){var az=A[k],aF=V[k],aw=Z(az,"hide"),aG=Z(aF,"hide"),aA=b[k],ax=c[k],h=aD&&aw||aD&&aG,aB=!aD&&!aw||!aD&&!aG;ap(az,aD);if(aF!=null){ap(aF,aD)}if(aD){aA.text="Close rule help";if(ax!=null){ax.text="Close results"}if(k===ruleListLengthAt0){al.classList.add("disabled")}}else{aA.text="Show rule help";if(ax!=null){ax.text="Show results"}if(W()){n.classList.add("disabled")}}}if(ay){ay.classList.remove("disabled");l.classList.add("disabled")}};al.addEventListener("click",H);n.addEventListener("click",H);var y=function(ax){ax.preventDefault();var aw={className:"archive-details",closeArchiveDetail:"Close details",showArchiveDetail:"Show details"};var k=ax.target.closest(".archive").getElementsByClassName(aw.className)[0];var j=Z(k,"hide");ap(k,j);if(j){ax.target.text=aw.closeArchiveDetail;if(!F()&&Z(n,"disabled")){n.classList.remove("disabled")}var o=document.querySelectorAll(".archive-details.hide").length;if(o===0){al.classList.add("disabled")}}else{ax.target.text=aw.showArchiveDetail;var l=k.getElementsByClassName("recommendation-toggle");for(var h=0;h<l.length;h++){at(l[h])}if(Z(al,"disabled")){al.classList.remove("disabled")}if(F()){n.classList.add("disabled")}}};var at=function(h){var aw={className:"archive-details",closeArchiveDetail:"Close details",showArchiveDetail:"Show details"};var l=h.closest(".archive").getElementsByClassName(aw.className)[0];var k=Z(l,"hide");if(!k){ap(l,k);h.text=aw.showArchiveDetail;var o=l.getElementsByClassName("recommendation-toggle");for(var j=0;j<o.length;j++){at(o[j])}}};for(var an=0;an<U.length;an++){var u=U[an];u.addEventListener("click",function(h){y(h)},false)}var ar=function(k,j){k.preventDefault();var i=k.target.closest(".rule").getElementsByClassName(j.className)[0];var h=Z(i,"hide");ap(i,h);if(h){k.target.text=j.closeRuleHelp;if(!W()&&Z(n,"disabled")){n.classList.remove("disabled")}}else{k.target.text=j.showRuleHelp;if(Z(al,"disabled")){al.classList.remove("disabled")}if(W()){n.classList.add("disabled")}}};for(var an=0;an<av.length;an++){var t=av[an];t.addEventListener("click",function(i){var h={className:"rule-fix",closeRuleHelp:"Close rule help",showRuleHelp:"Show rule help"};ar(i,h)},false)}for(var ak=0;ak<J.length;ak++){var T=J[ak];T.addEventListener("click",function(i){var h={className:"rule-result",closeRuleHelp:"Close results",showRuleHelp:"Show results"};ar(i,h)},false)}var I=document.querySelectorAll(".read-more, .read-less, .detailed-read-more-button");var r=document.querySelector("#js-rules-analyzed-detail");var aa=function(l){l.preventDefault();l.stopPropagation();var k=document.querySelector(".detailed-read-more-button"),h=Z(l.target,"detailed-read-more-button"),o=Z(r,"read-less"),i=document.querySelector(".read-more"),j=document.querySelector(".read-less");if(!o){i=document.querySelector(".read-less");j=document.querySelector(".read-more")}if(h&&o){l.target.text="Show less";l.target.title="Show less"}if(!h&&o){k.text="Show less";k.title="Show less"}if(h&&!o){l.target.text="Show more";l.target.title="Show more"}if(!h&&!o){k.text="Show more";k.title="Show more"}ap(r,o,"read-less","read-more");i.classList.add("disabled");j.classList.remove("disabled")};for(var ai=0;ai<I.length;ai++){var q=I[ai];var X=document.getElementById("js-rules-analyzed-detail");if(q!==X){q.addEventListener("click",aa)}}},false);</script> 
+<script type="text/javascript">
+function copyRewriteMavenConfig(){copyFunction("rewriteMavenConfigInput","rewritemavenconfig-copyimg")}function copyRewriteGradleConfig(){copyFunction("rewriteGradleConfigInput","rewritegradleconfig-copyimg")}function copyServerXml(){copyFunction("serverXmlInput","serverxml-copyimg")}function copyFunction(b,a){var c=document.getElementById(b).textContent;textArea=document.createElement("textarea");textArea.textContent=c.trim();document.body.append(textArea);textArea.select();document.execCommand("copy");textArea.hidden=true;var d=document.getElementById(a);d.style.border="1px dashed black";d.style.backgroundColor="#A5D37C"}function copyRewriteMavenConfigButtonResetBorder(){copyButtonResetBorder("rewritemavenconfig-copyimg")}function copyRewriteGradleConfigButtonResetBorder(){copyButtonResetBorder("rewritegradleconfig-copyimg")}function copyServerXmlButtonResetBorder(){copyButtonResetBorder("serverxml-copyimg")}function copyButtonResetBorder(b){var a=document.getElementById(b);a.style.border="1px solid rgb(202, 198, 198)"};</script>
+</body>
+</html>

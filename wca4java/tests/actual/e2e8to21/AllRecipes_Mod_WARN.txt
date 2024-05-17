@@ -1,0 +1,4 @@
+[WARNING] Changes have been made to src/main/java/com/acme/modres/AvailabilityCheckerServlet.java by:
+[WARNING]     com.ibm.testRecipe
+[WARNING]         org.openrewrite.java.migrate.lang.ThreadStopUnsupported
+[WARNING] Please review and commit the results.

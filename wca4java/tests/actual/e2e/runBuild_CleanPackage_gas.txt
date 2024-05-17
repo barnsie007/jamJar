@@ -1,0 +1,45 @@
+2024-05-17 05:51:33 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 05:51:33 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< GasStationModule:GasStationModule >------------------
+[INFO] Building GasStationModule 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ GasStationModule ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ GasStationModule ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /root/source/gas/mvn-tWAS-gasstationmodule/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.12.1:compile (default-compile) @ GasStationModule ---
+[INFO] Recompiling the module because of changed source code.
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 122 source files with javac [debug target 1.8] to target/classes
+[INFO] /root/source/gas/mvn-tWAS-gasstationmodule/src/main/java/com/ibm/svt/stationModule/store/storeSessions/StationStoreSessionBean.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/source/gas/mvn-tWAS-gasstationmodule/src/main/java/com/ibm/svt/stationModule/store/storeSessions/StationStoreSessionBean.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ GasStationModule ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /root/source/gas/mvn-tWAS-gasstationmodule/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.12.1:testCompile (default-testCompile) @ GasStationModule ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ GasStationModule ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- war:3.4.0:war (default-war) @ GasStationModule ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [GasStationModule] in [/root/source/gas/mvn-tWAS-gasstationmodule/target/GasStationModule]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/root/source/gas/mvn-tWAS-gasstationmodule/src/main/webapp]
+[INFO] Building war: /root/source/gas/mvn-tWAS-gasstationmodule/target/GasStationModule.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.763 s
+[INFO] Finished at: 2024-05-17T05:51:46-04:00
+[INFO] ------------------------------------------------------------------------
+[0m

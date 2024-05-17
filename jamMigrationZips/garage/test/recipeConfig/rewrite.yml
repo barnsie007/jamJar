@@ -1,0 +1,6 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: com.ibm.testRecipe
+recipeList:
+  - org.openrewrite.java.migrate.JpaCacheProperties
+  - org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider
+  - jc

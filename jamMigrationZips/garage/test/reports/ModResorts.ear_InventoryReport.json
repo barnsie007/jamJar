@@ -1,0 +1,262 @@
+{
+   "report": "inventory",
+   "version": "4.0",
+   "productVersion": "24.0.0.1",
+   "productRelease": "24.0.0.1",
+   "buildID": "v20240310_2333",
+   "options": [
+      "--includeHelpLocation",
+      "--maxUserDefinedRuleResults=100",
+      "--userRuleLocation=/root/jc/transformationadvisor-3.9.0/bin/../conf/userDefinedRules",
+      "--excludePackages=ch.qos,com.cloudant,com.cognos,com.fasterxml,com.filenet,com.ibatis,com.ibm,com.informix,com.lowagie,com.mchange,com.meterware,com.microsoft,com.mongodb,com.mysql,com.sun,com.sybase,filenet,freemarker,groovy,jakarta,java,javax,net,oracle,org,sqlj,sun,twitter4j,_ibmjsp"
+   ],
+   "applications": [
+      "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear"
+   ],
+   "sharedLibraries": [
+   ],
+   "archives": {
+      "ears": 1,
+      "wars": 1,
+      "rars": 0,
+      "ejbs": 0,
+      "webFragments": 0,
+      "utilityJars": 3,
+      "appClients": 0
+   },
+   "summary": {
+      "servlets": 3,
+      "jsps": 1,
+      "jpaEntities": 0,
+      "bmpEntityBeans": 0,
+      "cmpEntityBeans": 0,
+      "messageDrivenBeans": 0,
+      "singletonSessionBeans": 1,
+      "statefulSessionBeans": 0,
+      "statelessSessionBeans": 0,
+      "jaxrpcConsumers": 0,
+      "jaxrpcProviders": 0,
+      "jaxrsConsumers": 0,
+      "jaxrsProviders": 0,
+      "jaxwsConsumers": 0,
+      "jaxwsProviders": 0,
+      "springBeans": 0
+   },
+   "archiveInventory": [
+      {
+         "archiveName": "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear",
+         "moduleType": "Enterprise archive",
+         "moduleVersion": "7",
+         "metadataComplete": null,
+         "moduleSize": 9151908,
+         "checksum": "d214e01a3441eaee0d10903de48be4b42ce003307492cf6ebac3a5d194aa9b00",
+         "archives": {
+            "wars": 1,
+            "rars": 0,
+            "ejbs": 0,
+            "utilityJars": 3,
+            "appClients": 0
+         },
+         "summary": {
+            "servlets": 3,
+            "jsps": 1,
+            "jpaEntities": 0,
+            "bmpEntityBeans": 0,
+            "cmpEntityBeans": 0,
+            "messageDrivenBeans": 0,
+            "singletonSessionBeans": 1,
+            "statefulSessionBeans": 0,
+            "statelessSessionBeans": 0,
+            "jaxrpcConsumers": 0,
+            "jaxrpcProviders": 0,
+            "jaxrsConsumers": 0,
+            "jaxrsProviders": 0,
+            "jaxwsConsumers": 0,
+            "jaxwsProviders": 0,
+            "springBeans": 0
+         },
+         "potentialDeploymentProblemsSummary": {
+            "archivesContainingDuplicateClasses": 0,
+            "archivesContainingJavaEEorSEClasses": 0,
+            "archivesContainingConflictingOpenSourceSoftwareClasses": 0,
+            "archivesContainingWebSphereClasses": 0,
+            "archivesNotReferencedInTheApplication": 2,
+            "archivesWithMissingDependenciesInTheApplication": 1,
+            "classesWithSystemLevelJVMConfiguration": 0,
+            "sharedLibrariesReferencingApplicationClasses": 0
+         },
+         "potentialDeploymentProblemsDetails": [
+            {
+               "duplicateClassesWithinClassLoader": [
+               ]
+            },
+            {
+               "duplicateClassesAcrossApplication": [
+               ]
+            },
+            {
+               "javaEEandSEClasses": [
+               ]
+            },
+            {
+               "duplicateWebSphereClasses": [
+               ]
+            },
+            {
+               "openSourceSoftwareClasses": [
+               ]
+            },
+            {
+               "archivesNotReferenced": [
+                  {
+                     "archive": "modresorts-2.0.0.war/WEB-INF/lib/lombok-1.18.30.jar",
+                     "referencedBy": "",
+                     "checksum": "69e37ce28e972373905b99a83731ddadf330407bc1eed4a906a8d8264d51fb62"
+                  },
+                  {
+                     "archive": "modresorts-2.0.0.war/WEB-INF/lib/lombok-1.18.30.jar/lombok/launch/mavenEcjBootstrapAgent.jar",
+                     "referencedBy": "",
+                     "checksum": "978e46473c923bae74aa933a0ae7ac40de7b379f654aba21de33af7d1b5e3999"
+                  }
+               ]
+            },
+            {
+               "missingDependencies": [
+                  {
+                     "missingDependencies": [
+                        "com.sun.tools.javac.processing",
+                        "com.sun.tools.javac.util",
+                        "lombok.core",
+                        "lombok.core.configuration",
+                        "lombok.eclipse",
+                        "lombok.permit",
+                        "org.apache.tools.ant",
+                        "org.apache.tools.ant.types",
+                        "org.eclipse.core.resources",
+                        "org.eclipse.core.runtime",
+                        "org.eclipse.core.runtime.adaptor",
+                        "org.eclipse.jdt.core",
+                        "org.eclipse.jdt.core.dom",
+                        "org.eclipse.jdt.core.dom.rewrite",
+                        "org.eclipse.jdt.core.search",
+                        "org.eclipse.jdt.internal.compiler.ast",
+                        "org.eclipse.jdt.internal.compiler.lookup",
+                        "org.eclipse.jdt.internal.core",
+                        "org.eclipse.jdt.internal.core.dom.rewrite",
+                        "org.eclipse.jdt.internal.corext.refactoring",
+                        "org.eclipse.jdt.internal.corext.refactoring.structure",
+                        "org.osgi.framework",
+                        "sun.misc"
+                     ],
+                     "archive": [
+                        "modresorts-2.0.0.war/WEB-INF/lib/lombok-1.18.30.jar"
+                     ]
+                  }
+               ]
+            },
+            {
+               "classesWithSystemLevelJVMConfiguration": [
+               ]
+            },
+            {
+               "sharedLibraryDependencies": [
+               ]
+            }
+         ],
+         "performanceConsiderations": {
+            "archivesThatAreCandidatesForMetadataCompleteTrueAttribute": [
+            ],
+            "webModulesWithExcessiveClassFiles": [
+            ],
+            "webModulesWithExcessiveStaticResources": [
+            ]
+         },
+         "operationalConsiderations": {
+            "deploymentTargets": {
+               "clusters": [
+               ],
+               "nonClusteredServers": [
+                  {
+                     "name": "server1",
+                     "node": "demo-data-vm1Node01",
+                     "type": "APPLICATION_SERVER"
+                  }
+               ]
+            }
+         },
+         "containedArchiveInventory": [
+            {
+               "archiveName": "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear/modresorts-2.0.0.war",
+               "moduleType": "Web module",
+               "moduleVersion": "3.1",
+               "metadataComplete": "Unspecified",
+               "checksum": "d214e01a3441eaee0d10903de48be4b42ce003307492cf6ebac3a5d194aa9b00",
+               "archives": {
+                  "ejbs": 0,
+                  "webFragments": 0,
+                  "utilityJars": 3
+               },
+               "summary": {
+                  "servlets": 3,
+                  "jsps": 1,
+                  "jpaEntities": 0,
+                  "bmpEntityBeans": 0,
+                  "cmpEntityBeans": 0,
+                  "messageDrivenBeans": 0,
+                  "singletonSessionBeans": 1,
+                  "statefulSessionBeans": 0,
+                  "statelessSessionBeans": 0,
+                  "jaxrpcConsumers": 0,
+                  "jaxrpcProviders": 0,
+                  "jaxrsConsumers": 0,
+                  "jaxrsProviders": 0,
+                  "jaxwsConsumers": 0,
+                  "jaxwsProviders": 0,
+                  "springBeans": 0
+               },
+               "containedArchiveInventory": [
+                  {
+                     "archiveName": "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear/modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar",
+                     "moduleType": "Utility JAR",
+                     "checksum": "c83fc2cde3dedb7467effae849b0ae45497de58f53b8b2e932cc88512646e8c5",
+                     "containedPackages": [
+                        "com.google.gson"
+                     ]
+                  },
+                  {
+                     "archiveName": "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear/modresorts-2.0.0.war/WEB-INF/lib/lombok-1.18.30.jar",
+                     "moduleType": "Utility JAR",
+                     "checksum": "69e37ce28e972373905b99a83731ddadf330407bc1eed4a906a8d8264d51fb62",
+                     "containedPackages": [
+                        "lombok",
+                        "lombok.delombok.ant",
+                        "lombok.experimental",
+                        "lombok.extern.apachecommons",
+                        "lombok.extern.flogger",
+                        "lombok.extern.jackson",
+                        "lombok.extern.java",
+                        "lombok.extern.jbosslog",
+                        "lombok.extern.log4j",
+                        "lombok.extern.slf4j",
+                        "lombok.javac.apt",
+                        "lombok.launch"
+                     ],
+                     "containedArchiveInventory": [
+                        {
+                           "archiveName": "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear/modresorts-2.0.0.war/WEB-INF/lib/lombok-1.18.30.jar/lombok/launch/mavenEcjBootstrapAgent.jar",
+                           "moduleType": "Utility JAR",
+                           "checksum": "978e46473c923bae74aa933a0ae7ac40de7b379f654aba21de33af7d1b5e3999",
+                           "containedPackages": [
+                              "lombok.launch"
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "sharedLibraryDetails": [
+   ]
+}

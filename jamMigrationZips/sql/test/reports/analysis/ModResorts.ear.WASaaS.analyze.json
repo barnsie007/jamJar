@@ -1,0 +1,190 @@
+{
+   "report": "analysis",
+   "version": "1.4",
+   "productVersion": "24.0.0.1",
+   "productRelease": "24.0.0.1",
+   "buildID": "v20240310_2333",
+   "options": [
+      "--sourceAppServer=was90",
+      "--sourceJava=ibm8",
+      "--sourceJavaEE=ee7",
+      "--targetAppServer=was90",
+      "--targetJava=ibm8",
+      "--targetJavaEE=ee7",
+      "--targetCloud=containers",
+      "--includeHelpLocation",
+      "--maxUserDefinedRuleResults=100",
+      "--userRuleLocation=/root/jc/transformationadvisor-3.9.0/bin/../conf/userDefinedRules",
+      "--excludePackages=ch.qos,com.cloudant,com.cognos,com.fasterxml,com.filenet,com.ibatis,com.ibm,com.informix,com.lowagie,com.mchange,com.meterware,com.microsoft,com.mongodb,com.mysql,com.sun,com.sybase,filenet,freemarker,groovy,jakarta,java,javax,net,oracle,org,sqlj,sun,twitter4j,_ibmjsp"
+   ],
+   "totalRulesFlagged": 4,
+   "filesAffected": 5,
+   "totalResults": 5,
+   "severitySummary": [
+      {
+         "severity": "Information",
+         "severityId": "info",
+         "totalRulesFlagged": 4,
+         "totalResults": 5,
+         "totalRulesFlaggedWithAutomatedFix": 0,
+         "totalResultsWithAutomatedFix": 0
+      }
+   ],
+   "applications": [
+      "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear"
+   ],
+   "rules": [
+      {
+         "ruleName": "Databases",
+         "ruleId": "DatabasesRule",
+         "ruleHelpLocation": "/ruleinfo/appmigration/cloud/Databases.html",
+         "devCost": "0",
+         "instanceCost": "0",
+         "severity": "Information",
+         "severityId": "info",
+         "recipe": null,
+         "alternativeRecipes": [
+         ],
+         "category": "Technology connectivity considerations for IBM Cloud",
+         "categoryId": "appconversion.cloud.category.technology.connectivity",
+         "totalResults": 2,
+         "results": [
+            {
+               "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/db/ModResortsCustomerInformation.class",
+               "details": [
+                  {
+                     "reference": "Field dataSource",
+                     "match": "javax.sql",
+                     "lineNumber": 0
+                  }
+               ]
+            },
+            {
+               "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/sql/SqlDateTypeAdapter$1.class",
+               "details": [
+                  {
+                     "reference": "Method create",
+                     "match": "java.sql",
+                     "lineNumber": 43
+                  }
+               ]
+            }
+         ],
+         "referencedClasses": [
+            {
+               "class": "java.sql.Connection",
+               "total": 6
+            },
+            {
+               "class": "java.sql.Date",
+               "total": 15
+            },
+            {
+               "class": "java.sql.PreparedStatement",
+               "total": 6
+            },
+            {
+               "class": "java.sql.ResultSet",
+               "total": 7
+            },
+            {
+               "class": "java.sql.SQLException",
+               "total": 12
+            },
+            {
+               "class": "java.sql.Time",
+               "total": 9
+            },
+            {
+               "class": "java.sql.Timestamp",
+               "total": 15
+            },
+            {
+               "class": "javax.sql.DataSource",
+               "total": 3
+            }
+         ]
+      },
+      {
+         "ruleName": "Java EE security",
+         "ruleId": "ApplicationSecurityRule",
+         "ruleHelpLocation": "/ruleinfo/appmigration/cloud/ApplicationSecurity.html",
+         "devCost": "0",
+         "instanceCost": "0",
+         "severity": "Information",
+         "severityId": "info",
+         "recipe": null,
+         "alternativeRecipes": [
+         ],
+         "category": "Technology connectivity considerations for IBM Cloud",
+         "categoryId": "appconversion.cloud.category.technology.connectivity",
+         "totalResults": 1,
+         "results": [
+            {
+               "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/web.xml",
+               "details": [
+                  {
+                     "reference": null,
+                     "match": "security-constraint",
+                     "lineNumber": 26
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "ruleName": "Managing data inside and between Docker containers",
+         "ruleId": "FileSystemRule",
+         "ruleHelpLocation": "/ruleinfo/appmigration/cloud/FileSystemRule.html",
+         "devCost": "0",
+         "instanceCost": "0",
+         "severity": "Information",
+         "severityId": "info",
+         "recipe": null,
+         "alternativeRecipes": [
+         ],
+         "category": "Containers (OpenShift, Kubernetes)",
+         "categoryId": "appconversion.cloud.category.docker",
+         "totalResults": 1,
+         "results": [
+            {
+               "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/lib/lombok-1.18.30.jar/lombok/javac/apt/Processor.class",
+               "details": [
+                  {
+                     "reference": "Method writeFile",
+                     "match": "java.io.FileOutputStream",
+                     "lineNumber": 86
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "ruleName": "Validate the URL host and port for cloud access",
+         "ruleId": "URLRuleDockerCloud",
+         "ruleHelpLocation": "/ruleinfo/appmigration/cloud/UrlRule.html",
+         "devCost": "0",
+         "instanceCost": "0",
+         "severity": "Information",
+         "severityId": "info",
+         "recipe": null,
+         "alternativeRecipes": [
+         ],
+         "category": "Connectivity considerations for IBM Cloud (Containers and Virtual machines)",
+         "categoryId": "appconversion.cloud.category.connectivity.dockerAndWASOnCloud",
+         "totalResults": 1,
+         "results": [
+            {
+               "fileName": "ModResorts.ear/modresorts-2.0.0.war",
+               "details": [
+                  {
+                     "reference": "2",
+                     "match": "http://api.wunderground.com/api/",
+                     "lineNumber": 0
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

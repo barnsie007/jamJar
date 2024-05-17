@@ -1,0 +1,69 @@
+2024-04-22 05:32:52 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-04-22 05:32:52 DEBUG: Getting Maven build tool
+2024-04-22 05:32:52 DEBUG: Start create MavenBuildTool instance
+2024-04-22 05:32:52 DEBUG: Start get maven home value from the mvn execution
+2024-04-22 05:32:53 DEBUG: Start get maven home value from the mvn execution
+2024-04-22 05:32:53 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+2024-04-22 05:32:53 DEBUG: Finish create MavenValidator instance
+2024-04-22 05:32:53 DEBUG: Start make backup of: /root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/pom.xml
+2024-04-22 05:32:53 DEBUG: Backed up file to: /root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/pom.xml.bak.8
+2024-04-22 05:32:53 DEBUG: Getting WAR application
+2024-04-22 05:32:53 DEBUG: Getting or Creating migration bundle location at: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle
+2024-04-22 05:32:53 DEBUG: Start creating ExpandedBundle for: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/src
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/src/main
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/src/main/liberty
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/src/main/liberty/config
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/src/main/liberty/config/server.xml
+2024-04-22 05:32:53 DEBUG: Found server.xml: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/src/main/liberty/config/server.xml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/Containerfile
+2024-04-22 05:32:53 DEBUG: Found Containerfile: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/Containerfile
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/pom.xml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/k8s
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/k8s/deployment.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/k8s/route.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/k8s/service.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/base
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/base/kustomization.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/base/websphere-cafe-configmap.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/base/application-cr.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/overlays
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/overlays/dev
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/overlays/dev/kustomization.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/deploy/kustomize/overlays/dev/websphere-cafe-secret.yaml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/README.md
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/target
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/target/websphere-cafe.war.placeholder
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/recipeConfig
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/recipeConfig/recipes.pom
+2024-04-22 05:32:53 DEBUG: Found recipes.pom: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/recipeConfig/recipes.pom
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/recipeConfig/recipes.gradle
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/recipeConfig/rewrite.yml
+2024-04-22 05:32:53 DEBUG: Found rewrite.yml: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/recipeConfig/rewrite.yml
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_AnalysisReport.json
+2024-04-22 05:32:53 DEBUG: Found json analysis report: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_AnalysisReport.json
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_AnalysisReport.html
+2024-04-22 05:32:53 DEBUG: Found html analysis report: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_AnalysisReport.html
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_InventoryReport.html
+2024-04-22 05:32:53 DEBUG: Found inventory html report: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_InventoryReport.html
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_InventoryReport.json
+2024-04-22 05:32:53 DEBUG: Found inventory json report: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_InventoryReport.json
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_TechnologyReport.html
+2024-04-22 05:32:53 DEBUG: Found technology report: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_TechnologyReport.html
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_TechnologyReport.json
+2024-04-22 05:32:53 DEBUG: Found technology json: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_TechnologyReport.json
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/reports/websphere-cafe.war_AnalysisReport.json.bak
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/metadata
+2024-04-22 05:32:53 DEBUG: bundle file: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/metadata/metadata.json
+2024-04-22 05:32:53 DEBUG: Found metadata.json: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle/metadata/metadata.json
+2024-04-22 05:32:53 DEBUG: Found options in analysis report: 8
+2024-04-22 05:32:53 DEBUG: Detected open liberty report.
+2024-04-22 05:32:53 DEBUG: Found rules in analysis report: 3
+2024-04-22 05:32:53 DEBUG: Finish creating expanded bundle for: /root/.ibm_java_app_mod/null_websphere-cafe-web_null/migration_bundle
+2024-04-22 05:32:53 DEBUG: Updating report with rule help
+2024-04-22 05:32:53 DEBUG: Rules in analysis report: 3
+2024-04-22 05:32:53 DEBUG: Rule help already exists for all rules, not updating.

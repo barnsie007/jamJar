@@ -1,0 +1,41 @@
+2024-05-17 06:16:22 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 06:16:23 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< websphere-cafe:websphere-cafe-web >------------------
+[INFO] Building websphere-cafe-web 0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ websphere-cafe-web ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ websphere-cafe-web ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ websphere-cafe-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ websphere-cafe-web ---
+[INFO] skip non existing resourceDirectory /root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ websphere-cafe-web ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ websphere-cafe-web ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- war:3.2.2:war (default-war) @ websphere-cafe-web ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [websphere-cafe-web] in [/root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/target/websphere-cafe]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/src/main/webapp]
+[INFO] Webapp assembled in [33 msecs]
+[INFO] Building war: /root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/target/websphere-cafe.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.608 s
+[INFO] Finished at: 2024-05-17T06:16:29-04:00
+[INFO] ------------------------------------------------------------------------
+[0m

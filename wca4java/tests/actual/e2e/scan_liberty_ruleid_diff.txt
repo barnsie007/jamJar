@@ -1,0 +1,5 @@
+7,8d6
+<          "ruleId": "RemoveWas2LibertyNonPortableJndiLookup",
+<          "ruleId": "ServerName",
+10d7
+<          "ruleId": "WebSphereUnavailableSSOCookieMethod",

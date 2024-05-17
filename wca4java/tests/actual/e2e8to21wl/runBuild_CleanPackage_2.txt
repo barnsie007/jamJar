@@ -1,0 +1,55 @@
+2024-05-17 05:47:47 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 05:47:48 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.acme.modres:modresorts >---------------------
+[INFO] Building ModResorts 2.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ modresorts ---
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ modresorts ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 15 source files with javac [debug target 21] to target/classes
+[INFO] /root/source/modresorts/modresorts/src/main/java/com/acme/modres/WeatherServlet.java: Some input files use or override a deprecated API.
+[INFO] /root/source/modresorts/modresorts/src/main/java/com/acme/modres/WeatherServlet.java: Recompile with -Xlint:deprecation for details.
+[INFO] /root/source/modresorts/modresorts/src/main/java/com/acme/modres/WeatherServlet.java: /root/source/modresorts/modresorts/src/main/java/com/acme/modres/WeatherServlet.java uses unchecked or unsafe operations.
+[INFO] /root/source/modresorts/modresorts/src/main/java/com/acme/modres/WeatherServlet.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /root/source/modresorts/modresorts/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ modresorts ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ modresorts ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- war:3.1.0:war (default-war) @ modresorts ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [modresorts] in [/root/source/modresorts/modresorts/target/modresorts-2.0.0]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [/root/source/modresorts/modresorts/src/main/resources] to [/root/source/modresorts/modresorts/target/modresorts-2.0.0]
+[INFO] Copying webapp resources [/root/source/modresorts/modresorts/WebContent]
+[INFO] Webapp assembled in [89 msecs]
+[INFO] Building war: /root/source/modresorts/modresorts/target/modresorts-2.0.0.war
+[INFO] 
+[INFO] --- resources:3.2.0:copy-resources (copy-resources) @ modresorts ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 4 resources
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.811 s
+[INFO] Finished at: 2024-05-17T05:47:54-04:00
+[INFO] ------------------------------------------------------------------------
+[0m

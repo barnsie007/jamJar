@@ -1,0 +1,287 @@
+{
+  "_id": "b7a3a057-05a1-4742-bd57-66205c1fc020_AppSrv01_7acadcd8-1853-4684-8ec2-54b6c9c75ad5_ModResorts.ear.ICp_Liberty_json",
+  "_rev": "1-20aaa1ed0a8eab951f83a72ed129d6b5",
+  "report": "analysis",
+  "version": "1.4",
+  "productVersion": "24.0.0.1",
+  "productRelease": "24.0.0.1",
+  "buildID": "v20240310_2333",
+  "options": [
+    "--sourceAppServer=was90",
+    "--sourceJava=ibm8",
+    "--sourceJavaEE=ee7",
+    "--targetAppServer=openLiberty",
+    "--targetJava=ibm8",
+    "--targetJavaEE=ee7",
+    "--targetCloud=containers",
+    "--includeHelpLocation",
+    "--maxUserDefinedRuleResults=100",
+    "--userRuleLocation=/root/jc/transformationadvisor-3.9.0/bin/../conf/userDefinedRules",
+    "--excludePackages=ch.qos,com.cloudant,com.cognos,com.fasterxml,com.filenet,com.ibatis,com.ibm,com.informix,com.lowagie,com.mchange,com.meterware,com.microsoft,com.mongodb,com.mysql,com.sun,com.sybase,filenet,freemarker,groovy,jakarta,java,javax,net,oracle,org,sqlj,sun,twitter4j,_ibmjsp"
+  ],
+  "totalRulesFlagged": 7,
+  "filesAffected": 7,
+  "totalResults": 10,
+  "severitySummary": [
+    {
+      "severity": "Critical",
+      "severityId": "severe",
+      "totalRulesFlagged": 3,
+      "totalResults": 5,
+      "totalRulesFlaggedWithAutomatedFix": 3,
+      "totalResultsWithAutomatedFix": 5
+    },
+    {
+      "severity": "Information",
+      "severityId": "info",
+      "totalRulesFlagged": 4,
+      "totalResults": 5,
+      "totalRulesFlaggedWithAutomatedFix": 0,
+      "totalResultsWithAutomatedFix": 0
+    }
+  ],
+  "applications": [
+    "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/demo-data-vm1Node01Cell/applications/ModResorts.ear/ModResorts.ear"
+  ],
+  "rules": [
+    {
+      "ruleName": "Databases",
+      "ruleId": "DatabasesRule",
+      "ruleHelpLocation": "/ruleinfo/appmigration/cloud/Databases.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Technology connectivity considerations for IBM Cloud",
+      "categoryId": "appconversion.cloud.category.technology.connectivity",
+      "totalResults": 2,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/db/ModResortsCustomerInformation.class",
+          "details": [
+            {
+              "reference": "Field dataSource",
+              "match": "javax.sql",
+              "lineNumber": 0
+            }
+          ]
+        },
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/lib/gson-2.10.1.jar/com/google/gson/internal/sql/SqlDateTypeAdapter$1.class",
+          "details": [
+            {
+              "reference": "Method create",
+              "match": "java.sql",
+              "lineNumber": 43
+            }
+          ]
+        }
+      ],
+      "referencedClasses": [
+        {
+          "class": "java.sql.Connection",
+          "total": 6
+        },
+        {
+          "class": "java.sql.Date",
+          "total": 15
+        },
+        {
+          "class": "java.sql.PreparedStatement",
+          "total": 6
+        },
+        {
+          "class": "java.sql.ResultSet",
+          "total": 7
+        },
+        {
+          "class": "java.sql.SQLException",
+          "total": 12
+        },
+        {
+          "class": "java.sql.Time",
+          "total": 9
+        },
+        {
+          "class": "java.sql.Timestamp",
+          "total": 15
+        },
+        {
+          "class": "javax.sql.DataSource",
+          "total": 3
+        }
+      ]
+    },
+    {
+      "ruleName": "Do not start unmanaged threads within the web or EJB container",
+      "ruleId": "CreateThreadMethodsInWebOrEjbProject",
+      "ruleHelpLocation": "/ruleinfo/appconversion/allservers/BehaviorCreateThread.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "All application servers",
+      "categoryId": "com.ibm.ws.appconversion.all.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/AvailabilityCheckerServlet.class",
+          "details": [
+            {
+              "reference": "Method doGet",
+              "match": "java.lang.Thread.start(*)",
+              "lineNumber": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ruleName": "Do not use the WSSecurityHelper revokeSSOCookies method",
+      "ruleId": "WebSphereUnavailableSSOCookieMethod",
+      "ruleHelpLocation": "/ruleinfo/appconversion/was2was/deprecation85/WSSecurityHelperRevokeSSOCookies.html",
+      "devCost": "0.1",
+      "instanceCost": "0.1",
+      "severity": "Critical",
+      "severityId": "severe",
+      "recipe": "org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod",
+      "alternativeRecipes": [],
+      "category": "WebSphere traditional to Liberty",
+      "categoryId": "appconversion.was2liberty.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/LogoutServlet.class",
+          "details": [
+            {
+              "reference": "Method doGet",
+              "match": "com.ibm.websphere.security.WSSecurityHelper.revokeSSOCookies(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)",
+              "lineNumber": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ruleName": "Getting the server name on Liberty",
+      "ruleId": "ServerName",
+      "ruleHelpLocation": "/ruleinfo/appconversion/was2liberty/ServerName.html",
+      "devCost": "0.1",
+      "instanceCost": "0.1",
+      "severity": "Critical",
+      "severityId": "severe",
+      "recipe": "org.openrewrite.java.liberty.ServerName",
+      "alternativeRecipes": [],
+      "category": "WebSphere traditional to Liberty",
+      "categoryId": "appconversion.was2liberty.category",
+      "totalResults": 2,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/WeatherServlet.class",
+          "details": [
+            {
+              "reference": "Method configureEnvDiscovery",
+              "match": "com.ibm.websphere.runtime.ServerName.getDisplayName(*)",
+              "lineNumber": 243
+            },
+            {
+              "reference": "Method configureEnvDiscovery",
+              "match": "com.ibm.websphere.runtime.ServerName.getFullName(*)",
+              "lineNumber": 244
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ruleName": "Java EE security",
+      "ruleId": "ApplicationSecurityRule",
+      "ruleHelpLocation": "/ruleinfo/appmigration/cloud/ApplicationSecurity.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Technology connectivity considerations for IBM Cloud",
+      "categoryId": "appconversion.cloud.category.technology.connectivity",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/web.xml",
+          "details": [
+            {
+              "match": "auth-method",
+              "lineNumber": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ruleName": "Use the default InitialContext JNDI properties",
+      "ruleId": "RemoveWas2LibertyNonPortableJndiLookup",
+      "ruleHelpLocation": "/ruleinfo/appconversion/was2liberty/InitialContext.html",
+      "devCost": "1",
+      "instanceCost": "0.1",
+      "severity": "Critical",
+      "severityId": "severe",
+      "recipe": "org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup",
+      "alternativeRecipes": [],
+      "category": "WebSphere traditional to Liberty",
+      "categoryId": "appconversion.was2liberty.category",
+      "totalResults": 2,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war/WEB-INF/classes/com/acme/modres/WeatherServlet.class",
+          "details": [
+            {
+              "reference": "Method setInitialContextProps",
+              "match": "java.util.Hashtable.put(\"java.naming.factory.initial\",\"com.ibm.websphere.naming.WsnInitialContextFactory\")",
+              "lineNumber": 253
+            },
+            {
+              "reference": "Method setInitialContextProps",
+              "match": "java.util.Hashtable.put(\"java.naming.provider.url\",\"corbaloc:iiop:localhost:2809\")",
+              "lineNumber": 254
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ruleName": "Validate the URL host and port for cloud access",
+      "ruleId": "URLRuleDockerCloud",
+      "ruleHelpLocation": "/ruleinfo/appmigration/cloud/UrlRule.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Connectivity considerations for IBM Cloud (Containers and Virtual machines)",
+      "categoryId": "appconversion.cloud.category.connectivity.dockerAndWASOnCloud",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "ModResorts.ear/modresorts-2.0.0.war",
+          "details": [
+            {
+              "reference": "2",
+              "match": "http://api.wunderground.com/api/",
+              "lineNumber": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "name": "ModResorts.ear.ICp_Liberty.analyze",
+  "type": "json",
+  "tenantId": "7acadcd8-1853-4684-8ec2-54b6c9c75ad5",
+  "taskname": "b7a3a057-05a1-4742-bd57-66205c1fc020",
+  "created": 1713360395689,
+  "profileName": "AppSrv01",
+  "applicationName": "ModResorts.ear.ICp_Liberty",
+  "id": "b7a3a057-05a1-4742-bd57-66205c1fc020_AppSrv01_7acadcd8-1853-4684-8ec2-54b6c9c75ad5_ModResorts.ear.ICp_Liberty_json"
+}

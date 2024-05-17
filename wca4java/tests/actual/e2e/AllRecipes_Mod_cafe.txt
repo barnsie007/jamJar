@@ -1,0 +1,8 @@
+2024-05-17 06:15:48 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 06:15:48 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[0m[36m2024-05-17 06:16:15 INFO:  Running recipe(s)...
+2024-05-17 06:16:16 INFO:  Changes have been made to websphere-cafe-web/src/main/resources/META-INF/persistence.xml by:
+2024-05-17 06:16:16 INFO:      com.ibm.testRecipe
+2024-05-17 06:16:16 INFO:          org.openrewrite.java.migrate.JpaCacheProperties
+2024-05-17 06:16:16 INFO:  Please review and commit the results.
+[0m[36m[0m

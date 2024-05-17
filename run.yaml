@@ -1,0 +1,35 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: wca4jpipeline 
+spec:
+  pipelineRef:
+    name: wca4jpipeline 
+  serviceAccountName: pipeline
+  workspaces:
+    - name: maven-settings
+      emptyDir: {}
+    - name: build-workspace
+      persistentVolumeClaim:
+        claimName: maven
+  params:
+  - name: repo-url
+    value: https://github.com/barnsie007/resorts.git 
+  - name: branch-name
+    value: main
+  - name: repo-dockerfile
+    value: Containerfile
+  - name: image-url
+    value: default-route-openshift-image-registry.apps.ta1.cp.fyre.ibm.com/wlmod/mod:2.0
+  - name: bundle
+    value: https://github.com/barnsie007/bundle.git 
+  - name: branch
+    value: imageupdate
+  - name: deploymentfile
+    value: deploy/kustomize/base/application-cr.yaml 
+  - name: user
+    value: barnsie007 
+  - name: usermail
+    value: barnsie@hotmail.com 
+  - name: userpassword
+    value: Barmanutd@01

@@ -1,0 +1,266 @@
+{
+  "report": "analysis",
+  "version": "1.4",
+  "productVersion": "24.0.0.2",
+  "productRelease": "24.0.0.2",
+  "buildID": "v20240515_2333",
+  "options": [
+    "--sourceAppServer=was855",
+    "--sourceJava=ibm6",
+    "--sourceJavaEE=ee6",
+    "--targetAppServer=openLiberty",
+    "--targetJava=ibm8",
+    "--targetJavaEE=ee7",
+    "--includeHelpLocation",
+    "--excludePackages=ch.qos,com.cloudant,com.cognos,com.fasterxml,com.filenet,com.ibatis,com.ibm,com.informix,com.lowagie,com.mchange,com.meterware,com.microsoft,com.mongodb,com.mysql,com.sun,com.sybase,filenet,freemarker,groovy,jakarta,java,javax,net,oracle,org,sqlj,sun,twitter4j,_ibmjsp"
+  ],
+  "totalRulesFlagged": 4,
+  "filesAffected": 3,
+  "totalResults": 4,
+  "severitySummary": [
+    {
+      "severity": "Critical",
+      "severityId": "severe",
+      "totalRulesFlagged": 1,
+      "totalResults": 1,
+      "totalRulesFlaggedWithAutomatedFix": 0,
+      "totalResultsWithAutomatedFix": 0
+    },
+    {
+      "severity": "Warning",
+      "severityId": "warning",
+      "totalRulesFlagged": 2,
+      "totalResults": 2,
+      "totalRulesFlaggedWithAutomatedFix": 1,
+      "totalResultsWithAutomatedFix": 1
+    },
+    {
+      "severity": "Information",
+      "severityId": "info",
+      "totalRulesFlagged": 1,
+      "totalResults": 1,
+      "totalRulesFlaggedWithAutomatedFix": 0,
+      "totalResultsWithAutomatedFix": 0
+    }
+  ],
+  "applications": [
+    "/root/source/websphere-cafe/websphere-cafe/websphere-cafe-web/target/websphere-cafe.war"
+  ],
+  "rules": [
+    {
+      "ruleName": "Disable the persistence unit second-level cache",
+      "ruleId": "JpaCacheProperties",
+      "ruleHelpLocation": "/ruleinfo/appconversion/javaee7/jpa/JpaCacheBehavior.html",
+      "devCost": "0.25",
+      "instanceCost": "0.1",
+      "severity": "Warning",
+      "severityId": "warning",
+      "recipe": "org.openrewrite.java.migrate.JpaCacheProperties",
+      "alternativeRecipes": [],
+      "category": "Java EE 7 / OpenJPA to EclipseLink JPA",
+      "categoryId": "appconversion.javaee7.category / appconversion.javaee7.jpa.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "websphere-cafe.war/WEB-INF/classes/META-INF/persistence.xml",
+          "details": [
+            {
+              "match": "persistence-unit",
+              "lineNumber": 6
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkRpc2FibGUgdGhlIHBlcnNpc3RlbmNlIHVuaXQgc2Vjb25kLWxldmVsIGNhY2hlPC9oMz4KPHA+Ck9wZW5KUEEgZGlzYWJsZXMgdGhlIHNlY29uZC1sZXZlbCBjYWNoZSBieSBkZWZhdWx0LCB3aGVyZWFzIEVjbGlwc2VMaW5rIGVuYWJsZXMgdGhlIHNlY29uZC1sZXZlbCBjYWNoZSBieSBkZWZhdWx0LgpJZiB5b3UgYXJlIG1pZ3JhdGluZyBhbiBhcHBsaWNhdGlvbiB0aGF0IGRvZXMgbm90IHVzZSB0aGUgY2FjaGUsIHlvdSBjYW4KZGlzYWJsZSB0aGUgY2FjaGUgaW4gRWNsaXBzZUxpbmsgYnkgc2V0dGluZyB0aGUgZm9sbG93aW5nIGVsZW1lbnQgaW4gYQp2ZXJzaW9uIDIuMCBvciAyLjEgPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5wZXJzaXN0ZW5jZS54bWw8L3NwYW4+IGZpbGU6CjxwcmU+CiAgICZsdDtzaGFyZWQtY2FjaGUtbW9kZSZndDtOT05FJmx0Oy9zaGFyZWQtY2FjaGUtbW9kZSZndDsKPC9wcmU+CjxwPgpGb3IgYSB2ZXJzaW9uIDEuMCA8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPnBlcnNpc3RlbmNlLnhtbDwvc3Bhbj4gZmlsZSwgeW91IGNhbiAKZGlzYWJsZSB0aGUgY2FjaGUgaW4gRWNsaXBzZUxpbmsgYWRkaW5nIHRoZSBmb2xsb3dpbmcgcHJvcGVydHk6CjwvcD4KPHByZT4KICAgJmx0O3Byb3BlcnR5IG5hbWU9ImVjbGlwc2VsaW5rLmNhY2hlLnNoYXJlZC5kZWZhdWx0IiB2YWx1ZT0iZmFsc2UiLyZndDsKPC9wcmU+CjxwPgpUaGlzIHJ1bGUgZGV0ZWN0cyA8Y29kZT4mbHQ7cGVyc2lzdGVuY2UtdW5pdCZndDs8L2NvZGU+IGNvbmZpZ3VyYXRpb25zIGluIHRoZQo8c3BhbiBjbGFzcz0iRmlsZVBhdGgiPk1FVEEtSU5GL3BlcnNpc3RlbmNlLnhtbDwvc3Bhbj4gZmlsZSB3aGVyZSB0aGUgY3VycmVudCBjYWNoaW5nIGNvbmZpZ3VyYXRpb24gcmVzdWx0cwppbiBhIGRpZmZlcmVudCBkZWZhdWx0IGNhY2hpbmcgYmVoYXZpb3IgaW4gRWNsaXBzZUxpbmsuIEl0IGFsc28gaGVscHMgeW91IGNsZWFuCnVwIDxjb2RlPm9wZW5qcGEuRGF0YUNhY2hlPC9jb2RlPiBwcm9wZXJ0aWVzLCB3aGljaCBhcmUgaWdub3JlZCBieSBFY2xpcHNlTGluay4KPC9wPgo8cD4KVG8gZGV0ZXJtaW5lIHdoZXRoZXIgYSBjb25maWd1cmF0aW9uIGNoYW5nZSBpcyByZXF1aXJlZCwgdGhlIHJ1bGUgZXhhbWluZXMgY29tYmluYXRpb25zIG9mIHRoZSBmb2xsb3dpbmcgc2V0dGluZ3M6CjwvcD4KPHVsPgo8bGk+VGhlIDxjb2RlPiZsdDtzaGFyZWQtY2FjaGUtbW9kZSZndDs8L2NvZGU+IGNvbmZpZ3VyYXRpb24gZWxlbWVudDwvbGk+CjxsaT5UaGUgPGNvZGU+amF2YXgucGVyc2lzdGVuY2Uuc2hhcmVkQ2FjaGUubW9kZTwvY29kZT4gcGVyc2lzdGVuY2UgcHJvcGVydHk8L2xpPgo8bGk+VGhlIDxjb2RlPm9wZW5qcGEuRGF0YUNhY2hlPC9jb2RlPiBwZXJzaXN0ZW5jZSBwcm9wZXJ0eTwvbGk+CjwvdWw+CjxwPgogSWYgdGhlIDxjb2RlPm9wZW5qcGEuRGF0YUNhY2hlPC9jb2RlPiBwcm9wZXJ0eSBpcyBub3Qgc3BlY2lmaWVkIG9yIGlzIHNldCB0byA8Y29kZT5mYWxzZTwvY29kZT4gYW5kIHRoZSBzaGFyZWQgY2FjaGUgbW9kZQogY29uZmlndXJhdGlvbiBpcyBvbWl0dGVkIG9yIHNldCB0byA8Y29kZT5VTlNQRUNJRklFRDwvY29kZT4sIGluIEVjbGlwc2VMaW5rIHlvdSBtdXN0CiBjaGFuZ2UgdGhlIGNvbmZpZ3VyYXRpb24gdG8gZGlzYWJsZSB0aGUgY2FjaGUuIAogQmVjYXVzZSBFY2xpcHNlTGluayBlbmFibGVzIGNhY2hpbmcgYnkgZGVmYXVsdCwgYW4gPGNvZGU+b3BlbmpwYS5EYXRhQ2FjaGU8L2NvZGU+IHByb3BlcnR5IAogc2V0IHRvIDxjb2RlPnRydWU8L2NvZGU+IGluIE9wZW5KUEEgaXMgZXF1aXZhbGVudCB0byBoYXZpbmcgbm8gc2hhcmVkIGNhY2hlIG1vZGUgc2V0dGluZyAKIGluIEVjbGlwc2VMaW5rIG9yIHRvIHNldHRpbmcgPGNvZGU+c2hhcmVkLWNhY2hlLW1vZGU8L2NvZGU+IHRvIDxjb2RlPkFMTDwvY29kZT4uIAogSWYgeW91IG1hbnVhbGx5IHJlbW92ZSB0aGUgPGNvZGU+b3BlbmpwYS5EYXRhQ2FjaGU8L2NvZGU+IGNvbmZpZ3VyYXRpb24sCiBkbyBub3QgY29udGludWUgdG8gcnVuIHRoaXMgcnVsZSBiZWNhdXNlIGl0IHdpbGwgZGV0ZWN0IG5vIGNvbmZpZ3VyYXRpb24gYXMgYSBiZWhhdmlvciBjaGFuZ2UuCjwvcD4KPHA+CiBUaGUgYXV0b21hdGVkIGZpeCBmb3IgdGhpcyBydWxlIHNldHMgYW4gZXhwbGljaXQgdmFsdWUgZm9yIHRoZSBzaGFyZWQgY2FjaGUgbW9kZSBzbwogdGhhdCB0aGUgcnVsZSBkb2VzIG5vdCBjb250aW51ZSB0byBmbGFnIHRoZSA8Y29kZT5wZXJzaXN0ZW5jZS11bml0PC9jb2RlPi4KIFRoZSBhdXRvbWF0ZWQgZml4IGV2YWx1YXRlcyB0aGUgPGNvZGU+b3BlbmpwYS5EYXRhQ2FjaGU8L2NvZGU+IHNldHRpbmcgYW5kIG1vZGlmaWVzIGV4aXN0aW5nIG9yIGNyZWF0ZXMgbmV3Cjxjb2RlPnNoYXJlZC1jYWNoZS1tb2RlPC9jb2RlPiBjb25maWd1cmF0aW9uIG9yIDxjb2RlPmphdmF4LnBlcnNpc3RlbmNlLnNoYXJlZENhY2hlLm1vZGU8L2NvZGU+IHByb3BlcnRpZXMKc28gdGhhdCB5b3VyIGFwcGxpY2F0aW9ucyBoYXZlIHRoZSBzYW1lIGNhY2hlIG1vZGUgYmVoYXZpb3IgaW4gRWNsaXBzZUxpbmsgYXMgdGhleSBkaWQgaW4gT3BlbkpQQS4KSW4gT3BlbkpQQSwgd2hlbiBib3RoIGEgc3BlY2lmaWNhdGlvbi1kZWZpbmVkIHNoYXJlZCBjYWNoZSB2YWx1ZSBhbmQgdGhlIDxjb2RlPm9wZW5qcGEuRGF0YUNhY2hlPC9jb2RlPiAKcHJvcGVydHkgYXJlIHNldCwgdGhlIHNwZWNpZmljYXRpb24tZGVmaW5lZCB2YWx1ZSBpcyB1c2VkIHVubGVzcyBpdCBpcyA8Y29kZT5VTlNQRUNJRklFRDwvY29kZT4uIApJZiB0aGUgdmFsdWUgaXMgPGNvZGU+VU5TUEVDSUZJRUQ8L2NvZGU+LCB0aGUgPGNvZGU+b3BlbmpwYS5EYXRhQ2FjaGU8L2NvZGU+IHByb3BlcnR5IGlzIHVzZWQKdG8gZGV0ZXJtaW5lIHRoZSBjb3JyZWN0IHZhbHVlIG9mIHRoZSBzaGFyZWQgY2FjaGUgbW9kZS4KPC9wPgo8cD4KRm9yIGV4YW1wbGUsIGluIHRoZSBmb2xsb3dpbmcgPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5wZXJzaXN0ZW5jZS54bWw8L3NwYW4+IGZpbGUsCnRoZSBydWxlIGZsYWdzIGFsbCBvZiB0aGUgPGNvZGU+Jmx0O3BlcnNpc3RlbmNlLXVuaXQmZ3Q7PC9jb2RlPiBlbGVtZW50cyBiZWNhdXNlCnRoZXkgcmVxdWlyZSBjaGFuZ2VzIHRvIHRoZSBjYWNoaW5nIGNvbmZpZ3VyYXRpb24gdG8gbWFpbnRhaW4gdGhlIHNhbWUgCmNhY2hpbmcgYmVoYXZpb3IgaW4gRWNsaXBzZUxpbmsgYXMgaXQgd2FzIGluIE9wZW5KUEEuIAo8L3A+Cjx0YWJsZSBzdW1tYXJ5PSJUaGlzIHRhYmxlIHByb3ZpZGVzIG1vcmUgaW5mb3JtYXRpb24gYWJvdXQgdGhlIHJ1bGUsIHNvbWV0aW1lcyBpbiB0aGUgZm9ybSBvZiBhbiBleGNlcnB0IGZyb20gYSBmaWxlIGRlbW9uc3RyYXRpbmcgdGhlIG1pZ3JhdGlvbiBpc3N1ZS4iIGJnY29sb3I9IiNGN0Y4RjkiIGJvcmRlcj0iMSIgY2VsbHBhZGRpbmc9IjJweCI+Cjx0aGVhZD4KPHRyPgo8dGg+U291cmNlIHBlcnNpc3RlbmNlLnhtbCBmaWxlIGZvciBPcGVuSlBBPC90aD4KPHRoPkF1dG9tYXRlZCBmaXggY2hhbmdlcyB0byBwZXJzaXN0ZW5jZS54bWwgZmlsZSBmb3IgRWNsaXBzZUxpbmsKPC90cj4KPC90aGVhZD4KPHRyPjx0ZD4KPHByZT4KJmx0O3BlcnNpc3RlbmNlJmd0OwoKICAmbHQ7PGI+cGVyc2lzdGVuY2UtdW5pdDwvYj4gbmFtZT0iZXhhbXBsZTEiJmd0OwogICAgLi4uCiAgICAmbHQ7c2hhcmVkLWNhY2hlLW1vZGUmZ3Q7VU5TUEVDSUZJRUQmbHQ7L3NoYXJlZC1jYWNoZS1tb2RlJmd0OwogICAgLi4uCiAgJmx0Oy9wZXJzaXN0ZW5jZS11bml0Jmd0OwoKICAmbHQ7PGI+cGVyc2lzdGVuY2UtdW5pdDwvYj4gbmFtZT0iZXhhbXBsZTIiJmd0OwogICAgIC4uLgogICAgICZsdDtwcm9wZXJ0aWVzJmd0OwogICAgICAgICZsdDtwcm9wZXJ0eSBuYW1lPSJvcGVuanBhLkRhdGFDYWNoZSIgdmFsdWU9InRydWUiLyZndDsKICAgICAmbHQ7L3Byb3BlcnRpZXMmZ3Q7CiAgICAgLi4uCiAgJmx0Oy9wZXJzaXN0ZW5jZS11bml0Jmd0OwoKICAmbHQ7PGI+cGVyc2lzdGVuY2UtdW5pdDwvYj4gbmFtZT0iZXhhbXBsZTMiJmd0OwogICAgIC4uLgogICAgICZsdDtwcm9wZXJ0aWVzJmd0OwogICAgICAgICZsdDstLSBubyBjYWNoZSBwcm9wZXJ0aWVzIHNldCAtLSZndDsKICAgICAmbHQ7L3Byb3BlcnRpZXMmZ3Q7CiAgICAgLi4uCiAgJmx0Oy9wZXJzaXN0ZW5jZS11bml0Jmd0OwoKCiAgJmx0OzxiPnBlcnNpc3RlbmNlLXVuaXQ8L2I+IG5hbWU9ImV4YW1wbGU0IiZndDsKICAgICAuLi4KICAgICAmbHQ7cHJvcGVydGllcyZndDsKICAgICAgICAmbHQ7cHJvcGVydHkgbmFtZT0ib3BlbmpwYS5EYXRhQ2FjaGUiIAogICAgICAgICAgICAgICAgICB2YWx1ZT0iZmFsc2UiLyZndDsKICAgICAgICAmbHQ7cHJvcGVydHkgbmFtZT0iamF2YXgucGVyc2lzdGVuY2Uuc2hhcmVkQ2FjaGUubW9kZSIgCiAgICAgICAgICAgICAgICAgIHZhbHVlPSJBTEwiLyZndDsKICAgICAmbHQ7L3Byb3BlcnRpZXMmZ3Q7CiAgICAgLi4uCiAgJmx0Oy9wZXJzaXN0ZW5jZS11bml0Jmd0OwoKJmx0Oy9wZXJzaXN0ZW5jZSZndDsKPC9wcmU+CjwvdGQ+Cjx0ZD4KPHByZT4KJmx0O3BlcnNpc3RlbmNlJmd0OwoKICAmbHQ7cGVyc2lzdGVuY2UtdW5pdCBuYW1lPSJleGFtcGxlMSImZ3Q7CiAgICAuLi4KICAgICZsdDtzaGFyZWQtY2FjaGUtbW9kZSZndDtOT05FJmx0Oy9zaGFyZWQtY2FjaGUtbW9kZSZndDsKICAgIC4uLgogICZsdDsvcGVyc2lzdGVuY2UtdW5pdCZndDsKCiAgJmx0O3BlcnNpc3RlbmNlLXVuaXQgbmFtZT0iZXhhbXBsZTIiJmd0OwogICAgIC4uLgogICAgICZsdDtzaGFyZWQtY2FjaGUtbW9kZSZndDtBTEwmbHQ7L3NoYXJlZC1jYWNoZS1tb2RlJmd0OwogICAgICZsdDtwcm9wZXJ0aWVzJmd0OwogICAgICZsdDsvcHJvcGVydGllcyZndDsKICAgICAuLi4KICAmbHQ7L3BlcnNpc3RlbmNlLXVuaXQmZ3Q7CgogICZsdDtwZXJzaXN0ZW5jZS11bml0IG5hbWU9ImV4YW1wbGUzIiZndDsKICAgICAuLi4KICAgICAmbHQ7c2hhcmVkLWNhY2hlLW1vZGUmZ3Q7Tk9ORSZsdDsvc2hhcmVkLWNhY2hlLW1vZGUmZ3Q7CiAgICAgJmx0O3Byb3BlcnRpZXMmZ3Q7CiAgICAgICAgJmx0Oy0tIG5vIGNhY2hlIHByb3BlcnRpZXMgc2V0IC0tJmd0OwogICAgICZsdDsvcHJvcGVydGllcyZndDsKICAgICAuLi4KICAmbHQ7L3BlcnNpc3RlbmNlLXVuaXQmZ3Q7CgogICZsdDtwZXJzaXN0ZW5jZS11bml0IG5hbWU9ImV4YW1wbGU0IiZndDsKICAgICAuLi4KICAgICAmbHQ7cHJvcGVydGllcyZndDsKICAgICAgICAmbHQ7cHJvcGVydHkgbmFtZT0iamF2YXgucGVyc2lzdGVuY2Uuc2hhcmVkQ2FjaGUubW9kZSIgCiAgICAgICAgICAgICAgICAgIHZhbHVlPSJBTEwiLyZndDsKICAgICAmbHQ7L3Byb3BlcnRpZXMmZ3Q7CiAgICAgLi4uCiAgJmx0Oy9wZXJzaXN0ZW5jZS11bml0Jmd0OwoKJmx0Oy9wZXJzaXN0ZW5jZSZndDsKPC9wcmU+CjwvdGQ+PC90cj48L3RhYmxlPgo8cD4KVGhlIGF1dG9tYXRlZCBmaXggZGVsZXRlcyB0aGUgPGNvZGU+b3BlbmpwYS5EYXRhQ2FjaGU8L2NvZGU+IHByb3BlcnR5IGlmIGl0IGhhcyBhIHNpbXBsZQo8Y29kZT50cnVlPC9jb2RlPiBvciA8Y29kZT5mYWxzZTwvY29kZT4gdmFsdWUuCklmIHRoZSA8Y29kZT5vcGVuanBhLkRhdGFDYWNoZTwvY29kZT4gcHJvcGVydHkgY29uZmlndXJhdGlvbiBoYXMgYWRkaXRpb25hbCBwYXJhbWV0ZXJzIApzdWNoIGFzIGluIHRoZSBmb2xsb3dpbmcgZXhhbXBsZSwgdGhlIGF1dG9tYXRlZCBmaXggbGVhdmVzIHRoZSBwcm9wZXJ0eSBzbyB5b3UgY2FuIGRldGVybWluZSAKaWYgYW55IGFkZGl0aW9uYWwgbWFudWFsIGNoYW5nZXMgYXJlIG5lZWRlZC4gIApFdmFsdWF0ZSB0aGUgPGNvZGU+b3BlbmpwYS5EYXRhQ2FjaGU8L2NvZGU+IHByb3BlcnR5IGZvciBhZGRpdGlvbmFsIG1pZ3JhdGlvbiwKYW5kIHRoZW4gcmVtb3ZlIHRoZSBwcm9wZXJ0eSBiZWNhdXNlIGl0IGlzIG5vdCB1c2VkIGJ5IEVjbGlwc2VMaW5rLgo8L3A+CjxwcmU+CiAgICAmbHQ7cHJvcGVydHkgbmFtZT0ib3BlbmpwYS5EYXRhQ2FjaGUiIHZhbHVlPSJ0cnVlKFR5cGVzPWNvbS50ZXN0LlBlcnNvbjtjb20udGVzdC5FbXBsb3llZSkiLyZndDsKPC9wcmU+CjxwPgpJZiBib3RoIDxjb2RlPnNoYXJlZC1jYWNoZS1tb2RlPC9jb2RlPiBhbmQgPGNvZGU+amF2YXgucGVyc2lzdGVuY2Uuc2hhcmVkQ2FjaGUubW9kZTwvY29kZT4gYXJlCmRlZmluZWQgaW4gdGhlIHNhbWUgPGNvZGU+cGVyc2lzdGVuY2UtdW5pdDwvY29kZT4sIHRoZSBhdXRvbWF0ZWQgZml4IHVwZGF0ZXMgdGhlIDxjb2RlPnNoYXJlZC1jYWNoZS1tb2RlPC9jb2RlPiAKdmFsdWUgaWYgbmVlZGVkIGFuZCBkZWxldGVzIHRoZSA8Y29kZT5qYXZheC5wZXJzaXN0ZW5jZS5zaGFyZWRDYWNoZS5tb2RlPC9jb2RlPiBwcm9wZXJ0eS4KPC9wPgo8cD4KRm9yIEpQQSAxLjAgPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5wZXJzaXN0ZW5jZS54bWw8L3NwYW4+IGZpbGVzLCB0aGUgPGNvZGU+Jmx0O3NoYXJlZC1jYWNoZS1tb2RlJmd0OzwvY29kZT4gCmVsZW1lbnQgaXMgbm90IHZhbGlkLiBUaGUgYXV0b21hdGVkIGZpeCBldmFsdWF0ZXMgdGhlIHZhbHVlcyBvZgo8Y29kZT5vcGVuanBhLkRhdGFDYWNoZTwvY29kZT4gYW5kIDxjb2RlPmphdmF4LnBlcnNpc3RlbmNlLnNoYXJlZENhY2hlLm1vZGU8L2NvZGU+IHBlcnNpc3RlbmNlIHByb3BlcnRpZXMKYW5kIGFkZHMgYW4gPGNvZGU+ZWNsaXBzZWxpbmsuY2FjaGUuc2hhcmVkLmRlZmF1bHQ8L2NvZGU+IHBlcnNpc3RlbmNlIHByb3BlcnR5IHdoZW4gbmVlZGVkLgo8L3A+CjxwPgpDb3B5IHRoZSA8YSBocmVmPSIjYW5hbHl6ZV9BdXRvbWF0ZWRGaXhDb25maWd1cmF0aW9uIj5jdXN0b20gY29uZmlndXJhdGlvbjwvYT4KdG8geW91ciBhcHBsaWNhdGlvbiBidWlsZCBmaWxlIHRvIGVuYWJsZSB0aGUgZml4IGF1dG9tYXRpb24uCjwvcD4KPHA+CkZvciBtb3JlIGluZm9ybWF0aW9uIG9uIG1pZ3JhdGluZyB2ZW5kb3Itc3BlY2lmaWMgSlBBIGNvbmZpZ3VyYXRpb24gcHJvcGVydGllcywgc2VlIHRoZSBmb2xsb3dpbmcgcmVzb3VyY2VzOgo8dWw+CjxsaT48YSBocmVmPSJodHRwczovL3dpa2kuZWNsaXBzZS5vcmcvRWNsaXBzZUxpbmsvRXhhbXBsZXMvSlBBL01pZ3JhdGlvbi9PcGVuSlBBIgp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd2lraS5lY2xpcHNlLm9yZy9FY2xpcHNlTGluay9FeGFtcGxlcy9KUEEvTWlncmF0aW9uL09wZW5KUEEnKTsgcmV0dXJuIGZhbHNlOyI+CkhvdyBUbyBNaWdyYXRlIGZyb20gT3BlbkpQQSB0byBFY2xpcHNlTGluayBKUEE8L2E+PC9saT4KPGxpPjxhIGhyZWY9Imh0dHA6Ly9vcGVuanBhLmFwYWNoZS5vcmcvYnVpbGRzLzIuNC4wL2FwYWNoZS1vcGVuanBhL2RvY3MvcmVmX2d1aWRlX2NhY2hpbmcuaHRtbCNyZWZfZ3VpZGVfY2FjaGVfY29uZiIKdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwOi8vb3BlbmpwYS5hcGFjaGUub3JnL2J1aWxkcy8yLjQuMC9hcGFjaGUtb3BlbmpwYS9kb2NzL3JlZl9ndWlkZV9jYWNoaW5nLmh0bWwjcmVmX2d1aWRlX2NhY2hlX2NvbmYnKTsgcmV0dXJuIGZhbHNlOyI+Ck9wZW5KUEEgUmVmZXJlbmNlIEd1aWRlOiBDaGFwdGVyIDEwLiBDYWNoaW5nPC9hPjwvbGk+CjwvdWw+Cg=="
+    },
+    {
+      "ruleName": "Java API for RESTful Web Services (JAX-RS)",
+      "ruleId": "DetectJAXRS",
+      "ruleHelpLocation": "/help/java/DetectJAXRS.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Information",
+      "severityId": "info",
+      "alternativeRecipes": [],
+      "category": "Java EE 6 / JAX-RS 1.1",
+      "categoryId": "com.ibm.ws.appconversion.javaee6.category / com.ibm.ws.appconversion.javaee6.jaxrs.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "websphere-cafe.war/WEB-INF/classes/cafe/web/rest/CafeResource.class",
+          "details": [
+            {
+              "reference": "Class annotation",
+              "match": "javax.ws.rs",
+              "lineNumber": 0
+            }
+          ]
+        }
+      ],
+      "referencedClasses": [
+        {
+          "class": "javax.ws.rs.Consumes",
+          "total": 1
+        },
+        {
+          "class": "javax.ws.rs.DELETE",
+          "total": 1
+        },
+        {
+          "class": "javax.ws.rs.GET",
+          "total": 2
+        },
+        {
+          "class": "javax.ws.rs.POST",
+          "total": 1
+        },
+        {
+          "class": "javax.ws.rs.Path",
+          "total": 3
+        },
+        {
+          "class": "javax.ws.rs.PathParam",
+          "total": 2
+        },
+        {
+          "class": "javax.ws.rs.Produces",
+          "total": 2
+        },
+        {
+          "class": "javax.ws.rs.WebApplicationException",
+          "total": 4
+        },
+        {
+          "class": "javax.ws.rs.client.Client",
+          "total": 9
+        },
+        {
+          "class": "javax.ws.rs.client.ClientBuilder",
+          "total": 3
+        },
+        {
+          "class": "javax.ws.rs.client.Entity",
+          "total": 3
+        },
+        {
+          "class": "javax.ws.rs.client.Invocation$Builder",
+          "total": 6
+        },
+        {
+          "class": "javax.ws.rs.client.WebTarget",
+          "total": 10
+        },
+        {
+          "class": "javax.ws.rs.core.Context",
+          "total": 1
+        },
+        {
+          "class": "javax.ws.rs.core.GenericType",
+          "total": 3
+        },
+        {
+          "class": "javax.ws.rs.core.Response",
+          "total": 5
+        },
+        {
+          "class": "javax.ws.rs.core.Response$ResponseBuilder",
+          "total": 2
+        },
+        {
+          "class": "javax.ws.rs.core.Response$Status",
+          "total": 6
+        },
+        {
+          "class": "javax.ws.rs.core.UriInfo",
+          "total": 2
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkphdmEgQVBJIGZvciBSRVNUZnVsIFdlYiBTZXJ2aWNlcwoJCQkoSkFYLVJTKTwvaDM+CjxwPgoJCQlUaGlzIHJ1bGUgZmxhZ3MgcmVmZXJlbmNlcyB0bwoJCQk8Y29kZT5qYXZheC53cy5yczwvY29kZT4KCQkJcGFja2FnZXMuCgkJPC9wPgoJCTxwPklmIHlvdSBhcmUgdXNpbmcgdGhlIHNvdXJjZSBzY2FubmVyLCB5b3VyIG1pZ3JhdGlvbgoJCQljb25maWd1cmF0aW9uIHNlbGVjdGlvbnMgaW5kaWNhdGUgdGhhdCB5b3UgYXJlIG1pZ3JhdGluZyB0byBKYXZhIEVFIDcKCQkJYnV0IGFyZSBub3QgY2hhbmdpbmcgeW91ciBKQVgtUlMgaW1wbGVtZW50YXRpb24gbGV2ZWwuIEluIHRoaXMgY2FzZSwKCQkJeW91IHdpbGwgbmVlZCB0byBjb25maWd1cmUgdGhlIHNlcnZlciB0byB1c2UgdGhlIG5vbi1kZWZhdWx0CgkJCWltcGxlbWVudGF0aW9uLjwvcD4KCQk8cD5JZiB5b3UgYXJlIHVzaW5nIHRoZSBiaW5hcnkgYXBwbGljYXRpb24gc2Nhbm5lciwgdGhpcyBydWxlIGlzCgkJCWluY2x1ZGVkIHdoZW4gdGhlIHRhcmdldCBKYXZhIEVFIGxldmVsIGlzIHZlcnNpb24gNy4gVGhlIHJ1bGUgYWR2aXNlcwoJCQl5b3Ugb2YgYW55IHJlcXVpcmVkIHNlcnZlciBjb25maWd1cmF0aW9uIHRvIHVzZSB0aGUgbm9uLWRlZmF1bHQKCQkJaW1wbGVtZW50YXRpb24gZm9yIEpBWC1SUy48L3A+CgkJPHA+V2ViU3BoZXJlIEFwcGxpY2F0aW9uIFNlcnZlciB0cmFkaXRpb25hbCBWOS4wIGlzIEphdmEgRUUgNwoJCQljZXJ0aWZpZWQgd2hpY2ggaW5jbHVkZXMgSkFYLVJTIDIuMCBieSBkZWZhdWx0LiBJZiB5b3UgYXJlIG1pZ3JhdGluZyB0byBXZWJTcGhlcmUgQXBwbGljYXRpb24gU2VydmVyIAoJCQl0cmFkaXRpb25hbCBWOS4wLCB5b3UgY2FuIGNvbmZpZ3VyZSB5b3VyIHNlcnZlciB0byB1c2UgdGhlIEpBWC1SUyAxLjEgaW1wbGVtZW50YXRpb24gdG8gbWluaW1pemUgdGhlIAoJCQltaWdyYXRpb24gaW1wYWN0IG9uIHlvdXIgYXBwbGljYXRpb24uCgkJCUZvciBpbmZvcm1hdGlvbiBvbiBjb25maWd1cmluZyBXZWJTcGhlcmUgQXBwbGljYXRpb24gU2VydmVyIHRyYWRpdGlvbmFsLCBzZWUKCQkJPGEKCQkJCWhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vc3VwcG9ydC9rbm93bGVkZ2VjZW50ZXIvU1NBVzU3XzkuMC41L2NvbS5pYm0ud2Vic3BoZXJlLm5kLm11bHRpcGxhdGZvcm0uZG9jL2FlL3J3YnNfamF4cnNfY29leGlzdC5odG1sIgoJCQkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL3d3dy5pYm0uY29tL3N1cHBvcnQva25vd2xlZGdlY2VudGVyL1NTQVc1N185LjAuNS9jb20uaWJtLndlYnNwaGVyZS5uZC5tdWx0aXBsYXRmb3JtLmRvYy9hZS9yd2JzX2pheHJzX2NvZXhpc3QuaHRtbCcpO3JldHVybiBmYWxzZSI+CgkJCQlDb2V4aXN0ZW5jZSBvZiBKQVgtUlMgMi4wIHdpdGggSkFYLVJTIDEuMTwvYT4uCgkJCQlJZiB5b3Ugd291bGQgbGlrZSB0byBtaWdyYXRlIHRvIEpBWC1SUyAyLjAgaW5zdGVhZCBvZiBzdGF5aW5nIG9uIEpBWC1SUyAxLjEsIHVzZSB0aGUgc291cmNlIHNjYW5uZXIgdG8gYXNzaXN0IHdpdGggeW91ciBhcHBsaWNhdGlvbiBjaGFuZ2VzLiAKCQk8L3A+CgkJPHA+CgkJCTxiPk5vdGU8L2I+OiBhIFdlYlNwaGVyZSBzZXJ2ZXIgY2FuIG9ubHkgaGF2ZSBvbmUgZGVmYXVsdCBKQVgtUlMgcHJvdmlkZXIuIElmIHlvdSBhcmUgZGVwbG95aW5nIG11bHRpcGxlIAoJCQlhcHBsaWNhdGlvbnMgdG8gdGhlIHNhbWUgc2VydmVyLCB0aGV5IG11c3QgYWxsIGJlIGNvbXBhdGlibGUgd2l0aCBKQVgtUlMgMS4xLiBSdW4gdGhlIGFwcGxpY2F0aW9uIAoJCQltaWdyYXRpb24gdG9vbHMgYWdhaW5zdCBhbGwgeW91ciBhcHBsaWNhdGlvbnMgdG8gZGlzY292ZXIgaWYgYW55IG9mIHlvdXIgYXBwbGljYXRpb25zIG11c3QgdXBncmFkZSAKCQkJdG8gSkFYLVJTIDIuMC4KCQk8L3A+CgkJPHA+CgkJCUluIExpYmVydHksIHRvIHVzZSBhIGNvbWJpbmF0aW9uIG9mIEphdmEgRUUgNiBhbmQgSmF2YSBFRSA3CgkJCeKAi3RlY2hub2xvZ2llcywgYWxsIGZlYXR1cmVzIG11c3QgYmUgY29uZmlndXJlZCBpbmRpdmlkdWFsbHkuIAoJCQlUaGUgPGNvZGU+amF2YWVlLTcuMDwvY29kZT4gZmVhdHVyZSBjYW5ub3QgYmUgdXNlZCBpbiB0aGlzIGNhc2UuCgkJCUZvciBtb3JlIGluZm9ybWF0aW9uLCBzZWUKCQkJ4oCLPGEKCQkJCWhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vc3VwcG9ydC9rbm93bGVkZ2VjZW50ZXIvU1NFUVRQX2xpYmVydHkvY29tLmlibS53ZWJzcGhlcmUud2xwLmRvYy9hZS9yd2xwX3Byb2dfbW9kZWxfc3VwcG9ydGVkX2NvbWJvcy5odG1sIgoJCQkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL3d3dy5pYm0uY29tL3N1cHBvcnQva25vd2xlZGdlY2VudGVyL1NTRVFUUF9saWJlcnR5L2NvbS5pYm0ud2Vic3BoZXJlLndscC5kb2MvYWUvcndscF9wcm9nX21vZGVsX3N1cHBvcnRlZF9jb21ib3MuaHRtbCcpO3JldHVybiBmYWxzZSI+U3VwcG9ydGVkIEphdmEgRUUgNiBhbmQgNyBmZWF0dXJlIGNvbWJpbmF0aW9uczwvYT4uIAoJCTwvcD4KCQ=="
+    },
+    {
+      "ruleName": "Java Persistence API (JPA)",
+      "ruleId": "DetectJPA",
+      "ruleHelpLocation": "/help/java/DetectJPA.html",
+      "devCost": "0",
+      "instanceCost": "0",
+      "severity": "Warning",
+      "severityId": "warning",
+      "alternativeRecipes": [],
+      "category": "Java EE 6 / JPA 2.0",
+      "categoryId": "com.ibm.ws.appconversion.javaee6.category / com.ibm.ws.appconversion.javaee6.jpa.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "websphere-cafe.war/WEB-INF/classes/cafe/model/CafeRepository.class",
+          "details": [
+            {
+              "reference": "Field annotation entityManager",
+              "match": "javax.persistence",
+              "lineNumber": 0
+            }
+          ]
+        }
+      ],
+      "referencedClasses": [
+        {
+          "class": "javax.persistence.Entity",
+          "total": 1
+        },
+        {
+          "class": "javax.persistence.EntityManager",
+          "total": 11
+        },
+        {
+          "class": "javax.persistence.GeneratedValue",
+          "total": 1
+        },
+        {
+          "class": "javax.persistence.Id",
+          "total": 1
+        },
+        {
+          "class": "javax.persistence.NamedQuery",
+          "total": 1
+        },
+        {
+          "class": "javax.persistence.PersistenceContext",
+          "total": 1
+        },
+        {
+          "class": "javax.persistence.PersistenceException",
+          "total": 2
+        },
+        {
+          "class": "javax.persistence.TypedQuery",
+          "total": 2
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPkphdmEgUGVyc2lzdGVuY2UgQVBJIChKUEEpPC9oMz4KPHA+CgkJCVRoaXMgcnVsZSBmbGFncyByZWZlcmVuY2VzIHRvCgkJCTxjb2RlPmphdmF4LnBlcnNpc3RlbmNlPC9jb2RlPgoJCQlwYWNrYWdlcy4KCQkgVGhlIFdlYlNwaGVyZSBkZWZhdWx0IEpQQSBwcm92aWRlciBzd2l0Y2hlZCBmcm9tIE9wZW5KUEEgCgkJCWZvciBKUEEgMi4wIChKYXZhIEVFIDYpIHRvIEVjbGlwc2VMaW5rIGZvciBKUEEgMi4xIChKYXZhIEVFIDcpLgoJCTwvcD4KCQk8cD5JZiB5b3UgYXJlIHVzaW5nIHRoZSBzb3VyY2Ugc2Nhbm5lciwgeW91ciBtaWdyYXRpb24KCQkJY29uZmlndXJhdGlvbiBzZWxlY3Rpb25zIGluZGljYXRlIHRoYXQgeW91IGFyZSBtaWdyYXRpbmcgdG8gSmF2YSBFRSA3CgkJCWJ1dCBhcmUgbm90IGNoYW5naW5nIHlvdXIgSlBBIGltcGxlbWVudGF0aW9uIGxldmVsLiBJbiB0aGlzIGNhc2UsCgkJCXlvdSB3aWxsIG5lZWQgdG8gY29uZmlndXJlIHRoZSBzZXJ2ZXIgdG8gdXNlIHRoZSBub24tZGVmYXVsdAoJCQlpbXBsZW1lbnRhdGlvbi48L3A+CgkJPHA+SWYgeW91IGFyZSB1c2luZyB0aGUgYmluYXJ5IGFwcGxpY2F0aW9uIHNjYW5uZXIsIHRoaXMgcnVsZSBpcwoJCQlpbmNsdWRlZCB3aGVuIHRoZSB0YXJnZXQgSmF2YSBFRSBsZXZlbCBpcyB2ZXJzaW9uIDcuIFRoZSBydWxlIGFkdmlzZXMKCQkJeW91IG9mIGFueSByZXF1aXJlZCBzZXJ2ZXIgY29uZmlndXJhdGlvbiB0byB1c2UgdGhlIG5vbi1kZWZhdWx0CgkJCWltcGxlbWVudGF0aW9uIGZvciBKUEEuPC9wPgoJCTxwPldlYlNwaGVyZSBBcHBsaWNhdGlvbiBTZXJ2ZXIgdHJhZGl0aW9uYWwgVjkuMCBpcyBKYXZhIEVFIDcKCQkJY2VydGlmaWVkIHdoaWNoIGluY2x1ZGVzIEpQQSAyLjEgYnkgZGVmYXVsdC4gSWYgeW91IGFyZSBtaWdyYXRpbmcgdG8gV2ViU3BoZXJlIEFwcGxpY2F0aW9uIFNlcnZlciB0cmFkaXRpb25hbCBWOS4wLCB5b3UgY2FuIGNvbmZpZ3VyZQoJCQl5b3VyIHNlcnZlciB0byB1c2UgdGhlIEpQQSAyLjAgaW1wbGVtZW50YXRpb24gdG8gbWluaW1pemUgdGhlIG1pZ3JhdGlvbiBpbXBhY3Qgb24geW91ciBhcHBsaWNhdGlvbi4gCgkJCUZvciBpbmZvcm1hdGlvbiBvbiBjb25maWd1cmluZyBXZWJTcGhlcmUgQXBwbGljYXRpb24gU2VydmVyIHRyYWRpdGlvbmFsLCBzZWUgPGEKCQkJCWhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vc3VwcG9ydC9rbm93bGVkZ2VjZW50ZXIvU1NBVzU3XzkuMC41L2NvbS5pYm0ud2Vic3BoZXJlLm5kLm11bHRpcGxhdGZvcm0uZG9jL2FlL3RlamJfaWRtb2RfanBhc3BlYy5odG1sIgoJCQkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL3d3dy5pYm0uY29tL3N1cHBvcnQva25vd2xlZGdlY2VudGVyL1NTQVc1N185LjAuNS9jb20uaWJtLndlYnNwaGVyZS5uZC5tdWx0aXBsYXRmb3JtLmRvYy9hZS90ZWpiX2lkbW9kX2pwYXNwZWMuaHRtbCcpO3JldHVybiBmYWxzZSI+CgkJCQlJZGVudGlmeWluZyBhbmQgbW9kaWZ5aW5nIHRoZSBKUEEgc3BlY2lmaWNhdGlvbiBsZXZlbDwvYT4uCgkJCQlJZiB5b3Ugd291bGQgbGlrZSB0byBtaWdyYXRlIHRvIEpQQSAyLjEgaW5zdGVhZCBvZiBzdGF5aW5nIG9uIEpQQSAyLjAsIHVzZSB0aGUgc291cmNlIHNjYW5uZXIgdG8gYXNzaXN0IHdpdGggeW91ciBhcHBsaWNhdGlvbiBjaGFuZ2VzLiAKCQk8L3A+CgkJPHA+CgkJCUluIExpYmVydHksIHRvIHVzZSBhIGNvbWJpbmF0aW9uIG9mIEphdmEgRUUgNiBhbmQgSmF2YSBFRSA3CgkJCeKAi3RlY2hub2xvZ2llcywgYWxsIGZlYXR1cmVzIG11c3QgYmUgY29uZmlndXJlZCBpbmRpdmlkdWFsbHkuIAoJCQlUaGUgPGNvZGU+amF2YWVlLTcuMDwvY29kZT4gZmVhdHVyZSBjYW5ub3QgYmUgdXNlZCBpbiB0aGlzIGNhc2UuCgkJCUZvciBtb3JlIGluZm9ybWF0aW9uLCBzZWUKCQkJ4oCLPGEKCQkJCWhyZWY9Imh0dHBzOi8vd3d3LmlibS5jb20vc3VwcG9ydC9rbm93bGVkZ2VjZW50ZXIvU1NFUVRQX2xpYmVydHkvY29tLmlibS53ZWJzcGhlcmUud2xwLmRvYy9hZS9yd2xwX3Byb2dfbW9kZWxfc3VwcG9ydGVkX2NvbWJvcy5odG1sIgoJCQkJdGl0bGU9Ik9wZW5zIGEgbmV3IHdpbmRvdyIgb25jbGljaz0iamF2YXNjcmlwdDpoZWxwV2luZG93KCdodHRwczovL3d3dy5pYm0uY29tL3N1cHBvcnQva25vd2xlZGdlY2VudGVyL1NTRVFUUF9saWJlcnR5L2NvbS5pYm0ud2Vic3BoZXJlLndscC5kb2MvYWUvcndscF9wcm9nX21vZGVsX3N1cHBvcnRlZF9jb21ib3MuaHRtbCcpO3JldHVybiBmYWxzZSI+U3VwcG9ydGVkIEphdmEgRUUgNiBhbmQgNyBmZWF0dXJlIGNvbWJpbmF0aW9uczwvYT4uIAoJCTwvcD4KCQ=="
+    },
+    {
+      "ruleName": "OpenJPA and WebSphere JPA configuration properties must be migrated",
+      "ruleId": "OpenJPAConfigurationProperties",
+      "ruleHelpLocation": "/ruleinfo/appconversion/javaee7/jpa/OpenJpaConfigurationProperties.html",
+      "devCost": "2",
+      "instanceCost": "0.1",
+      "severity": "Critical",
+      "severityId": "severe",
+      "alternativeRecipes": [],
+      "category": "Java EE 7 / OpenJPA to EclipseLink JPA",
+      "categoryId": "appconversion.javaee7.category / appconversion.javaee7.jpa.category",
+      "totalResults": 1,
+      "results": [
+        {
+          "fileName": "websphere-cafe.war/WEB-INF/classes/META-INF/persistence.xml",
+          "details": [
+            {
+              "match": "property.name=openjpa.jdbc.SynchronizeMappings",
+              "lineNumber": 12
+            }
+          ]
+        }
+      ],
+      "ruleHelpEncoded": "PGgzPk9wZW5KUEEgYW5kIFdlYlNwaGVyZSBKUEEgY29uZmlndXJhdGlvbiBwcm9wZXJ0aWVzIG11c3QgYmUgbWlncmF0ZWQ8L2gzPgo8cD4KVGhpcyBydWxlIGRldGVjdHMgT3BlbkpQQSBhbmQgV2ViU3BoZXJlIHZlbmRvci1zcGVjaWZpYyBKUEEgMi4wIGNvbmZpZ3VyYXRpb24gcHJvcGVydGllcyBpbiB0aGUKPHNwYW4gY2xhc3M9IkZpbGVQYXRoIj5wZXJzaXN0ZW5jZS54bWw8L3NwYW4+IGZpbGUuIFlvdSBtdXN0IG1hbnVhbGx5IG1pZ3JhdGUgdGhlc2UgcHJvcGVydGllcyAKdG8gc3RhbmRhcmRpemVkIG9yIEVjbGlwc2VMaW5rIHByb3BlcnRpZXMuClRoZSBydWxlIGZsYWdzIGFueSA8Y29kZT5wcm9wZXJ0eTwvY29kZT4gZWxlbWVudCB3aXRoIGEgPGNvZGU+bmFtZTwvY29kZT4gYXR0cmlidXRlCnRoYXQgc3RhcnRzIHdpdGggPGNvZGU+b3BlbmpwYS4qPC9jb2RlPiBvciA8Y29kZT53c2pwYS4qPC9jb2RlPiBleGNlcHQgZm9yIAp0aGUgPGNvZGU+b3BlbmpwYS5qZGJjLlNjaGVtYTwvY29kZT4gcHJvcGVydHksIHdoaWNoIGlzIGZsYWdnZWQgYnkgCjxhIGhyZWY9Ii4vT3BlbkpwYUpkYmNTY2hlbWFDb25maWd1cmF0aW9uUHJvcGVydHkuaHRtbCI+b3BlbmpwYS5qZGJjLlNjaGVtYSBydWxlPC9hPiBhbmQgPGNvZGU+b3BlbmpwYS5Mb2NrTWFuYWdlcjwvY29kZT4gcHJvcGVydHksIAp3aGljaCBpcyBmbGFnZ2VkIGJ5IAo8YSBocmVmPSIuL09wZW5KUEFMb2NrTWFuYWdlci5odG1sIj5vcGVuanBhLkxvY2tNYW5hZ2VyIHJ1bGU8L2E+LgpUaGUgPGNvZGU+d3NqcGE8L2NvZGU+IGNvbmZpZ3VyYXRpb24gcHJvcGVydGllcyBhcmUgc3BlY2lmaWMgdG8gdGhlIFdlYlNwaGVyZSB0cmFkaXRpb25hbCBhbmQgTGliZXJ0eSBKUEEgMi4wIAppbXBsZW1lbnRhdGlvbiBidWlsdCBvbiBPcGVuSlBBLgo8L3A+CjxwPgpJbiB0aGUgZm9sbG93aW5nIDxzcGFuIGNsYXNzPSJGaWxlUGF0aCI+cGVyc2lzdGVuY2UueG1sPC9zcGFuPiBmaWxlLCAKYWxsIGZvdXIgPGNvZGU+cHJvcGVydHk8L2NvZGU+IGVsZW1lbnRzIGFyZSBmbGFnZ2VkIGJ5IHRoaXMgcnVsZS4gCjwvcD4KPHRhYmxlIHN1bW1hcnk9IlRoaXMgdGFibGUgcHJvdmlkZXMgbW9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgcnVsZSwgc29tZXRpbWVzIGluIHRoZSBmb3JtIG9mIGFuIGV4Y2VycHQgZnJvbSBhIGZpbGUgZGVtb25zdHJhdGluZyB0aGUgbWlncmF0aW9uIGlzc3VlLiIgYmdjb2xvcj0iI0Y3RjhGOSIgYm9yZGVyPSIxIiBjZWxscGFkZGluZz0iMnB4Ij4KPHRyPjx0ZD4KPHByZT4KJmx0O3BlcnNpc3RlbmNlJmd0OwogICZsdDtwZXJzaXN0ZW5jZS11bml0IG5hbWU9Im9wZW5qcGEiJmd0OwogICAgJmx0O3Byb3BlcnRpZXMmZ3Q7CiAgICAgIC4uLgogICAgICAmbHQ7cHJvcGVydHkgbmFtZT0ib3BlbmpwYS5Db25uZWN0aW9uVVJMICIKICAgICAgICAgICAgICAgICAgIHZhbHVlPSJqZGJjOmRiMjovL2hvc3QuaWJtLmNvbTo1MDAwMC9teWRiMnVzZXIiIC8mZ3Q7CiAgICAgICZsdDtwcm9wZXJ0eSBuYW1lPSJvcGVuanBhLkNvbm5lY3Rpb25Ecml2ZXJOYW1lIiB2YWx1ZT0iY29tLmlibS5kYjIuamNjLkRCMkRyaXZlciIgLyZndDsKICAgICAgJmx0O3Byb3BlcnR5IG5hbWU9Im9wZW5qcGEuQ29ubmVjdGlvblVzZXJOYW1lIiB2YWx1ZT0ibXlkYjJ1c2VyIiAvJmd0OwogICAgICAmbHQ7cHJvcGVydHkgbmFtZT0ib3BlbmpwYS5Db25uZWN0aW9uUGFzc3dvcmQiIHZhbHVlPSJwYXNzd29yZCIgLyZndDsgICAgICAKICAgICAgLi4uCiAgICAmbHQ7L3Byb3BlcnRpZXMmZ3Q7CiAgJmx0Oy9wZXJzaXN0ZW5jZS11bml0Jmd0OwombHQ7L3BlcnNpc3RlbmNlJmd0Owo8L3ByZT4KPC90ZD48L3RyPjwvdGFibGU+CjxwPgpUbyByZXNvbHZlIHRoZSBpc3N1ZSwgY2hhbmdlIHRoZSBwcm9wZXJ0eSBuYW1lIHRvIGEgc3RhbmRhcmRpemVkIHByb3BlcnR5IHdoZW4gdGhlcmUgaXMgb25lCmF2YWlsYWJsZS4KPC9wPgo8dGFibGUgc3VtbWFyeT0iVGhpcyB0YWJsZSBwcm92aWRlcyBtb3JlIGluZm9ybWF0aW9uIGFib3V0IHRoZSBydWxlLCBzb21ldGltZXMgaW4gdGhlIGZvcm0gb2YgYW4gZXhjZXJwdCBmcm9tIGEgZmlsZSBkZW1vbnN0cmF0aW5nIHRoZSBtaWdyYXRpb24gaXNzdWUuIiBiZ2NvbG9yPSIjRjdGOEY5IiBib3JkZXI9IjEiIGNlbGxwYWRkaW5nPSIycHgiPgo8dHI+PHRkPgo8cHJlPgombHQ7cGVyc2lzdGVuY2UmZ3Q7CiAgJmx0O3BlcnNpc3RlbmNlLXVuaXQgbmFtZT0ib3BlbmpwYSImZ3Q7CiAgICAmbHQ7cHJvcGVydGllcyZndDsKICAgICAgLi4uICAgCiAgICAgICZsdDtwcm9wZXJ0eSBuYW1lPSJqYXZheC5wZXJzaXN0ZW5jZS5qZGJjLnVybCIKICAgICAgICAgICAgICAgICAgIHZhbHVlPSJqZGJjOmRiMjovL2hvc3QuaWJtLmNvbTo1MDAwMC9teWRiMnVzZXIiIC8mZ3Q7CiAgICAgICZsdDtwcm9wZXJ0eSBuYW1lPSJqYXZheC5wZXJzaXN0ZW5jZS5qZGJjLmRyaXZlciIgdmFsdWU9ImNvbS5pYm0uZGIyLmpjYy5EQjJEcml2ZXIiIC8mZ3Q7CiAgICAgICZsdDtwcm9wZXJ0eSBuYW1lPSJqYXZheC5wZXJzaXN0ZW5jZS5qZGJjLnVzZXIiIHZhbHVlPSJteWRiMnVzZXIiIC8mZ3Q7CiAgICAgICZsdDtwcm9wZXJ0eSBuYW1lPSJqYXZheC5wZXJzaXN0ZW5jZS5qZGJjLnBhc3N3b3JkIiB2YWx1ZT0icGFzc3dvcmQiIC8mZ3Q7CiAgICAgIC4uLgogICAgJmx0Oy9wcm9wZXJ0aWVzJmd0OwogICZsdDsvcGVyc2lzdGVuY2UtdW5pdCZndDsKJmx0Oy9wZXJzaXN0ZW5jZSZndDsKPC9wcmU+CjwvdGQ+PC90cj48L3RhYmxlPgo8cD4KVGhlIHNlY29uZC1sZXZlbCBjYWNoZSBpcyBlbmFibGVkIGluIEVjbGlwc2VMaW5rIGJ5IGRlZmF1bHQuCklmIHlvdSBoYXZlIDxjb2RlPiZsdDtwcm9wZXJ0eSBuYW1lPSJvcGVuanBhLkRhdGFDYWNoZSIgdmFsdWU9InRydWUiLyZndDs8L2NvZGU+IHNldCBpbiBhIAphIDxjb2RlPnBlcnNpc3RlbmNlLXVuaXQ8L2NvZGU+LCB5b3UgY2FuIHJlbW92ZSB0aGlzIHByb3BlcnR5LgpGb3IgbW9yZSBpbmZvcm1hdGlvbiwgc2VlIHRoZSA8YSBocmVmPSIuL0pwYUNhY2hlQmVoYXZpb3IuaHRtbCI+RGlzYWJsZSB0aGUgcGVyc2lzdGVuY2UgdW5pdCBzZWNvbmQtbGV2ZWwgY2FjaGU8L2E+CnJ1bGUuCjwvcD4KPHA+CkZvciBtb3JlIGluZm9ybWF0aW9uIG9uIG1pZ3JhdGluZyB2ZW5kb3Itc3BlY2lmaWMgSlBBIGNvbmZpZ3VyYXRpb24gcHJvcGVydGllcywgc2VlIHRoZSBmb2xsb3dpbmcgcmVzb3VyY2VzOgo8dWw+CjxsaT48YSBocmVmPSJodHRwczovL3dpa2kuZWNsaXBzZS5vcmcvRWNsaXBzZUxpbmsvRXhhbXBsZXMvSlBBL01pZ3JhdGlvbi9PcGVuSlBBL1BlcnNpc3RlbmNlWE1MIgp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd2lraS5lY2xpcHNlLm9yZy9FY2xpcHNlTGluay9FeGFtcGxlcy9KUEEvTWlncmF0aW9uL09wZW5KUEEvUGVyc2lzdGVuY2VYTUwnKTsgcmV0dXJuIGZhbHNlOyI+Ck1pZ3JhdGlvbiBmcm9tIE9wZW5KUEEgdG8gRWNsaXBzZUxpbms6IFBlcnNpc3RlbmNlIFhNTDwvYT48L2xpPgo8bGk+PGEgaHJlZj0iaHR0cHM6Ly93d3cuZWNsaXBzZS5vcmcvZWNsaXBzZWxpbmsvZG9jdW1lbnRhdGlvbi8yLjYvanBhL2V4dGVuc2lvbnMvcGVyc2lzdGVuY2Vwcm9wZXJ0aWVzX3JlZi5odG0jc3RocmVmNzMzIgp0aXRsZT0iT3BlbnMgYSBuZXcgd2luZG93IiBvbmNsaWNrPSJqYXZhc2NyaXB0OmhlbHBXaW5kb3coJ2h0dHBzOi8vd3d3LmVjbGlwc2Uub3JnL2VjbGlwc2VsaW5rL2RvY3VtZW50YXRpb24vMi42L2pwYS9leHRlbnNpb25zL3BlcnNpc3RlbmNlcHJvcGVydGllc19yZWYuaHRtI3N0aHJlZjczMycpOyByZXR1cm4gZmFsc2U7Ij4KRWNsaXBzZUxpbmsgUGVyc2lzdGVuY2UgUHJvcGVydHkgRXh0ZW5zaW9ucyBSZWZlcmVuY2U8L2E+CjwvbGk+CjwvdWw+Cg=="
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+2024-05-17 05:40:13 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 05:40:13 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[0m[36m2024-05-17 05:40:37 INFO:  Running recipe(s)...
+2024-05-17 05:40:38 INFO:  Changes have been made to src/main/java/com/acme/modres/AvailabilityCheckerServlet.java by:
+2024-05-17 05:40:38 INFO:      com.ibm.testRecipe
+2024-05-17 05:40:38 INFO:          org.openrewrite.java.migrate.lang.ThreadStopUnsupported
+2024-05-17 05:40:38 INFO:  Please review and commit the results.
+[0m[36m[0m

@@ -1,0 +1,21 @@
+.........FF.......
+======================================================================
+FAIL: test_jam_e2e8to21wl_scan_twas (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E8to21WL.py", line 19, in test_jam_e2e8to21wl_scan_twas
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e8to21wl/scan_twas_ruleid.txt', '/root/jam/wca4java/tests/expected/e2e8to21wl/scan_twas_ruleid.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_e2e8to21wl_scan_twas_2 (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E8to21WL.py", line 40, in test_jam_e2e8to21wl_scan_twas_2
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e8to21wl/scan_twas_ruleid_2.txt', '/root/jam/wca4java/tests/expected/e2e8to21wl/scan_twas_ruleid_2.txt'))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.003s
+
+FAILED (failures=2)

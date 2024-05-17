@@ -1,0 +1,4 @@
+      "ruleId": "DetectJAXRS",
+      "ruleId": "DetectJPA",
+      "ruleId": "JpaCacheProperties",
+      "ruleId": "OpenJPAConfigurationProperties",

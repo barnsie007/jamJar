@@ -1,0 +1,31 @@
+2024-05-17 05:52:47 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 05:52:47 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+2024-05-17 05:52:47 INFO: Bundle is valid.
+2024-05-17 05:52:48 INFO: Some or all rule help not found. Regenerating.
+2024-05-17 05:52:48 INFO: Finished updating report with rule help
+[36m[0m[36mline 2:1 token recognition error at: '%'
+line 2:2 token recognition error at: '-'
+line 2:3 token recognition error at: '-'
+line 2:100 token recognition error at: '-'
+line 2:101 token recognition error at: '-'
+line 2:102 token recognition error at: '%'
+line 2:105 token recognition error at: '%'
+line 2:106 token recognition error at: '-'
+line 2:107 token recognition error at: '-'
+line 2:123 token recognition error at: '-'
+line 2:124 token recognition error at: '-'
+line 2:125 token recognition error at: '%'
+line 2:1 token recognition error at: '%'
+line 2:2 token recognition error at: '-'
+line 2:3 token recognition error at: '-'
+line 2:96 token recognition error at: '-'
+line 2:97 token recognition error at: '-'
+line 2:98 token recognition error at: '%'
+line 2:101 token recognition error at: '%'
+line 2:102 token recognition error at: '-'
+line 2:103 token recognition error at: '-'
+line 2:119 token recognition error at: '-'
+line 2:120 token recognition error at: '-'
+line 2:121 token recognition error at: '%'
+2024-05-17 05:53:26 INFO:  Running recipe(s)...
+[0m[36m[0m

@@ -1,0 +1,4 @@
+2024-05-17 05:55:42 INFO: Detected pom.xml, setting build tool type to "maven"
+2024-05-17 05:55:42 INFO: Using 'mvn --version' for maven home location: /root/maven/apache-maven-3.9.6
+[36m[0m[36m2024-05-17 05:56:09 INFO:  Running recipe(s)...
+[0m[36m[0m

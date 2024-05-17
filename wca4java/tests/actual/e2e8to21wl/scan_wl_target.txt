@@ -1,0 +1,4 @@
+      "/root/source/modresorts/modresorts/target/modresorts-2.0.0.war"
+      "--targetAppServer=liberty",
+      "--targetJavaEE=ee7",
+      "--targetJava=java21",

@@ -1,0 +1,1 @@
+db2jcc_license_cu.jar is present

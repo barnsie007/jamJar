@@ -1,0 +1,51 @@
+FE..EEF
+======================================================================
+ERROR: test_jam_e2e_run_recipes_gas (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_02.py", line 19, in test_jam_e2e_run_recipes_gas
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/AllRecipes_Mod_WARN_gas.txt', '/root/jam/wca4java/tests/expected/e2e/AllRecipes_Mod_WARN_gas.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/AllRecipes_Mod_WARN_gas.txt'
+
+======================================================================
+ERROR: test_jam_e2e_scan_wl_2_gas (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_02.py", line 25, in test_jam_e2e_scan_wl_2_gas
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_wl_ruleid_2_gas.txt', '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_2_gas.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_2_gas.txt'
+
+======================================================================
+ERROR: test_jam_e2e_scan_wl_diff_gas (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_02.py", line 28, in test_jam_e2e_scan_wl_diff_gas
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_wl_ruleid_diff_gas.txt', '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_diff_gas.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_diff_gas.txt'
+
+======================================================================
+FAIL: test_jam_e2e_get_recipes_gas (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_02.py", line 16, in test_jam_e2e_get_recipes_gas
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/getrecipes_gas.txt', '/root/jam/wca4java/tests/expected/e2e/getrecipes_gas.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_e2e_scan_wl_gas (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_02.py", line 13, in test_jam_e2e_scan_wl_gas
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_wl_ruleid_gas.txt', '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_gas.txt'))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.006s
+
+FAILED (failures=2, errors=3)

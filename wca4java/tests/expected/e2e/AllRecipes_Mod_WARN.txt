@@ -1,0 +1,14 @@
+ Detected pom.xml, setting build tool type to "maven"
+ Using 'mvn --version' for maven home location
+  Running recipe(s)...
+  Changes have been made to src/main/java/com/acme/modres/LogoutServlet.java by
+      com.ibm.testRecipe
+          org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod
+  Changes have been made to src/main/java/com/acme/modres/WeatherServlet.java by
+      com.ibm.testRecipe
+          org.openrewrite.java.liberty.ServerName
+          org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup
+  Changes have been made to src_orig/main/java/com/acme/modres/WeatherServlet.java by
+      com.ibm.testRecipe
+          org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup
+  Please review and commit the results.

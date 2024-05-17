@@ -1,0 +1,6 @@
+ Detected pom.xml, setting build tool type to "maven"
+ Using 'mvn --version' for maven home location
+ Bundle is valid.
+ Some or all rule help not found. Regenerating.
+ Finished updating report with rule help
+  Running recipe(s)...

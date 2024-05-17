@@ -1,0 +1,10 @@
+# Name this file jvm.options and place in the same folder as the server.xml.
+# Properties are migrated from server d-shrapp-was70-36Node01/bdinqservice_sit7_01.
+
+# The following non-standard JVM options were detected but might not be applicable to your WebSphere Liberty Application Server JVM. Before you enable the JVM options, make sure that they are valid for the JVM and are properly tuned for this WebSphere Liberty application.
+#  -Xmx2048m
+
+-DAPP_NAME=ccsp_env18
+-DSERVER_LOG_ROOT=${SERVER_LOG_ROOT}
+-DUNIQUE_DIR=/opt/hcsc_unique/sit7
+-Djava.net.preferIPv4Stack=true

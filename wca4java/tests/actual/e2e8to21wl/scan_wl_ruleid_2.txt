@@ -1,0 +1,4 @@
+         "ruleId": "CLDRLocaleDataByDefault",
+         "ruleId": "DetectMBeanOperationInfoConstructor",
+         "ruleId": "Java11VersionNumberChange",
+         "ruleId": "Java17GeneralInfoAndPotentialIssues",

@@ -1,0 +1,81 @@
+.E..EEEEE.FF.
+======================================================================
+ERROR: test_jam_e2e_run_recipes_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 25, in test_jam_e2e_run_recipes_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/AllRecipes_Mod_WARN_acme.txt', '/root/jam/wca4java/tests/expected/e2e/AllRecipes_Mod_WARN_acme.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/AllRecipes_Mod_WARN_acme.txt'
+
+======================================================================
+ERROR: test_jam_e2e_scan_count_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 19, in test_jam_e2e_scan_count_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_ruleid_acme_count.txt', '/root/jam/wca4java/tests/expected/e2e/scan_ruleid_acme_count.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/scan_ruleid_acme_count.txt'
+
+======================================================================
+ERROR: test_jam_e2e_scan_ol_2_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 34, in test_jam_e2e_scan_ol_2_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_ol_acme_2', '/root/jam/wca4java/tests/expected/e2e/scan_ol_acme_2.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 52, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/actual/e2e/scan_ol_acme_2'
+
+======================================================================
+ERROR: test_jam_e2e_scan_ol_diff_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 43, in test_jam_e2e_scan_ol_diff_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_ol_ruleid_diff_acme.txt', '/root/jam/wca4java/tests/expected/e2e/scan_ol_ruleid_diff_acme.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/scan_ol_ruleid_diff_acme.txt'
+
+======================================================================
+ERROR: test_jam_e2e_scan_recipe_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 16, in test_jam_e2e_scan_recipe_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_ol_acme.txt', '/root/jam/wca4java/tests/expected/e2e/scan_ol_acme.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 53, in cmp
+    s2 = _sig(os.stat(f2))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/expected/e2e/scan_ol_acme.txt'
+
+======================================================================
+ERROR: test_jam_e2e_scan_twas_2_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 37, in test_jam_e2e_scan_twas_2_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_ruleid_acme_count_2', '/root/jam/wca4java/tests/expected/e2e/scan_ruleid_acme_count_2.txt'))
+  File "/root/python/Python-3.9.0/Lib/filecmp.py", line 52, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/jam/wca4java/tests/actual/e2e/scan_ruleid_acme_count_2'
+
+======================================================================
+FAIL: test_jam_e2e_scan_wl_2_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 31, in test_jam_e2e_scan_wl_2_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_wl_ruleid_2_acme.txt', '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_2_acme.txt'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_jam_e2e_scan_wl_acme (__main__.LearningCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/jam/wca4java/tests/jamJarTestsE2E_03.py", line 13, in test_jam_e2e_scan_wl_acme
+    self.assertTrue(filecmp.cmp('/root/jam/wca4java/tests/actual/e2e/scan_wl_ruleid_acme.txt', '/root/jam/wca4java/tests/expected/e2e/scan_wl_ruleid_acme.txt'))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.006s
+
+FAILED (failures=2, errors=6)

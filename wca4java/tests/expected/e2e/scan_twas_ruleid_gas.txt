@@ -1,0 +1,4 @@
+         "ruleId": "DatabasesRule",
+         "ruleId": "DetectPropertiesFiles",
+         "ruleId": "RemoteEJBLookupsRule",
+         "ruleId": "RemoteEJBProvidersRule",

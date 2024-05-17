@@ -1,0 +1,2 @@
+###BEGIN-API-OUTPUT:
+org.openrewrite.java.migrate.JpaCacheProperties

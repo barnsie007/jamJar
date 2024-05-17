@@ -1,0 +1,1 @@
+/root/.ibm_java_app_mod/com.acme.modres_modresorts_2.0.0/migration_bundle/reports/analysis/ModResorts.ear.WASaaS.analyze.json
